@@ -1,0 +1,107 @@
+/* Container & Label */
+.jip-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-8);
+  margin-bottom: var(--jip-spacing-16);
+  width: 100%;
+  min-width: 400px; /* Khớp với độ rộng Card/Calendar của bạn */
+}
+
+.jip-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Base Input Style */
+.jip-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 8px; /* Bo góc nhẹ cho hiện đại */
+  font: var(--typo-body-m);
+  color: var(--jip-color-navy);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.jip-input::placeholder {
+  color: #ccc;
+  font-style: italic;
+  font: var(--typo-body-m);
+}
+
+/* 1. Hover & Focus Standard */
+.jip-input:hover {
+  border-color: var(--jip-color-gold);
+}
+
+.jip-input:focus {
+  border-color: var(--jip-color-navy);
+  box-shadow: 0 0 0 3px rgba(0, 32, 96, 0.05);
+}
+
+/* 2. Variant: Glow (Metallic Style) */
+.jip-input.variant-glow {
+  background: var(--jip-bg-default);
+  /* Tạo viền gradient bằng border-box tương tự checkbox */
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(var(--jip-bg-default), var(--jip-bg-default)),
+    var(--jip-gradient-gold-metallic);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.jip-input.variant-glow:focus {
+  box-shadow: var(--jip-checkbox-glow);
+  transform: translateY(-1px);
+}
+
+/* 3. State: Error */
+.state-error .jip-input {
+  border-color: var(--jip-error);
+  background-color: rgba(165, 42, 42, 0.02);
+}
+
+.state-error .error-text {
+  font: var(--typo-caption);
+  color: var(--jip-error);
+  margin-top: 4px;
+}
+
+/* 4. Icon Integration */
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--jip-color-gold-dark);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.jip-input-wrapper:has(.input-icon) .jip-input {
+  padding-left: 36px;
+}
+
+.jip-input-wrapper .icon-error {
+  position: absolute;
+  right: 12px;
+  margin-right: 0; /* Reset margin từ style cũ */
+}
+
+/* 5. Variant: Underline (Minimalist Luxury) */
+.variant-minimal {
+  border: none;
+  border-bottom: 1px solid var(--jip-border-gold);
+  border-radius: 0;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.variant-minimal:focus {
+  border-bottom: 1.5px solid var(--jip-color-navy);
+  box-shadow: none;
+}

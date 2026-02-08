@@ -1,0 +1,129 @@
+/* --- Select Container --- */
+.jip-select-container {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-8);
+  font-family: var(--font-body);
+}
+
+.jip-select-label {
+  font: var(--typo-label);
+  font-size: 12px;
+  color: var(--jip-color-navy);
+  letter-spacing: 1px;
+  margin-left: 4px;
+}
+
+/* --- Trigger Box --- */
+.jip-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.jip-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--jip-bg-default);
+  border: 1.5px solid var(--jip-border-gold);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font: var(--typo-body-m);
+  color: var(--jip-color-navy);
+}
+
+.jip-select-trigger:hover {
+  border-color: var(--jip-color-gold);
+  box-shadow: var(--jip-shadow-glow);
+}
+
+/* Icon Kim cương xoay khi mở */
+.trigger-icon .diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--jip-color-gold);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.jip-select-wrapper.active .trigger-icon .diamond {
+  transform: rotate(225deg) scale(1.2);
+  background: var(--jip-gradient-gold-metallic);
+}
+
+/* --- Dropdown List (Sổ ra) --- */
+.jip-select-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+  padding: 8px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 10px 40px rgba(0, 32, 96, 0.12);
+  z-index: 100;
+
+  /* Hiệu ứng xuất hiện */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jip-select-wrapper.active .jip-select-list {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* --- List Items --- */
+.jip-select-item {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jip-select-item:hover {
+  background: var(--jip-color-cream-light);
+  color: var(--jip-color-navy);
+  padding-left: 20px; /* Hiệu ứng đẩy nhẹ khi hover */
+}
+
+/* Trạng thái được chọn (Selected) */
+.jip-select-item.selected {
+  background: rgba(0, 32, 96, 0.05);
+  color: var(--jip-color-navy);
+  font-weight: var(--fw-semibold);
+}
+
+.jip-select-item.selected::after {
+  content: "✓";
+  font-weight: bold;
+  color: var(--jip-color-gold-dark);
+}
+
+/* Trạng thái bị khóa (Disabled) */
+.jip-select-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+/* Hint Text */
+.jip-select-hint {
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  margin-left: 4px;
+}

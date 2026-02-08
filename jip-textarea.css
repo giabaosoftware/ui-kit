@@ -1,0 +1,106 @@
+/* Container */
+.jip-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-8);
+  width: 100%;
+  max-width: 500px;
+  font-family: var(--font-body);
+}
+
+/* Label */
+.jip-input-label {
+  font: var(--typo-label);
+  font-size: 12px;
+  color: var(--jip-color-navy);
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.required-mark {
+  color: var(--jip-color-gold-dark);
+}
+
+/* Textarea Wrapper & Box */
+.jip-textarea-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.jip-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 8px;
+  font: var(--typo-body-m);
+  color: var(--jip-text-primary);
+  resize: vertical; /* Cho phép chỉnh độ cao */
+  min-height: 100px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Placeholder */
+.jip-textarea::placeholder {
+  color: #a0a0a0;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Hover State */
+.jip-textarea:hover {
+  border-color: var(--jip-color-gold);
+}
+
+/* Focus State - Tái sử dụng hiệu ứng Glow của bạn */
+.jip-textarea:focus {
+  border-color: var(--jip-color-navy);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 32, 96, 0.05);
+}
+
+/* Footer & Extras */
+.jip-input-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.jip-input-hint,
+.jip-char-counter {
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+}
+
+/* Error State */
+.state-error .jip-textarea {
+  border-color: var(--jip-error);
+  background-color: rgba(165, 42, 42, 0.02);
+}
+
+.jip-error-message {
+  font: var(--typo-caption);
+  color: var(--jip-error);
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Custom Scrollbar cho sang trọng */
+.jip-textarea::-webkit-scrollbar {
+  width: 6px;
+}
+.jip-textarea::-webkit-scrollbar-track {
+  background: var(--jip-bg-default);
+}
+.jip-textarea::-webkit-scrollbar-thumb {
+  background: var(--jip-border-gold);
+  border-radius: 10px;
+}
+.jip-textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--jip-color-gold);
+}

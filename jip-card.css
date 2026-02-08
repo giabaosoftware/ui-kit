@@ -1,0 +1,124 @@
+/* Course Card Container */
+.jip-course-card {
+  width: 340px;
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.jip-course-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--jip-color-gold);
+  box-shadow: 0 12px 30px rgba(184, 134, 11, 0.15);
+}
+
+/* Media Section */
+.jip-card-media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.jip-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.jip-course-card:hover .jip-card-media img {
+  transform: scale(1.05);
+}
+
+.jip-badge-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--jip-gradient-gold-metallic);
+  color: var(--jip-color-navy);
+  padding: 4px 12px;
+  font: var(--typo-caption);
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Content Section */
+.jip-card-content {
+  padding: var(--jip-card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-element-spacing);
+}
+
+.jip-course-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  margin: 0 0 4px 0;
+}
+
+.jip-course-instructor {
+  font: var(--typo-body-s);
+  color: var(--jip-text-secondary);
+  font-style: italic;
+}
+
+/* Reusing your Divider for Card */
+.jip-card-content .divider {
+  display: flex;
+  align-items: center;
+  color: var(--jip-color-gold);
+  width: 100%;
+}
+
+/* Meta info */
+.jip-course-meta {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 32, 96, 0.03);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.meta-label {
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  display: block;
+}
+
+.meta-value {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+}
+
+/* Footer Section */
+.jip-card-footer {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.jip-price {
+  color: var(--jip-color-gold-dark);
+}
+
+.jip-price .currency {
+  font: var(--typo-h3);
+  vertical-align: top;
+}
+
+.jip-price .amount {
+  font: var(--typo-display-s);
+  margin-left: 2px;
+}
+
+/* Ghi đè nút để full-width trong card */
+.jip-card-footer .jip-button {
+  width: 100%;
+  min-width: unset;
+}

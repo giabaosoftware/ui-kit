@@ -1,0 +1,72 @@
+/* --- JIP BUTTON VARIANTS --- */
+
+/* 1. Primary Button (Gold Metallic) 
+   Dành cho các hành động quan trọng nhất như Mua hàng/Đăng ký */
+.btn-primary {
+  background: var(--jip-gradient-gold-metallic);
+  color: var(--jip-color-navy);
+  border: none;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
+}
+
+.btn-primary .divider::before,
+.btn-primary .divider::after,
+.btn-primary .diamond {
+  background: var(--jip-color-navy);
+}
+
+/* 2. Secondary Button (Navy & Gold Border)
+   Dành cho các hành động phụ hoặc trên nền sáng */
+.btn-secondary {
+  background-color: var(--jip-color-navy);
+  color: var(--jip-color-gold);
+  border: 1.5px solid var(--jip-color-gold);
+}
+
+.btn-secondary:hover {
+  background-color: #001a4d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 32, 96, 0.2);
+}
+
+.btn-secondary .divider::before,
+.btn-secondary .divider::after,
+.btn-secondary .diamond {
+  background: var(--jip-color-gold);
+}
+
+/* 3. Ghost Button (Transparent/Minimal)
+   Dành cho các hành động ít ưu tiên hoặc đặt trong Card */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--jip-color-navy);
+  border: 1.5px solid rgba(0, 32, 96, 0.2);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(0, 32, 96, 0.05);
+  border-color: var(--jip-color-navy);
+  transform: translateY(-1px);
+}
+
+.btn-ghost .divider::before,
+.btn-ghost .divider::after,
+.btn-ghost .diamond {
+  background: var(--jip-color-navy);
+  opacity: 0.4;
+}
+
+/* Container for demo layout */
+.button-showcase {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  background-color: var(--jip-bg-subtle);
+  flex-wrap: wrap;
+}

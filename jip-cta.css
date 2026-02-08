@@ -1,0 +1,107 @@
+/* Base Component */
+.jip-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--jip-spacing-8) var(--jip-spacing-24); /* Thu nhỏ từ 16/48 xuống 8/24 */
+  border-radius: var(--jip-btn-radius);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: var(--jip-btn-border-width) solid transparent;
+  text-decoration: none;
+  min-width: 200px; /* Thu nhỏ từ 280px */
+  outline: none;
+  background: none;
+}
+
+/* Typography - Điều chỉnh tỉ lệ nhỏ hơn */
+.jip-button .main-label {
+  font: var(--typo-h4); /* Chuyển từ h2 xuống h3 để nhỏ gọn hơn */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.jip-button .sub-label {
+  font: var(--typo-caption); /* Chuyển từ body-s xuống caption */
+  font-style: italic;
+  font-weight: var(--fw-medium);
+  opacity: 0.85;
+}
+
+/* Divider & Diamond - Thu nhỏ tỉ lệ */
+.jip-button .divider {
+  display: flex;
+  align-items: center;
+  width: 60%; /* Thu hẹp đường kẻ */
+  margin: 2px 0;
+}
+
+.jip-button .divider::before,
+.jip-button .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.jip-button .diamond {
+  width: 4px; /* Giảm từ 6px xuống 4px */
+  height: 4px;
+  transform: rotate(45deg);
+  background: currentColor;
+  margin: 0 6px;
+}
+
+/* --- Variants --- */
+
+/* 1. Enroll Now (Primary Dark) */
+.btn-enroll {
+  background-color: var(--jip-color-navy);
+  color: var(--jip-color-gold);
+  border-color: var(--jip-color-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-enroll:hover {
+  transform: translateY(-1.5px);
+  background-color: #001a4d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="dark"] .btn-enroll:hover {
+  transform: translateY(-1.5px);
+  background-color: var(--jip-color-gold-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* 2. Learn More (Outline Cream) */
+.btn-learn-outline {
+  background-color: var(--jip-bg-default);
+  color: var(--jip-color-navy);
+  border-color: var(--jip-color-navy);
+}
+
+.btn-learn-outline:hover {
+  background-color: var(--jip-color-cream);
+  transform: translateY(-1.5px);
+}
+
+/* 3. Learn More (Gold Gradient) */
+.btn-learn-gold {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: var(--jip-color-navy);
+  border: none;
+}
+
+.btn-learn-gold .divider::before,
+.btn-learn-gold .divider::after {
+  background: var(--jip-color-navy);
+}
+
+.btn-learn-gold:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1.5px);
+}

@@ -1,0 +1,127 @@
+/* Container layout */
+.checkbox-container {
+  display: flex;
+  gap: var(--jip-spacing-24);
+  padding: var(--jip-spacing-48);
+}
+
+.jip-checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--jip-spacing-8);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Ẩn checkbox mặc định */
+.jip-checkbox {
+  display: none; /* Ẩn input gốc */
+}
+
+/* Custom Checkbox Box */
+.jip-checkbox-box {
+  width: var(--jip-checkbox-size);
+  height: var(--jip-checkbox-size);
+  border: 1px solid var(--jip-color-gold);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.jip-checkbox-box.variant-glow {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Tạo nền xanh nhạt bên trong */
+  background: #f0f7ff;
+
+  /* Hiệu ứng viền ánh kim bằng Border-Box */
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(#f0f7ff, #f0f7ff), var(--jip-gradient-gold-metallic);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  /* Hiệu ứng tỏa sáng (Glow) */
+  transition: all 0.3s ease;
+}
+
+/* Dấu tích Navy - Tinh chỉnh độ dày để giống ảnh */
+.jip-checkbox:checked + .variant-glow::after {
+  content: "";
+  width: 10px;
+  height: 5px;
+  border-left: 2.5px solid var(--jip-color-navy);
+  border-bottom: 2.5px solid var(--jip-color-navy);
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+/* Hiệu ứng Checkmark (dùng SVG nội bộ để chính xác nhất) */
+.jip-checkbox:checked + .jip-checkbox-box::after {
+  content: "";
+  width: 12px;
+  height: 8px;
+  border-left: 2.5px solid var(--jip-color-navy);
+  border-bottom: 2.5px solid var(--jip-color-navy);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/* Variant: Option 2 (Glow & Light Background) */
+.variant-glow {
+  background-color: #eef4f8; /* Màu xanh nhạt trong hình */
+  border-width: 1.5px;
+}
+
+/* Variant: Option 6 (Error) */
+.state-error .jip-checkbox-box {
+  border-color: var(--jip-error);
+}
+.state-error .jip-label {
+  color: var(--jip-error);
+  text-decoration: underline;
+}
+.icon-error {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background-color: var(--jip-error);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+/* Variant: Focus 7 (Double Border) */
+.variant-focus {
+  outline: 1.5px solid var(--jip-color-navy);
+  outline-offset: -3.5px;
+  border: 2px solid var(--jip-color-gold);
+}
+
+/* Typography mapping */
+.jip-label {
+  font: var(--typo-label);
+  font-size: 12px;
+  color: var(--jip-text-primary);
+  margin-top: 4px;
+}
+
+.jip-label-focus {
+  font: var(--typo-label);
+  font-size: 10px;
+  color: var(--jip-color-navy);
+  border-bottom: 1px solid var(--jip-color-navy);
+}
+
+/* Card */
+/* Container mô phỏng phần đầu của Card */

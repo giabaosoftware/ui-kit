@@ -1,0 +1,144 @@
+/* Calendar Container */
+.jip-calendar {
+  width: 340px;
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+  padding: var(--jip-spacing-24);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-body);
+}
+
+/* Header: Month & Year */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.month-display {
+  text-align: center;
+}
+
+.month-display .month {
+  display: block;
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.month-display .year {
+  font: var(--typo-caption);
+  color: var(--jip-color-gold-dark);
+  letter-spacing: 2px;
+}
+
+.cal-nav {
+  background: none;
+  border: 1px solid var(--jip-border-gold);
+  color: var(--jip-color-navy);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-nav:hover {
+  background: var(--jip-gradient-gold-metallic);
+  border-color: transparent;
+}
+
+/* Grid Layout */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+/* Weekdays Row */
+.weekdays {
+  font: var(--typo-label);
+  color: var(--jip-color-gold-dark);
+  margin-bottom: var(--jip-spacing-8);
+  border-bottom: 1px solid var(--jip-border-gold);
+  padding-bottom: 8px;
+}
+
+/* Day Cells */
+.day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: var(--typo-body-m);
+  color: var(--jip-text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.day:hover:not(.prev-month):not(.next-month) {
+  background: var(--jip-color-cream);
+  color: var(--jip-color-navy);
+}
+
+.day.prev-month,
+.day.next-month {
+  color: #ccc;
+  cursor: default;
+}
+
+/* Today State */
+.current-day {
+  font-weight: var(--fw-bold);
+  color: var(--jip-color-navy);
+  border: 1.5px solid var(--jip-color-navy);
+}
+
+/* Selected State */
+.day.selected {
+  background: var(--jip-color-navy);
+  color: var(--jip-color-gold);
+  box-shadow: 0 4px 10px rgba(0, 32, 96, 0.3);
+}
+
+/* Event Indicator (Small Gold Dot) */
+.day.has-event::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  background: var(--jip-color-gold-dark);
+  border-radius: 50%;
+}
+
+/* Footer */
+.calendar-footer {
+  margin-top: var(--jip-spacing-16);
+  padding-top: var(--jip-spacing-16);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.event-indicator {
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-indicator .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--jip-gradient-gold-metallic);
+  border-radius: 50%;
+}
