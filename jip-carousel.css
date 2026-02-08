@@ -2,8 +2,8 @@
 .jip-banner-slider {
   position: relative;
   width: 100%;
-  height: 600px; /* Chiều cao cố định hoặc dùng vh */
-  background: var(--jip-color-navy);
+  height: 600px;
+  background: var(--jip-bg-brand); /* Đồng bộ với biến background brand */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -13,13 +13,17 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  visibility: hidden;
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.8s;
   display: flex;
   align-items: center;
 }
 
 .jip-slide.active {
   opacity: 1;
+  visibility: visible;
   z-index: 1;
 }
 
@@ -30,21 +34,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 32, 96, 0.9) 0%,
-    rgba(0, 32, 96, 0.4) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  /* Đảm bảo ảnh nền không làm rối text */
+  filter: brightness(0.7);
 }
 
-.jip-slide-overlay {
+/* Tối ưu Overlay: Kết hợp gradient của bạn với độ che phủ tốt hơn cho text */
+.jip-slide-overlay,
+.slide-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 32, 96, 0.9) 0%,
-    rgba(0, 32, 96, 0.4) 50%,
+    rgba(0, 24, 72, 0.95) 0%,
+    /* Đậm hơn ở phía text */ rgba(0, 32, 96, 0.6) 40%,
     transparent 100%
   );
   z-index: 1;
@@ -61,87 +63,92 @@
 }
 
 .jip-slide-content {
-  max-width: 600px;
-  color: white;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.jip-slide-title {
-  font: var(--typo-display-l);
-  margin: var(--jip-spacing-16) 0;
+  max-width: 650px;
   color: var(--jip-text-on-brand);
 }
 
+/* Sử dụng đúng Typo Tokens đã định nghĩa */
+.jip-slide-title {
+  font: var(--typo-display-l);
+  margin: 0 0 var(--jip-spacing-16) 0;
+  color: var(--jip-text-on-brand);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Hiệu ứng Gold Text đồng bộ với Metallic Gradient */
 .text-gold {
   background: var(--jip-gradient-gold-metallic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  font-weight: var(--fw-bold);
 }
 
 .jip-slide-description {
   font: var(--typo-body-l);
   margin-bottom: var(--jip-spacing-32);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  max-width: 90%;
 }
 
 .jip-slide-actions {
   display: flex;
   gap: var(--jip-spacing-16);
+  align-items: center;
 }
 
 /* --- Slider Controls --- */
 .jip-slider-controls {
   position: absolute;
   bottom: var(--jip-spacing-48);
-  left: 50%;
-  transform: translateX(-50%);
+  left: var(
+    --jip-container-gutter
+  ); /* Căn lề trái theo container để sang trọng hơn */
   z-index: 10;
   display: flex;
   align-items: center;
   gap: var(--jip-spacing-24);
 }
-.slide-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 32, 96, 0.9) 0%,
-    rgba(0, 32, 96, 0.4) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
 
 .jip-slider-dots {
   display: flex;
   gap: 12px;
+  align-items: center;
 }
 
 .jip-slider-dots .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  border: 1px solid var(--jip-color-gold);
+  border: 1.5px solid var(--jip-color-gold);
+  background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.jip-slider-dots .dot:hover {
+  border-color: #fff;
 }
 
 .jip-slider-dots .dot.active {
-  width: 24px;
-  border-radius: 4px;
+  width: 32px; /* Dài hơn một chút để tạo cảm giác cao cấp */
+  border-radius: var(--jip-btn-radius);
   background: var(--jip-gradient-gold-metallic);
   border: none;
+  box-shadow: var(--jip-shadow-glow);
 }
 
-/* Animation */
-@keyframes fadeInUp {
+/* Animation tối ưu mượt mà hơn */
+.jip-slide.active .jip-slide-content {
+  animation: jip-fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes jip-fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -149,18 +156,46 @@
   }
 }
 
-/* Responsive */
+/* Responsive Tối ưu dựa trên Tokens */
 @media (max-width: 768px) {
   .jip-banner-slider {
-    height: 500px;
+    height: 550px;
   }
+
+  .jip-slide-overlay {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 32, 96, 0.9) 20%,
+      rgba(0, 32, 96, 0.4) 100%
+    );
+  }
+
+  .jip-slide-container {
+    padding: 0 var(--jip-spacing-24);
+    text-align: center;
+  }
+
+  .jip-slide-content {
+    margin: 0 auto;
+  }
+
   .jip-slide-title {
     font: var(--typo-display-s);
   }
+
   .jip-slide-actions {
     flex-direction: column;
+    gap: var(--jip-spacing-12);
   }
-  .jip-button {
+
+  .jip-slide-actions .jip-button {
     min-width: 100%;
+    width: 100%;
+  }
+
+  .jip-slider-controls {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: var(--jip-spacing-24);
   }
 }

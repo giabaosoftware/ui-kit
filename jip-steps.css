@@ -1,0 +1,134 @@
+/* Journey Layout */
+.jip-journey-container {
+  padding: var(--jip-spacing-48) var(--jip-spacing-24);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.jip-journey-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Base Step */
+.jip-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Connector Line */
+.step-connector {
+  position: absolute;
+  top: 20px; /* Bằng 1/2 size của indicator */
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--jip-border-gold);
+  z-index: -1;
+}
+
+.jip-step:last-child .step-connector {
+  display: none;
+}
+
+/* Step Circle Indicator */
+.step-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--jip-bg-default);
+  border: 2px solid var(--jip-color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  margin-bottom: var(--jip-spacing-16);
+}
+
+.step-icon {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+}
+
+/* Content Styling */
+.step-content {
+  text-align: center;
+  padding: 0 var(--jip-spacing-8);
+}
+
+.step-number {
+  font: var(--typo-caption);
+  color: var(--jip-color-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.step-title {
+  font: var(--typo-h3);
+  color: var(--jip-color-navy);
+  margin: 4px 0 8px 0;
+}
+
+.step-desc {
+  font: var(--typo-body-s);
+  color: var(--jip-text-secondary);
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* --- STATES --- */
+
+/* State: Completed */
+.state-completed .step-indicator {
+  background: var(--jip-gradient-gold-metallic);
+  border-color: transparent;
+}
+
+.state-completed .step-connector {
+  background: var(--jip-color-gold);
+}
+
+/* State: Active */
+.state-active .step-indicator {
+  background: var(--jip-color-navy);
+  border-color: var(--jip-color-gold);
+  box-shadow: var(--jip-shadow-glow);
+  transform: scale(1.1);
+}
+
+.state-active .step-icon {
+  color: var(--jip-color-gold);
+}
+
+/* Hiệu ứng xung nhịp cho bước hiện tại */
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid var(--jip-color-gold);
+  animation: jip-pulse 2s infinite;
+}
+
+@keyframes jip-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* State: Pending */
+.state-pending .step-indicator {
+  opacity: 0.6;
+  border-style: dashed;
+}

@@ -2,25 +2,21 @@
 .jip-banner {
   position: relative;
   width: 100%;
-  min-height: 600px;
-  height: 18vh;
+  min-height: 40vh; /* Tăng nhẹ để cân đối với typo display-l */
+  background-color: var(--jip-bg-brand);
+  background-image: url("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Tạo hiệu ứng sang trọng khi scroll */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--jip-color-navy);
-  /* Bạn có thể thay background-image bằng ảnh thật */
-  background-image: url("https://images.unsplash.com/photo-1541339907198-e08756defe93?auto=format&fit=crop&q=80");
-  background-size: cover;
-  background-position: center;
+  padding: var(--jip-spacing-80) var(--jip-container-gutter);
+  text-align: center;
   overflow: hidden;
-  animation: slowZoom 20s infinite alternate ease-in-out;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
-
-  /* Đảm bảo phần nội dung không bị che khuất bởi phần vát */
-  padding-bottom: 50px;
 }
 
-/* Dark Overlay để nổi bật chữ */
+/* Overlay tạo chiều sâu - Sử dụng biến màu brand thay vì mã cứng */
 .jip-banner-overlay {
   position: absolute;
   top: 0;
@@ -29,19 +25,10 @@
   bottom: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 32, 96, 0.85) 0%,
-    rgba(0, 32, 96, 0.6) 100%
+    color-mix(in srgb, var(--base-navy), transparent 15%) 0%,
+    color-mix(in srgb, var(--base-navy), transparent 40%) 50%,
+    color-mix(in srgb, var(--base-navy), transparent 10%) 100%
   );
-  z-index: 1;
-  background: linear-gradient(
-    -45deg,
-    rgba(0, 32, 96, 0.9),
-    rgba(0, 32, 96, 0.7),
-    rgba(10, 50, 120, 0.8),
-    rgba(0, 32, 96, 0.9)
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
   z-index: 1;
 }
 
@@ -49,39 +36,26 @@
 .jip-banner-content {
   position: relative;
   z-index: 2;
-  text-align: center;
   max-width: 800px;
-  padding: 0 var(--jip-container-gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--jip-spacing-24);
 }
 
-/* Badge */
-.jip-banner-badge {
+.jip-banner-tagline {
   font: var(--typo-label);
   color: var(--jip-color-gold);
+  letter-spacing: 4px; /* Giữ nguyên độ giãn chữ đặc trưng */
   text-transform: uppercase;
-  letter-spacing: 3px;
-  border: 1px solid var(--jip-border-gold);
-  padding: 8px 20px;
-  border-radius: var(--jip-btn-radius);
-  background: rgba(212, 175, 55, 0.1);
-  opacity: 0;
-  animation: fadeInUp 0.8s ease out forwards;
-  animation-delay: 0.2s;
+  animation: fadeInDown 0.8s ease-out forwards;
 }
 
-/* Title & Typography */
 .jip-banner-title {
   font: var(--typo-display-l);
   color: var(--jip-text-on-brand);
   margin: 0;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.5s;
+  line-height: 1.1; /* Khớp với token display-l */
 }
 
 .text-gradient {
@@ -89,35 +63,69 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  background-size: 200% auto;
-  animation: shimmer 4s linear infinite;
+  filter: drop-shadow(
+    0 2px 4px rgba(0, 0, 0, 0.3)
+  ); /* Giúp gradient nổi bật hơn trên nền ảnh */
 }
 
-.jip-banner-subtitle {
+.jip-banner-description {
   font: var(--typo-body-l);
-  color: var(--jip-color-cream);
-  max-width: 600px;
+  color: var(--jip-text-on-brand);
+  max-width: 640px;
   line-height: 1.6;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.8s;
+  opacity: 0.9;
 }
 
-/* Actions Layout */
+/* Action Group */
 .jip-banner-actions {
   display: flex;
   gap: var(--jip-spacing-24);
-  margin-top: var(--jip-spacing-16);
+  margin-top: var(--jip-spacing-8);
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Decorative Accent Line */
+/* Decorative Frame - Đồng nhất với border-gold và spacing */
+.banner-frame {
+  position: absolute;
+  top: var(--jip-spacing-24);
+  left: var(--jip-spacing-24);
+  right: var(--jip-spacing-24);
+  bottom: var(--jip-spacing-24);
+  border: 1px solid var(--jip-border-gold);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
 
-/* Responsive */
+/* Dark Mode Overrides (Tự động thích ứng qua các biến đã có) */
+html[data-theme="dark"] .jip-banner-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .jip-banner {
-    min-height: 500px;
+    min-height: 50vh;
+    padding: var(--jip-spacing-64) var(--jip-spacing-16);
   }
   .jip-banner-title {
     font: var(--typo-display-s);
@@ -126,91 +134,10 @@
     flex-direction: column;
     width: 100%;
   }
-  .jip-banner-actions .jip-button {
-    width: 100%;
+  .banner-frame {
+    top: var(--jip-spacing-8);
+    left: var(--jip-spacing-8);
+    right: var(--jip-spacing-8);
+    bottom: var(--jip-spacing-8);
   }
-}
-
-/* Định nghĩa các chuyển động */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-@keyframes cinematicBackground {
-  0% {
-    transform: scale(1);
-    background-position: center;
-  }
-  50% {
-    transform: scale(1.05);
-    background-position: 52% 48%; /* Di chuyển tâm nhẹ */
-  }
-  100% {
-    transform: scale(1);
-    background-position: center;
-  }
-}
-
-.jip-banner {
-  /* ... giữ các thuộc tính cũ ... */
-  overflow: hidden; /* Bắt buộc để không lộ lề khi zoom */
-}
-
-/* Thêm lớp giả để chạy animation mà không ảnh hưởng đến nội dung bên trong */
-.jip-banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("https://images.unsplash.com/photo-1541339907198-e08756defe93?auto=format&fit=crop&q=80");
-  background-size: cover;
-  background-position: center;
-  animation: cinematicBackground 20s infinite ease-in-out;
-  z-index: 0;
-}
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.jip-banner-overlay::after {
-  content: "";
-  position: absolute;
-
-  background-size: 100px 100px; /* Khoảng cách các hạt bụi */
-  opacity: 0.15;
-  animation: floatingDust 10s linear infinite;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Phải trùng clip-path với banner nhưng lùi lên một chút để lộ viền */
-  background: var(--jip-gradient-gold-metallic);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 50% 100%, 0% 91%);
 }

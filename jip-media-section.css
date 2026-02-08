@@ -1,0 +1,207 @@
+/* Gallery Container */
+.jip-gallery {
+  padding: var(--jip-section-gap) var(--jip-container-gutter);
+  width: 100%;
+}
+
+.gallery-title {
+  font: var(--typo-display-s);
+  color: var(--jip-color-navy);
+  text-align: center;
+  margin-bottom: var(--jip-spacing-48);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Video Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--jip-spacing-24); /* Tăng nhẹ khoảng cách cho thoáng */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Video Card & Overlay */
+.video-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--jip-border-gold);
+  background: var(--jip-bg-subtle); /* Đổi từ Navy sang Cream (#f5f5dc) */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Tỉ lệ 16:9 */
+  background: #000; /* Giữ nền đen cho video khi load */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Lớp phủ thiết kế (Design Overlay) - CHUYỂN SANG TÔNG SÁNG */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient từ trắng mờ sang Cream đậm hơn */
+  background: linear-gradient(
+    to bottom,
+    rgba(253, 253, 245, 0.7) 0%,
+    rgba(245, 245, 220, 0.95) 100%
+  );
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Hiệu ứng Hover */
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+}
+
+.video-card:hover .video-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Nút Play phong cách Kim cương */
+.play-button {
+  width: 60px;
+  height: 60px;
+  background: var(--jip-gradient-gold-metallic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: var(--jip-shadow-glow); /* Sử dụng shadow glow vàng nhẹ */
+  margin-bottom: var(--jip-spacing-16);
+  transition: transform 0.3s ease;
+}
+
+.play-button .diamond {
+  width: 18px;
+  height: 18px;
+  background: var(--jip-color-navy); /* Giữ navy để nổi bật trên nền vàng */
+  clip-path: polygon(25% 0%, 100% 50%, 25% 100%, 0% 50%);
+}
+
+/* Content trên Overlay - ĐỔI MÀU CHỮ SANG TỐI */
+.overlay-content {
+  text-align: center;
+  padding: 0 var(--jip-spacing-24);
+}
+
+.video-category {
+  font: var(--typo-caption);
+  color: var(--jip-color-gold-dark); /* Vàng đậm cho dễ đọc trên nền cream */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.video-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy); /* Chữ Navy trên nền Cream */
+  margin: 0;
+}
+
+/* Dark Mode Overrides - Đảm bảo tính tương phản trong chế độ tối */
+html[data-theme="dark"] .video-card {
+  background: var(--jip-bg-subtle);
+}
+
+html[data-theme="dark"] .video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 30, 30, 0.6) 0%,
+    rgba(18, 18, 18, 0.95) 100%
+  );
+}
+
+html[data-theme="dark"] .video-title {
+  color: var(--jip-text-primary);
+}
+/* Container chứa sóng */
+.jip-gallery {
+  position: relative;
+  overflow: hidden; /* Đảm bảo sóng không tràn ra ngoài */
+  z-index: 1;
+}
+
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Độ cao của vùng sóng */
+  min-height: 100px;
+  max-height: 200px;
+  z-index: -1; /* Nằm dưới nội dung gallery */
+  pointer-events: none;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hiệu ứng chuyển động */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* Responsive cho sóng */
+@media (max-width: 768px) {
+  .wave-container {
+    height: 60px;
+    min-height: 60px;
+  }
+}

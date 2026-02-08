@@ -1,0 +1,111 @@
+/* Partners Section Container */
+.jip-partners-section {
+  padding: var(--jip-spacing-80) var(--jip-container-gutter);
+  background-color: var(--jip-bg-default);
+  text-align: center;
+  width: 100%;
+  background-color: var(--jip-color-cream);
+}
+
+html[data-theme="dark"] .jip-partners-section {
+  background-color: #0d0d0d;
+}
+
+/* Header Styling */
+.partners-header {
+  margin-bottom: var(--jip-spacing-48);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partners-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.partners-subtitle {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  max-width: 600px;
+  margin-top: 16px;
+}
+
+/* Partners Grid */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--jip-spacing-24);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Partner Card Item */
+.partner-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(100%);
+  opacity: 0.6; /* Làm mờ nhẹ khi chưa hover */
+  transition: all ease-in-out 1s;
+  cursor: pointer;
+}
+
+.partner-logo {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* Reusing your Divider for Section Header */
+.partners-header .divider {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  color: var(--jip-color-gold);
+}
+
+.partners-header .divider::before,
+.partners-header .divider::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: var(--jip-gradient-gold-metallic);
+}
+
+.partners-header .diamond {
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background: var(--jip-color-gold-dark);
+  margin: 0 10px;
+}
+
+/* Định nghĩa chuyển động */
+
+/* Xử lý logo cho Dark Theme */
+html[data-theme="dark"] .partner-card {
+  /* Chuyển logo sang màu trắng và tăng độ sáng */
+  filter: grayscale(100%) brightness(0.5) invert(1);
+  opacity: 0.5; /* Giảm nhẹ độ mờ để trông sang hơn khi chưa hover */
+}
+
+html[data-theme="dark"] .partner-card:hover {
+  /* Khi hover: Trở về màu gốc (nếu muốn) hoặc giữ màu trắng sáng rực */
+  filter: grayscale(0%) brightness(0.8) invert(0);
+  opacity: 1;
+  /* Thêm hiệu ứng phát sáng nhẹ (Glow) cho đẹp */
+  filter: drop-shadow(0 0 8px rgba(203, 203, 203, 0.3));
+}
+
+/* Điều chỉnh lại màu chữ tiêu đề trong Dark Mode nếu chưa có */
+html[data-theme="dark"] .partners-title {
+  color: var(--jip-color-white, #ffffff);
+}
+
+html[data-theme="dark"] .partners-subtitle {
+  color: #b0b0b0; /* Màu xám nhẹ cho dễ đọc */
+}

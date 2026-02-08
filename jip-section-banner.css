@@ -1,0 +1,100 @@
+/* Section Heading Container */
+.jip-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--jip-spacing-32) var(--jip-spacing-16);
+  background: transparent; /* Loại bỏ nền gradient bao phủ */
+}
+
+/* Subtitle (Small gold text on top) */
+.jip-subtitle {
+  font: var(--typo-label);
+  color: var(--jip-color-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Tăng khoảng cách chữ cho cảm giác sang trọng */
+  display: block;
+  margin-bottom: var(--jip-spacing-8);
+}
+
+/* Main Title Group */
+.jip-title-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--jip-spacing-24);
+  margin-bottom: var(--jip-spacing-16);
+}
+
+.jip-main-heading {
+  font: var(--typo-display-s);
+  color: var(--jip-color-navy);
+  margin: 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Chỉnh màu cho Dark Mode */
+html[data-theme="dark"] .jip-main-heading {
+  color: var(--jip-text-primary);
+}
+
+/* Decorative Lines - Tối ưu hóa đường kẻ mỏng & thanh lịch */
+.header-line {
+  flex: 1;
+  height: 1.5px;
+  background: var(--jip-border-gold);
+  position: relative;
+  min-width: 40px;
+}
+
+/* Diamond Accent - Sử dụng metallic gradient thống nhất với button */
+.diamond-accent {
+  width: 8px;
+  height: 8px;
+  background: var(--jip-gradient-gold-metallic);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+}
+
+/* Vị trí kim cương đối xứng hai đầu */
+.header-line:first-child .diamond-accent {
+  right: 0;
+}
+
+.header-line:last-child .diamond-accent {
+  left: 0;
+}
+
+/* Description text */
+.jip-description {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 650px;
+  /* Thêm một chút italic nếu muốn phong cách sang trọng hơn */
+  font-style: italic;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .jip-title-group {
+    gap: var(--jip-spacing-16);
+  }
+
+  .header-line {
+    display: none; /* Ẩn đường kẻ trên mobile để tập trung vào text */
+  }
+
+  .jip-main-heading {
+    font-size: 24px;
+    white-space: normal;
+  }
+
+  .jip-subtitle {
+    letter-spacing: 2px;
+  }
+}

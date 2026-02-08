@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./jip-promo-card.css" />
     <link rel="stylesheet" href="./jip-media-section.css" />
     <link rel="stylesheet" href="./jip-form.css" />
+
     <link rel="stylesheet" href="./page-config-ui.css" />
 
     <link rel="stylesheet" href="./style.css" />
@@ -723,357 +724,103 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <!-- Carousel -->
+    <div class="jip-selection-wrapper">
+      <div class="jip-radio-group">
+        <label class="jip-radio-wrapper">
+          <input
+            type="radio"
+            name="course-type"
+            class="jip-radio-input"
+            checked
+          />
+          <div class="jip-radio-button">
+            <span class="radio-dot"></span>
+            <span class="radio-label">Individual Course</span>
+          </div>
+        </label>
 
-      <!-- Course -->
-      <div style="display: flex; gap: 30px">
-        <div class="jip-course-card">
-          <div class="jip-card-media">
-            <img src="./img/1000007087.png" alt="Course Cover" />
-            <div class="jip-badge-category">Premium Course</div>
+        <label class="jip-radio-wrapper">
+          <input type="radio" name="course-type" class="jip-radio-input" />
+          <div class="jip-radio-button">
+            <span class="radio-dot"></span>
+            <span class="radio-label">Learning Paths</span>
           </div>
 
-          <div class="jip-card-content">
-            <div class="jip-card-header">
-              <h3 class="jip-course-title">Mastering Classical Piano</h3>
-              <p class="jip-course-instructor">with Prof. Alexander Reed</p>
-            </div>
-
+          <ul class="jip-unfold-list">
+            <li><i class="diamond-s"></i> Master of Fine Arts</li>
+            <li><i class="diamond-s"></i> Classical Music Theory</li>
+            <li><i class="diamond-s"></i> Luxury Brand Management</li>
+          </ul>
+        </label>
+      </div>
+    </div>
+    <footer class="jip-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-text">JIP</span>
             <div class="divider">
-              <div class="diamond"></div>
+              <span class="diamond"></span>
             </div>
-
-            <div class="jip-course-meta">
-              <div class="meta-item">
-                <span class="meta-label">Duration:</span>
-                <span class="meta-value">12 Weeks</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Level:</span>
-                <span class="meta-value">Advanced</span>
-              </div>
-            </div>
-
-            <button class="jip-button btn-enroll">
-              <span class="main-label">Enroll Now</span>
-              <div class="divider"><span class="diamond"></span></div>
-              <span class="sub-label">Start Your Learning Journey</span>
-            </button>
+            <span class="logo-subtext">ACADEMY</span>
+          </div>
+          <p class="brand-description">
+            Elevating knowledge and skills through internationally standardized
+            courses with in-depth learning pathways.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">LI</a>
+            <a href="#" class="social-icon">IG</a>
           </div>
         </div>
 
-        <div class="jip-course-card">
-          <div class="jip-card-media">
-            <img src="/img/1000007097.png" alt="Course Cover" />
-          </div>
-
-          <div class="jip-card-content">
-            <div class="jip-card-header">
-              <h3 class="jip-course-title">Mastering Classical Piano</h3>
-              <p class="jip-course-instructor">with Prof. Alexander Reed</p>
-            </div>
-
-            <div class="divider">
-              <div class="diamond"></div>
-            </div>
-
-            <div class="jip-course-meta">
-              <div class="meta-item">
-                <span class="meta-label">Duration:</span>
-                <span class="meta-value">12 Weeks</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Level:</span>
-                <span class="meta-value">Advanced</span>
-              </div>
-            </div>
-
-            <button class="jip-button btn-learn-outline">
-              <span class="main-label">Learn More</span>
-              <div class="divider"><span class="diamond"></span></div>
-              <span class="sub-label">Explore the Learning Path</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Calendar -->
-      <div class="jip-calendar">
-        <div class="calendar-header">
-          <button class="cal-nav">❮</button>
-          <div class="month-display">
-            <span class="month">September</span>
-            <span class="year">2026</span>
-          </div>
-          <button class="cal-nav">❯</button>
-        </div>
-
-        <div class="calendar-grid weekdays">
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-          <div>Sun</div>
-        </div>
-
-        <div class="calendar-grid days">
-          <div class="day prev-month">31</div>
-          <div class="day">1</div>
-          <div class="day">2</div>
-          <div class="day current-day">3</div>
-          <div class="day">4</div>
-          <div class="day has-event">5</div>
-          <div class="day">6</div>
-          <div class="day">7</div>
-          <div class="day selected">15</div>
-          <div class="day">16</div>
-          <div class="day">17</div>
-          <div class="day">18</div>
-          <div class="day">19</div>
-          <div class="day">20</div>
-          <div class="day next-month">1</div>
-        </div>
-
-        <div class="calendar-footer">
-          <div class="event-indicator">
-            <span class="dot"></span> Next Workshop: September 5th
-          </div>
-        </div>
-      </div>
-
-      <!-- Input -->
-      <div>
-        <div class="jip-input-group">
-          <label class="jip-label">Full Name</label>
-          <div class="jip-input-wrapper">
-            <input
-              type="text"
-              class="jip-input"
-              placeholder="Enter your full name..."
-            />
-          </div>
-        </div>
-
-        <div class="jip-input-group state-glow">
-          <label class="jip-label">Premium Code</label>
-          <div class="jip-input-wrapper">
-            <span class="input-icon">✦</span>
-            <input
-              type="text"
-              class="jip-input variant-glow"
-              placeholder="JIP-GOLD-2024"
-            />
-          </div>
-        </div>
-
-        <div class="jip-input-group state-error">
-          <label class="jip-label">Email Address</label>
-          <div class="jip-input-wrapper">
-            <input type="email" class="jip-input" value="invalid-email" />
-            <span class="icon-error">!</span>
-          </div>
-          <span class="error-text">Please enter a valid email address</span>
-        </div>
-      </div>
-
-      <!-- Checkbox group -->
-      <div class="jip-checkbox-group">
-        <div class="checkbox-container">
-          <label class="jip-checkbox-wrapper">
-            <input type="checkbox" class="jip-checkbox" />
-            <span class="jip-checkbox-box"></span>
-            <span class="jip-label">Option 1</span>
-          </label>
-
-          <label class="jip-checkbox-wrapper">
-            <input type="checkbox" class="jip-checkbox" checked />
-            <span class="jip-checkbox-box variant-glow"></span>
-            <span class="jip-label">Option 2</span>
-          </label>
-
-          <label class="jip-checkbox-wrapper">
-            <input type="checkbox" class="jip-checkbox" checked />
-            <span class="jip-checkbox-box"></span>
-            <span class="jip-label">Option 3</span>
-          </label>
-
-          <label class="jip-checkbox-wrapper state-error">
-            <input type="checkbox" class="jip-checkbox" />
-            <span class="jip-checkbox-box"></span>
-            <span class="jip-label">
-              <span class="icon-error">!</span> Option 6
-            </span>
-          </label>
-
-          <label class="jip-checkbox-wrapper">
-            <input type="checkbox" class="jip-checkbox" />
-            <span class="jip-checkbox-box variant-focus variant-glow"></span>
-            <span class="jip-label-focus">Focus 7</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div>
-        <button class="jip-button btn-enroll">
-          <span class="main-label">Enroll Now</span>
-          <div class="divider"><span class="diamond"></span></div>
-          <span class="sub-label">Start Your Learning Journey</span>
-        </button>
-
-        <button class="jip-button btn-learn-outline">
-          <span class="main-label">Learn More</span>
-          <div class="divider"><span class="diamond"></span></div>
-          <span class="sub-label">Explore the Learning Path</span>
-        </button>
-
-        <button class="jip-button btn-learn-gold">
-          <span class="main-label">Learn More</span>
-          <div class="divider"><span class="diamond"></span></div>
-          <span class="sub-label">Explore Our Courses</span>
-        </button>
-      </div>
-
-      <!-- Text Area -->
-      <div>
-        <div class="jip-input-group">
-          <label class="jip-input-label">
-            Your Message <span class="required-mark">*</span>
-          </label>
-
-          <div class="jip-textarea-wrapper">
-            <textarea
-              class="jip-textarea"
-              placeholder="How can we help elevate your journey?"
-              rows="4"
-            ></textarea>
-            <div class="jip-textarea-border-glow"></div>
-          </div>
-
-          <div class="jip-input-footer">
-            <span class="jip-input-hint">
-              Please provide as much detail as possible.
-            </span>
-            <span class="jip-char-counter">0/500</span>
-          </div>
-        </div>
-
-        <div class="jip-input-group state-error">
-          <label class="jip-input-label">Message</label>
-          <div class="jip-textarea-wrapper">
-            <textarea
-              class="jip-textarea"
-              placeholder="Enter your message..."
-            ></textarea>
-          </div>
-          <div class="jip-error-message">
-            <span class="icon-error">!</span> This field is required.
-          </div>
-        </div>
-      </div>
-
-      <!-- Select -->
-      <div class="jip-select-container">
-        <label class="jip-select-label">Select a course</label>
-
-        <div class="jip-select-wrapper">
-          <div class="jip-select-trigger">
-            <span>Art of Leadership (Mastery)</span>
-            <div class="trigger-icon">
-              <div class="diamond"></div>
-            </div>
-          </div>
-
-          <ul class="jip-select-list">
-            <li class="jip-select-item">Personal Finance Management</li>
-            <li class="jip-select-item selected">
-              Art of Leadership (Mastery)
-              <i class="check-icon"></i>
-            </li>
-            <li class="jip-select-item">Life Design Thinking</li>
-            <li class="jip-select-item">Elite Communication</li>
-            <li class="jip-select-item disabled">
-              Sustainable Marketing (Coming Soon)
-            </li>
+        <div class="footer-links">
+          <h4 class="footer-heading">Programs</h4>
+          <ul>
+            <li><a href="#">Expert Courses</a></li>
+            <li><a href="#">Corporate Training</a></li>
+            <li><a href="#">Upcoming Schedule</a></li>
+            <li><a href="#">JIP Scholarships</a></li>
           </ul>
         </div>
 
-        <span class="jip-select-hint">
-          Please select a specialization to continue
-        </span>
+        <div class="footer-links">
+          <h4 class="footer-heading">Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p>
+            Subscribe to receive updates on new courses and exclusive offers.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email address..."
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">SUBMIT</button>
+          </form>
+        </div>
       </div>
 
-      <!-- Radio -->
-    </div>
-  </body>
-
-  <footer class="jip-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="logo-text">JIP</span>
-          <div class="divider">
-            <span class="diamond"></span>
-          </div>
-          <span class="logo-subtext">ACADEMY</span>
+      <div class="footer-bottom">
+        <div class="divider">
+          <span class="diamond"></span>
         </div>
-        <p class="brand-description">
-          Elevating knowledge and skills through internationally standardized
-          courses with in-depth learning pathways.
+        <p class="copyright">
+          © 2026 JIP ACADEMY. All rights reserved. Designed for Excellence.
         </p>
-        <div class="social-links">
-          <a href="#" class="social-icon">FB</a>
-          <a href="#" class="social-icon">LI</a>
-          <a href="#" class="social-icon">IG</a>
-        </div>
       </div>
-
-      <div class="footer-links">
-        <h4 class="footer-heading">Programs</h4>
-        <ul>
-          <li><a href="#">Expert Courses</a></li>
-          <li><a href="#">Corporate Training</a></li>
-          <li><a href="#">Upcoming Schedule</a></li>
-          <li><a href="#">JIP Scholarships</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-links">
-        <h4 class="footer-heading">Support</h4>
-        <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-newsletter">
-        <h4 class="footer-heading">Newsletter</h4>
-        <p>Subscribe to receive updates on new courses and exclusive offers.</p>
-        <form class="newsletter-form">
-          <input
-            type="email"
-            placeholder="Your email address..."
-            class="newsletter-input"
-          />
-          <button type="submit" class="newsletter-btn">SUBMIT</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="divider">
-        <span class="diamond"></span>
-      </div>
-      <p class="copyright">
-        © 2026 JIP ACADEMY. All rights reserved. Designed for Excellence.
-      </p>
-    </div>
-  </footer>
+    </footer>
+  </body>
 
   <script>
     const wrapper = document.querySelector(".jip-select-wrapper");
