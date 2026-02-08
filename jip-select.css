@@ -60,7 +60,7 @@
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: white;
+  background: var(--jip-color-cream);
   border: 1px solid var(--jip-border-gold);
   border-radius: 12px;
   padding: 8px;

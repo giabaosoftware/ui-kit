@@ -90,6 +90,11 @@
   color: var(--jip-color-navy);
 }
 
+html[data-theme="dark"] .day:hover:not(.prev-month):not(.next-month) {
+  background: var(--jip-color-gold);
+  color: var(--jip-color-navy);
+}
+
 .day.prev-month,
 .day.next-month {
   color: #ccc;

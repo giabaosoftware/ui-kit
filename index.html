@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./jip-cta.css" />
     <link rel="stylesheet" href="./jip-select.css" />
     <link rel="stylesheet" href="./jip-radio.css" />
-    <link rel="stylesheet" href="./jip-carousel.css" />
+    <link rel="stylesheet" href="./jip-banner.css" />
     <link rel="stylesheet" href="./page-config-ui.css" />
     <link rel="stylesheet" href="./style.css" />
 
@@ -32,6 +32,54 @@
     />
   </head>
   <body style="background-color: var(--jip-color-cream-light)">
+    <!-- Setting -->
+
+    <button id="settings-toggle">⚙</button>
+
+    <div id="settings-panel">
+      <div class="jip-settings-group">
+        <label class="jip-settings-label">
+          Heading Typeface
+          <select id="font-heading-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Body Typeface
+          <select id="font-body-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Brand Primary (Navy)
+          <input
+            type="color"
+            id="navy-picker"
+            class="jip-settings-color"
+            data-token="--base-navy"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Brand Accent (Gold)
+          <input
+            type="color"
+            id="gold-picker"
+            class="jip-settings-color"
+            data-token="--base-gold"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Surface Background (Light)
+          <input
+            type="color"
+            id="cream-picker"
+            class="jip-settings-color"
+            data-token="--base-cream-light"
+          />
+        </label>
+      </div>
+    </div>
+
     <header class="jip-header">
       <div class="jip-header-container">
         <div class="jip-logo">
@@ -61,60 +109,42 @@
 
     <div class="container">
       <!-- Carousel -->
-      <section class="jip-banner-slider">
-        <div class="jip-slide active">
-          <div class="jip-slide-overlay">
-            <img
-              src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Luxury Course"
-              class="jip-slide-bg"
-            />
+      <section class="jip-banner">
+        <div class="jip-banner-overlay"></div>
+
+        <div class="jip-banner-content">
+          <span class="jip-banner-badge">Premium Education</span>
+
+          <h1 class="jip-banner-title">
+            Elevate Your <br />
+            <span class="text-gradient">Professional Journey</span>
+          </h1>
+
+          <div class="divider">
+            <div class="diamond"></div>
           </div>
 
-          <div class="jip-slide-container">
-            <div class="jip-slide-content">
-              <h1 class="jip-slide-title">
-                Master the Art of <br /><span class="text-gold"
-                  >Professional Leadership</span
-                >
-              </h1>
+          <p class="jip-banner-subtitle">
+            Trải nghiệm chương trình đào tạo chuẩn quốc tế với sự kết hợp hoàn
+            hảo giữa tri thức hiện đại và giá trị truyền thống bền vững.
+          </p>
 
-              <div class="divider">
-                <span class="diamond"></span>
-              </div>
+          <div class="jip-banner-actions">
+            <button class="jip-button btn-enroll">
+              <span class="main-label">Enroll Now</span>
+              <div class="divider"><span class="diamond"></span></div>
+              <span class="sub-label">Start your legacy today</span>
+            </button>
 
-              <p class="jip-slide-description">
-                Nâng tầm sự nghiệp với những khóa học chuyên sâu từ các chuyên
-                gia hàng đầu, kết hợp giữa tri thức hàn lâm và kinh nghiệm thực
-                chiến.
-              </p>
-
-              <div class="jip-slide-actions">
-                <button class="jip-button btn-enroll">
-                  <span class="main-label">Enroll Now</span>
-                  <div class="divider"><span class="diamond"></span></div>
-                  <span class="sub-label">Bắt đầu hành trình ngay</span>
-                </button>
-
-                <button class="jip-button btn-learn-outline">
-                  <span class="main-label">View Schedule</span>
-                  <div class="divider"><span class="diamond"></span></div>
-                  <span class="sub-label">Lịch khai giảng</span>
-                </button>
-              </div>
-            </div>
+            <button class="jip-button btn-learn-outline">
+              <span class="main-label">Our Programs</span>
+              <div class="divider"><span class="diamond"></span></div>
+              <span class="sub-label">Explore curriculum</span>
+            </button>
           </div>
         </div>
 
-        <div class="jip-slider-controls">
-          <button class="cal-nav prev">←</button>
-          <div class="jip-slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-          <button class="cal-nav next">→</button>
-        </div>
+        <div class="jip-banner-accent-line"></div>
       </section>
       <!-- Course -->
       <div style="display: flex; gap: 30px">
@@ -155,7 +185,7 @@
 
         <div class="jip-course-card">
           <div class="jip-card-media">
-            <img src="./img/1000007097.png" alt="Course Cover" />
+            <img src="/img/1000007097.png" alt="Course Cover" />
           </div>
 
           <div class="jip-card-content">
@@ -552,5 +582,76 @@
         document.documentElement.removeAttribute("data-theme");
       }
     });
+
+    //logic thay doi font
+    const settingsToggle = document.getElementById("settings-toggle");
+    const settingsPanel = document.getElementById("settings-panel");
+
+    settingsToggle.addEventListener("click", () => {
+      settingsPanel.classList.toggle("active");
+    });
+    const fonts = [
+      "Cinzel",
+      "Playfair Display",
+      "Cormorant Garamond",
+      "Libre Baskerville",
+      "Inter",
+      "Roboto",
+      "PT Sans",
+    ];
+
+    const headingSelect = document.getElementById("font-heading-select");
+    const bodySelect = document.getElementById("font-body-select");
+
+    fonts.forEach((font) => {
+      const opt1 = document.createElement("option");
+      opt1.value = font;
+      opt1.textContent = font;
+      headingSelect.appendChild(opt1);
+
+      const opt2 = opt1.cloneNode(true);
+      bodySelect.appendChild(opt2);
+    });
+
+    const root = document.documentElement;
+
+    function loadFont(font) {
+      const id = `font-${font.replace(/\s+/g, "-")}`;
+      if (document.getElementById(id)) return;
+
+      const link = document.createElement("link");
+      link.id = id;
+      link.rel = "stylesheet";
+      link.href = `https://fonts.googleapis.com/css2?family=${font.replace(
+        /\s+/g,
+        "+",
+      )}:wght@300;400;500;600;700&display=swap`;
+      document.head.appendChild(link);
+    }
+
+    headingSelect.addEventListener("change", (e) => {
+      loadFont(e.target.value);
+      root.style.setProperty(
+        "--base-font-heading",
+        `"${e.target.value}", serif`,
+      );
+    });
+
+    bodySelect.addEventListener("change", (e) => {
+      loadFont(e.target.value);
+      root.style.setProperty(
+        "--base-font-body",
+        `"${e.target.value}", sans-serif`,
+      );
+    });
+
+    document.getElementById("navy-picker").oninput = (e) =>
+      root.style.setProperty("--base-navy", e.target.value);
+
+    document.getElementById("gold-picker").oninput = (e) =>
+      root.style.setProperty("--base-gold", e.target.value);
+
+    document.getElementById("cream-picker").oninput = (e) =>
+      root.style.setProperty("--base-cream-light", e.target.value);
   </script>
 </html>

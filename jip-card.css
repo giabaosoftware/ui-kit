@@ -83,6 +83,14 @@
   border-radius: 6px;
 }
 
+html[data-theme="dark"] .jip-course-meta {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 32, 96, 0.03);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
 .meta-label {
   font: var(--typo-caption);
   color: var(--jip-text-secondary);

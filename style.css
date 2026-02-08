@@ -1,12 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
+  --base-navy: #002060;
+  --base-gold: #d4af37;
+  --base-gold-dark: #b8860b;
+  --base-cream: #f5f5dc;
+  --base-cream-light: #fdfdf5;
+
+  --base-font-heading: "Cinzel", serif;
+  --base-font-body: "Inter", sans-serif;
+
   /* Brand Colors */
-  --jip-color-navy: #002060;
-  --jip-color-gold: #d4af37;
-  --jip-color-gold-dark: #b8860b;
-  --jip-color-cream: #f5f5dc;
-  --jip-color-cream-light: #fdfdf5;
+  --jip-color-navy: var(--base-navy);
+  --jip-color-gold: var(--base-gold);
+  --jip-color-gold-dark: var(--base-gold-dark);
+  --jip-color-cream: var(--base-cream);
+  --jip-color-cream-light: var(--base-cream-light);
+
+  --font-heading: var(--base-font-heading);
+  --font-body: var(--base-font-body);
   /* Backgrounds */
   --jip-bg-default: var(--jip-color-cream-light);
   --jip-bg-subtle: var(--jip-color-cream);
@@ -24,8 +36,7 @@
   --jip-success: #2d5a27;
   --jip-error: #a52a2a;
   --jip-warning: var(--jip-color-gold);
-  --font-heading: "Cinzel", serif;
-  --font-body: "Inter", sans-serif;
+
   /* Font Weights */
   --fw-regular: 400;
   --fw-medium: 500;
@@ -91,11 +102,14 @@ html[data-theme="dark"] {
      - Gold: Trở thành tone vàng trầm/đồng tối
      - Cream: Trở thành tone xanh đen/đen sâu
   */
-  --jip-color-navy: #e0e6f0; /* Gốc là Navy đậm -> giờ là Navy cực nhạt */
-  --jip-color-gold: #8a6d1a; /* Gốc là Gold sáng -> giờ là Gold trầm tối */
-  --jip-color-gold-dark: #ffd700; /* Gốc là Gold tối -> giờ là Gold rực rỡ */
-  --jip-color-cream: #121212; /* Gốc là Kem sáng -> giờ là Đen nền */
-  --jip-color-cream-light: #1e1e1e; /* Gốc là Kem nhạt -> giờ là Xám đen bề mặt */
+  --jip-color-navy: color-mix(in srgb, var(--base-navy), white 85%);
+  --jip-color-gold: color-mix(in srgb, var(--base-gold), black 45%);
+  --jip-color-gold-dark: color-mix(in srgb, var(--base-gold), white 25%);
+  --jip-color-cream: #121212;
+  --jip-color-cream-light: #1e1e1e;
+
+  --font-heading: var(--base-font-heading);
+  --font-body: var(--base-font-body);
 
   /* Backgrounds */
   --jip-bg-default: var(--jip-color-cream-light);
@@ -117,10 +131,6 @@ html[data-theme="dark"] {
   --jip-success: #4ade80; /* Green sáng cho Dark mode */
   --jip-error: #f87171; /* Red sáng cho Dark mode */
   --jip-warning: var(--jip-color-gold-dark);
-
-  /* Typography */
-  --font-heading: "Cinzel", serif;
-  --font-body: "Inter", sans-serif;
 
   /* Font Weights */
   --fw-regular: 400;
@@ -377,6 +387,7 @@ html[data-theme="dark"] #theme-toggle i::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* Logo */
@@ -540,7 +551,7 @@ html[data-theme="dark"] #theme-toggle i::before {
 }
 
 .footer-links ul li a {
-  color: var(--jip-text-on-brand);
+  color: white;
   text-decoration: none;
   font: var(--typo-body-m);
   transition: color 0.3s ease;
@@ -845,6 +856,13 @@ html[data-theme="dark"] #theme-toggle i::before {
   padding: 6px 20px !important;
 }
 
+.jip-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(
+    -50%
+  ); /* Nên thay bằng menu hamburger khi làm thực tế */
+}
 /* Mobile Responsive (Cơ bản) */
 @media (max-width: 768px) {
   .jip-nav {
@@ -903,7 +921,7 @@ html[data-theme="dark"] .jip-footer {
 
 .brand-description {
   font: var(--typo-body-s);
-  color: var(--jip-color-navy);
+  color: white;
   opacity: 0.8;
   line-height: 1.6;
   margin-bottom: var(--jip-spacing-24);
@@ -929,15 +947,6 @@ html[data-theme="dark"] .jip-footer {
   color: var(--jip-color-gold);
 }
 
-.footer-links ul li a {
-  color: var(--jip-text-on-brand);
-  text-decoration: none;
-  font: var(--typo-body-m);
-  transition: color 0.3s ease;
-  opacity: 0.8;
-  color: var(--jip-color-navy);
-}
-
 .footer-links ul li a:hover {
   color: var(--jip-color-gold);
   padding-left: 8px;
@@ -947,7 +956,7 @@ html[data-theme="dark"] .jip-footer {
 .footer-newsletter p {
   font: var(--typo-body-s);
   margin-bottom: var(--jip-spacing-16);
-  color: var(--jip-color-navy);
+  color: rgb(218, 218, 218);
 }
 
 .newsletter-form {
@@ -1037,4 +1046,103 @@ html[data-theme="dark"] .jip-footer {
   .social-links {
     justify-content: center;
   }
+}
+
+#settings-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background: var(--jip-color-navy);
+  color: white;
+  z-index: 2000;
+}
+
+#settings-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  width: 260px;
+  padding: 16px;
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2000;
+}
+
+#settings-panel.active {
+  display: flex;
+}
+
+#settings-panel label {
+  font: var(--typo-body-s);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jip-settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.jip-settings-label {
+  font: var(--typo-label);
+  color: var(--jip-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ===== SELECT ===== */
+.jip-settings-select {
+  appearance: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--jip-border-gold);
+  background: var(--jip-bg-default);
+  font: var(--typo-body-s);
+  color: var(--jip-text-primary);
+  cursor: pointer;
+}
+
+/* ===== COLOR PICKER ===== */
+.jip-settings-color {
+  height: 36px;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--jip-border-gold);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Chrome / Edge */
+.jip-settings-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.jip-settings-color::-webkit-color-swatch {
+  border-radius: 6px;
+  border: none;
+}
+
+/* Hover / focus */
+.jip-settings-select:hover,
+.jip-settings-color:hover {
+  border-color: var(--jip-color-gold);
+}
+
+.jip-settings-select:focus-visible,
+.jip-settings-color:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--jip-border-gold);
 }
