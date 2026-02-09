@@ -1,4 +1,4 @@
-/* Container chính */
+/* --- TỔNG THỂ --- */
 .jip-admission-section {
   margin: 0 auto;
   max-width: 1280px;
@@ -6,48 +6,71 @@
   font-family: var(--font-body);
 }
 
-/* Tiêu đề Section (Sử dụng font Cinzel - Serif) */
+/* --- TIÊU ĐỀ --- */
 .jip-section-title {
-  font: var(--typo-display-s); /* 32px Cinzel */
+  font: var(--typo-display-s);
   color: var(--jip-color-navy);
   margin-bottom: var(--jip-spacing-24);
   letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
 }
 
-/* List Requirements */
+/* Hiệu ứng gạch chân mờ dưới tiêu đề để tăng ADN thương hiệu */
+.jip-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--jip-color-gold);
+}
+
+/* --- DANH SÁCH YÊU CẦU --- */
 .jip-requirement-list {
   list-style: none;
   padding: 0;
-  margin-bottom: var(--jip-spacing-24);
+  margin-bottom: var(--jip-spacing-32);
 }
 
 .jip-requirement-list li {
-  font: var(--typo-body-l); /* 16px Inter */
+  font: var(--typo-body-l);
   color: var(--jip-text-primary);
   padding-left: var(--jip-spacing-24);
   position: relative;
-  margin-bottom: var(--jip-spacing-8);
+  margin-bottom: var(--jip-spacing-16); /* Tăng khoảng cách giữa các dòng */
   line-height: 1.6;
+  transition: transform 0.2s ease;
 }
 
-/* Tùy chỉnh Bullet Point thành hình vuông Gold nhỏ cho sang */
+/* Hiệu ứng hover nhẹ vào từng yêu cầu */
+.jip-requirement-list li:hover {
+  transform: translateX(4px);
+}
+
 .jip-requirement-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 0.6em;
   width: 6px;
   height: 6px;
   background-color: var(--jip-color-gold);
   border-radius: 1px;
+  box-shadow: 0 0 4px var(--jip-border-gold); /* Thêm glow nhẹ cho bullet */
 }
 
-/* Disclaimer (Chữ đỏ/nâu nhạt đặc trưng trong ảnh) */
+/* --- CHÚ THÍCH & PHÂN TÁCH --- */
 .jip-disclaimer {
   font: var(--typo-body-m);
-  color: var(--jip-error); /* Sử dụng mã màu #a52a2a bạn đã định nghĩa */
-  line-height: 1.5;
+  color: var(--jip-error);
+  line-height: 1.6;
   font-style: italic;
+  padding: var(--jip-spacing-16);
+  background: rgba(165, 42, 42, 0.04); /* Thêm nền mờ để nổi bật cảnh báo */
+  border-left: 2px solid var(--jip-error);
+  border-radius: 0 4px 4px 0;
 }
 
 .jip-marker {
@@ -55,7 +78,6 @@
   margin-right: 4px;
 }
 
-/* Divider */
 .jip-divider {
   border: none;
   height: 1px;
@@ -65,17 +87,20 @@
     var(--jip-border-gold),
     transparent
   );
-  margin: var(--jip-spacing-48) 0;
-  opacity: 0.6;
+  margin: var(--jip-spacing-64) 0; /* Tăng khoảng cách divider */
+  opacity: 0.5;
 }
+
+/* --- SCREENING CONTENT --- */
 .jip-screening-content {
   width: 100%;
 }
-/* Screening Content */
+
 .jip-screening-content p {
   font: var(--typo-body-l);
   color: var(--jip-text-secondary);
-  line-height: 1.7;
+  line-height: 1.8;
+  max-width: 80ch; /* Giới hạn độ dài dòng để dễ đọc hơn */
 }
 
 .jip-screening-content strong {
@@ -83,41 +108,99 @@
   font-weight: var(--fw-semibold);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .jip-admission-section {
-    padding: var(--jip-spacing-24);
-  }
-  .jip-section-title {
-    font: var(--typo-h1); /* Hạ size xuống 28px trên mobile */
-  }
-}
-
-.step {
-  display: none;
-}
+/* --- STEP INDICATORS & PULSE --- */
 .step.active {
   display: block;
+  animation: jip-fade-in 0.5s ease-out;
 }
 
-.step-indicator {
-  position: relative; /* anchor */
-  overflow: visible; /* cho phép pulse tràn ra */
-}
-
-/* pulse ring chỉ xuất hiện khi ACTIVE */
 .state-active .step-indicator::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -4px; /* Rộng hơn icon một chút */
   border-radius: 50%;
   border: 1px solid var(--jip-color-gold);
-  animation: jip-pulse 2s infinite;
+  animation: jip-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   pointer-events: none;
 }
+
+/* --- FLOATING BUTTON --- */
+.btn-next-floating {
+  position: fixed;
+  top: 96px;
+  right: 32px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: var(--jip-color-navy); /* Gán màu mặc định */
+  color: white;
+  border-radius: var(--jip-btn-radius);
+  border: 1px solid var(--jip-border-gold);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 32px rgba(0, 32, 96, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-next-floating:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 32, 96, 0.3);
+  background: var(--jip-action-hover);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes jip-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes jip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .jip-admission-section {
+    padding: var(--jip-spacing-32) var(--jip-spacing-24);
+  }
+
+  .jip-section-title {
+    font: var(--typo-h1);
+  }
+
+  .btn-next-floating {
+    top: auto;
+    bottom: 24px;
+    right: 24px;
+    left: 24px; /* Chiếm full chiều ngang mobile cho dễ bấm */
+    justify-content: center;
+    transform: none;
+  }
+}
+
 .state-completed .step-icon {
   content: "✓";
+
   color: var(--jip-color-navy);
+
   font-weight: 700;
 }
 
@@ -131,81 +214,92 @@
 
 #btn-next.hidden {
   opacity: 0;
+
   pointer-events: none;
+
   transform: translateY(8px);
+
   transition: 0.3s ease;
 }
+
 strong {
   font-weight: bold;
 }
 
-/* ===============================
-   FLOATING NEXT BUTTON (TOP)
-================================ */
-.btn-next-floating {
-  position: fixed;
-  top: 96px; /* dưới header */
-  right: 32px;
-  z-index: 999;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* khi ẩn */
-.btn-next-floating.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-8px);
-}
-
-/* mobile: đưa xuống bottom */
 @media (max-width: 768px) {
-  .btn-next-floating {
-    top: auto;
-    bottom: 24px;
-    right: 50%;
-    transform: translateX(50%);
+  .jip-admission-section {
+    padding: var(--jip-spacing-24);
+  }
+
+  .jip-section-title {
+    font: var(--typo-h1); /* Hạ size xuống 28px trên mobile */
   }
 }
-/* ===============================
-   FLOATING NEXT BUTTON (TOP)
-================================ */
-.btn-next-floating {
-  position: fixed;
-  top: 96px; /* dưới header */
-  right: 32px;
-  z-index: 999;
 
-  display: flex;
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+/* BLOCK CHA */
+.jip-intro-block {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--jip-spacing-48);
   align-items: center;
-  gap: 8px;
-
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  margin-top: var(--jip-spacing-48);
 }
 
-/* khi ẩn */
-.btn-next-floating.hidden {
-  opacity: 0;
+/* TEXT */
+.jip-intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jip-intro-eyebrow {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+.jip-intro-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--jip-border-gold);
+  background: var(--jip-bg-default);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.jip-intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* DECORATIVE GOLD LINE (ADN JIP) */
+.jip-intro-image::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
   pointer-events: none;
-  transform: translateY(-8px);
 }
 
-/* mobile: đưa xuống bottom */
+/* MOBILE */
 @media (max-width: 768px) {
-  .btn-next-floating {
-    top: auto;
-    bottom: 24px;
-    right: 50%;
-    transform: translateX(50%);
+  .jip-intro-block {
+    grid-template-columns: 1fr;
+  }
+
+  .jip-intro-image {
+    order: -1;
   }
 }
