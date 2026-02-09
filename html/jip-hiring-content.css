@@ -247,7 +247,7 @@ strong {
 /* BLOCK CHA */
 .jip-intro-block {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--jip-spacing-48);
   align-items: center;
   margin-top: var(--jip-spacing-48);
