@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./jip-course-layout.css" />
     <link rel="stylesheet" href="./jip-hiring-banner.css" />
     <link rel="stylesheet" href="./jip-hiring-content.css" />
-
+    <link rel="stylesheet" href="./jip-hiring-form.css" />
 
     <link rel="stylesheet" href="../page-config-ui.css" />
 
@@ -120,119 +120,439 @@
       </div>
     </header>
     <section class="jip-hero-banner">
-        <div class="jip-hero-glow"></div>
-        <div class="jip-hero-particles" id="particles-js"></div>
+      <div class="jip-hero-glow"></div>
+      <div class="jip-hero-particles" id="particles-js"></div>
 
-        <div class="jip-hero-container">
-          <div class="jip-hero-content">
-            <span class="jip-hero-subtitle">Admissions</span>
-            <h1 class="jip-hero-title">How to apply to JIPA</h1>
-            <p class="jip-hero-description">
-              Khám phá lộ trình trở thành học viên chính thức tại Học viện Sở
-              hữu Trí tuệ Nhật Bản.
-            </p>
-            <div class="jip-hero-actions">
-              <a href="#" class="jip-button btn-learn-outline">
-                <span class="main-label">Learn More</span>
-                <div class="divider"><span class="diamond"></span></div>
-                <span class="sub-label">Our Curriculum</span>
-              </a>
-            </div>
-          </div>
+      <div class="jip-hero-container">
+        <div class="jip-hero-content">
+          <span class="jip-hero-subtitle">Admissions</span>
+          <h1 class="jip-hero-title">How to apply to JIPA</h1>
+          <p class="jip-hero-description">
+            Khám phá lộ trình trở thành học viên chính thức tại Học viện Sở hữu
+            Trí tuệ Nhật Bản.
+          </p>
+        </div>
 
-          <div class="jip-hero-image-wrapper">
-            <div class="jip-image-frame">
-              <img
-                src="../img/Gemini_Generated_Image_jc121djc121djc12.png"
-                alt="JIPA Students"
-              />
-            </div>
-          </div>
-      </section>
-    <div class="container">
-      <!-- Banner -->
-      
-      <!-- Section content -->
-       <section class="jip-admission-section">
-            <div class="jip-requirement-card">
-                <h2 class="jip-section-title">1. Requirements</h2>
-                <ul class="jip-requirement-list">
-                <li>You must be at least 22 years of age.</li>
-                <li>You must have a minimum 1 year of professional working experience.<span class="jip-marker">*</span></li>
-                <li>You must be proficient in Japanese or English.</li>
-                <li>You must possess a bachelor’s degree, or equivalent degree.<span class="jip-marker">*</span></li>
-                </ul>
-                <p class="jip-disclaimer">
-                <span class="jip-marker">*</span>If you do not have a bachelor’s degree or equivalent by the time of entrance, you will need to undergo a Preliminary Screening to determine if your background and work experience is sufficient.
-                </p>
-            </div>
-
-            <hr class="jip-divider">
-
-            <div class="jip-screening-card">
-                <h2 class="jip-section-title">3.Application Process</h2>
-                <div class="jip-screening-content">
-                <p>
-                    If you are 18 years of age but do not meet one or more of the admission requirements listed above, you may still apply for the JIPA programs. However, you will first need to pass a <strong>Preliminary Screening</strong>, which includes a review of your language skills and essays.
-                </p>
-                </div>
-            </div>
-             <hr class="jip-divider">
-
-            <div class="jip-screening-card">
-                <h2 class="jip-section-title">2. Preliminary Screening</h2>
-                <div class="jip-screening-content">
-                <div class="jip-journey-container">
-        <div class="jip-journey-steps">
-          <div class="jip-step state-completed">
-            <div class="step-connector"></div>
-            <div class="step-indicator">
-              <span class="step-icon">✓</span>
-            </div>
-            <div class="step-content">
-              <span class="step-number">Bước 01</span>
-              <h4 class="step-title">Tư vấn mục tiêu</h4>
-              <p class="step-desc">
-                Xác định lộ trình học tập cá nhân hóa cùng chuyên gia.
-              </p>
-            </div>
-          </div>
-
-          <div class="jip-step state-active">
-            <div class="step-connector"></div>
-            <div class="step-indicator">
-              <div class="pulse-ring"></div>
-              <span class="step-icon">02</span>
-            </div>
-            <div class="step-content">
-              <span class="step-number">Bước 02</span>
-              <h4 class="step-title">Đăng ký nhập học</h4>
-              <p class="step-desc">
-                Hoàn thiện hồ sơ và thanh toán học phí trực tuyến.
-              </p>
-            </div>
-          </div>
-
-          <div class="jip-step state-pending">
-            <div class="step-connector"></div>
-            <div class="step-indicator">
-              <span class="step-icon">03</span>
-            </div>
-            <div class="step-content">
-              <span class="step-number">Bước 03</span>
-              <h4 class="step-title">Bắt đầu khóa học</h4>
-              <p class="step-desc">
-                Truy cập hệ thống LMS và tham gia lớp học đầu tiên.
-              </p>
-            </div>
+        <div class="jip-hero-image-wrapper">
+          <div class="jip-image-frame">
+            <img
+              src="../img/Gemini_Generated_Image_jc121djc121djc12.png"
+              alt="JIPA Students"
+            />
           </div>
         </div>
       </div>
-
-                </div>
+    </section>
+    <div class="container">
+      <div>
+        <!-- Section content -->
+        <div style="padding-top: var(--jip-spacing-64)">
+          <section class="jip-admission-section step active" id="step-1">
+            <div class="jip-requirement-card">
+              <h2 class="jip-section-title">1. Requirements</h2>
+              <ul class="jip-requirement-list">
+                <li>You must be at least 22 years of age.</li>
+                <li>
+                  You must have a minimum 1 year of professional working
+                  experience.<span class="jip-marker">*</span>
+                </li>
+                <li>You must be proficient in Japanese or English.</li>
+                <li>
+                  You must possess a bachelor’s degree, or equivalent
+                  degree.<span class="jip-marker">*</span>
+                </li>
+              </ul>
+              <p class="jip-disclaimer">
+                <span class="jip-marker">*</span>If you do not have a bachelor’s
+                degree or equivalent by the time of entrance, you will need to
+                undergo a Preliminary Screening to determine if your background
+                and work experience is sufficient.
+              </p>
             </div>
-        </section>
-    </div>
+
+            <hr class="jip-divider" />
+
+            <div class="jip-screening-card">
+              <h2 class="jip-section-title">3.Application Process</h2>
+              <div class="jip-screening-content">
+                <p>
+                  If you are 18 years of age but do not meet one or more of the
+                  admission requirements listed above, you may still apply for
+                  the JIPA programs. However, you will first need to pass a
+                  <strong>Preliminary Screening</strong>, which includes a
+                  review of your language skills and essays.
+                </p>
+              </div>
+            </div>
+            <hr class="jip-divider" />
+
+            <h2 class="jip-section-title">2. Preliminary Screening</h2>
+
+            <hr class="jip-divider" />
+          </section>
+
+          <section class="jip-admission-section step" data-step="2">
+            <section class="jip-admission-section">
+              <div class="jip-screening-card">
+                <div style="margin-bottom: 40px">
+                  <h2 class="jip-section-title">
+                    Chương Trình Đào Tạo Phát Triển Nhân Tài CNTT Cao Cấp JIPA
+                  </h2>
+                  <p class="jip-subtitle">Edogawa, JP-13, Nhật Bản</p>
+                </div>
+                <div
+                  class="jip-screening-content"
+                  style="
+                    margin-bottom: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                  "
+                >
+                  <p>
+                    <strong
+                      >Join the Japan Advanced Talent Development
+                      Program!</strong
+                    >
+                  </p>
+
+                  <p>Take the first step toward an exciting career in Japan.</p>
+
+                  <p>
+                    The
+                    <strong>Japan Advanced Talent Development Program</strong>
+                    offers a comprehensive curriculum covering the entire
+                    software development process, essential soft skills for
+                    working in Japan, and full support for your job-hunting
+                    journey.
+                  </p>
+                  <img
+                    width="60%"
+                    src="../img/Screenshot 2026-02-09 at 6.20.32 PM.png"
+                    alt="JIPA Students"
+                  />
+                </div>
+              </div>
+
+              <hr class="jip-divider" />
+            </section>
+            <div class="jip-requirement-card">
+              <h2 class="jip-section-title">Program Highlights</h2>
+
+              <ul class="jip-requirement-list jip-highlight-list">
+                <li class="jip-highlight-item">
+                  <strong class="jip-highlight-title">
+                    01. Comprehensive Software Development Training
+                  </strong>
+                  <ul>
+                    <li>
+                      Learn the full software development lifecycle:
+                      requirements definition, documentation, implementation,
+                      testing, maintenance, and operations.
+                    </li>
+                    <li>
+                      Gain hands-on experience through practical projects to
+                      build real-world skills.
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="jip-highlight-item">
+                  <strong class="jip-highlight-title">
+                    02. Essential Soft Skills for Working in Japan
+                  </strong>
+                  <ul>
+                    <li>
+                      Master critical workplace skills such as effective
+                      communication, teamwork, and Japan’s unique reporting
+                      culture (Hō-Ren-Sō).
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="jip-highlight-item">
+                  <strong class="jip-highlight-title">
+                    03. Job-Hunting Support
+                  </strong>
+                  <ul>
+                    <li>
+                      Receive guidance on creating professional resumes tailored
+                      to the Japanese job market.
+                    </li>
+                    <li>
+                      Boost your confidence with mock interviews and interview
+                      practice.
+                    </li>
+                    <li>
+                      Get assistance in applying to companies and accessing job
+                      opportunities.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <hr class="jip-divider" />
+          </section>
+          <section class="jip-admission-section step" data-step="3">
+            <div class="jip-main-layout">
+              <div class="jip-content-left" style="border-top: none">
+                <header class="jip-form-header">
+                  <nav class="jip-breadcrumb">
+                    Tuyển dụng / Chương Trình Đào Tạo Phát Triển Nhân Tài CNTT
+                    Cao Cấp JIPA
+                  </nav>
+                  <h1 class="jip-form-title">Apply Form</h1>
+                </header>
+
+                <form class="jip-apply-form">
+                  <div class="jip-input-group">
+                    <label class="jip-label"
+                      >Fullname <span class="required">*</span></label
+                    >
+                    <div class="jip-input-wrapper">
+                      <input
+                        type="text"
+                        class="jip-input"
+                        placeholder="Enter your full name..."
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="jip-input-group">
+                    <label class="jip-label"
+                      >Email <span class="required">*</span></label
+                    >
+                    <div class="jip-input-wrapper">
+                      <input
+                        type="email"
+                        class="jip-input"
+                        placeholder="example@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="jip-input-group">
+                    <label class="jip-label"
+                      >Phone <span class="required">*</span></label
+                    >
+                    <div class="jip-input-wrapper">
+                      <input
+                        type="tel"
+                        class="jip-input"
+                        placeholder="Your phone number..."
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="jip-input-group">
+                    <label class="jip-label"
+                      >Application documents
+                      <span class="required">*</span></label
+                    >
+                    <div class="jip-file-wrapper">
+                      <input type="file" id="jip-file" class="jip-file-input" />
+                      <label for="jip-file" class="jip-file-custom">
+                        <span class="btn-choose">Choose File</span>
+                        <span class="file-name">No file chosen</span>
+                      </label>
+                    </div>
+
+                    <div class="jip-form-note">
+                      <strong>Note:</strong> If you are applying for a
+                      scholarship under the
+                      <span class="highlight"
+                        >"Japan Advanced IT Human Resource Development Program
+                        (日本高度IT人材研修プログラム)"</span
+                      >, please make sure to prepare and submit the required
+                      documents as instructed below. If you do not follow them,
+                      your application will not be accepted.
+                    </div>
+                  </div>
+
+                  <div class="jip-instruction-box">
+                    <h3 class="ins-title">
+                      A. Prepare your documents for the application
+                    </h3>
+                    <ul class="ins-list">
+                      <li>1. Check the format <a href="#">Here</a>.</li>
+                      <li>
+                        2. Preparation of Personal Data
+                        <span class="tag-req">*required</span>
+                      </li>
+                      <li>
+                        3. Preparation of Photo (clearly shows your face)
+                        <span class="tag-req">*required</span>
+                      </li>
+                      <li>
+                        4. Preparation of University Degrees
+                        <span class="tag-req">*required</span>
+                      </li>
+                      <li>
+                        5. Preparation of Professional Certificates
+                        <span class="tag-req">*required</span>
+                      </li>
+                      <li>
+                        6. English (GMAT, GRE, IELTS...) or Japanese (JLPT)
+                        Certificates
+                      </li>
+                      <li>
+                        7. Preparation of Essays (English or Japanese)
+                        <span class="tag-req">*required</span>
+                      </li>
+                      <li>
+                        8. Preparation of CV (English or Japanese)
+                        <span class="tag-req">*required</span>
+                      </li>
+                    </ul>
+
+                    <h3 class="ins-title">
+                      B. Place the files in the specified format
+                    </h3>
+                    <ul class="ins-list">
+                      <li>
+                        1. Download the format <a href="#">Download</a> and
+                        place the files.
+                      </li>
+                      <li>2. Zip the folder and upload.</li>
+                    </ul>
+                  </div>
+
+                  <div class="jip-input-group">
+                    <label class="jip-label">Remarks</label>
+                    <div class="jip-input-wrapper">
+                      <textarea
+                        class="jip-input jip-textarea"
+                        rows="4"
+                        placeholder="Giới thiệu tùy theo ý muốn hoặc bất kỳ câu hỏi nào..."
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <a href="#" class="jip-button btn-enroll">
+                    <span class="main-label">Enroll Now</span>
+                    <div class="divider"><span class="diamond"></span></div>
+                    <span class="sub-label">Enrollment Open 2026</span>
+                  </a>
+                </form>
+              </div>
+              <div class="jip-content-right" style="width: 40%">
+                <aside class="jip-job-summary-card">
+                  <a href="#" class="jip-btn-back">
+                    <span class="icon">←</span> Mô tả công việc
+                  </a>
+
+                  <div class="jip-summary-content">
+                    <div class="summary-item">
+                      <span class="summary-label">Công việc</span>
+                      <h3 class="summary-value title-serif">
+                        Chương Trình Đào Tạo Phát Triển Nhân Tài CNTT Cao Cấp
+                        JIPA
+                      </h3>
+                    </div>
+
+                    <div class="summary-item">
+                      <span class="summary-label">Vị trí</span>
+                      <h3 class="summary-value title-serif">JIP Academy</h3>
+                    </div>
+
+                    <hr class="summary-divider" />
+
+                    <div class="process-grid">
+                      <div class="process-item">
+                        <span class="process-label"
+                          >回答時間 (Thời gian phản hồi)</span
+                        >
+                        <span class="process-value">受付3日間</span>
+                      </div>
+
+                      <div class="process-item">
+                        <span class="process-label">プロセス (Quy trình)</span>
+                        <span class="process-value">面接対面2回</span>
+                      </div>
+
+                      <div class="process-item">
+                        <span class="process-label"
+                          >オファーまでの日数 (Ngày nhận Offer)</span
+                        >
+                        <span class="process-value">面接後7日</span>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="jip-screening-card">
+          <div class="jip-screening-content">
+            <div class="jip-journey-container">
+              <div class="jip-journey-steps">
+                <div class="jip-step" data-step="1">
+                  <div class="step-connector"></div>
+                  <div class="step-indicator">
+                    <span class="step-icon">01</span>
+                  </div>
+                  <div class="step-content">
+                    <span class="step-number">Bước 01</span>
+                    <h4 class="step-title">Tư vấn mục tiêu</h4>
+                    <p class="step-desc">
+                      Xác định lộ trình học tập cá nhân hóa cùng chuyên gia.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="jip-step" data-step="2">
+                  <div class="step-connector"></div>
+                  <div class="step-indicator">
+                    <span class="step-icon">02</span>
+                  </div>
+                  <div class="step-content">
+                    <span class="step-number">Bước 02</span>
+                    <h4 class="step-title">Đăng ký nhập học</h4>
+                    <p class="step-desc">
+                      Hoàn thiện hồ sơ và thanh toán học phí trực tuyến.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="jip-step state-pending" data-step="3">
+                  <div class="step-connector"></div>
+                  <div class="step-indicator">
+                    <span class="step-icon">03</span>
+                  </div>
+                  <div class="step-content">
+                    <span class="step-number">Bước 03</span>
+                    <h4 class="step-title">Bắt đầu khóa học</h4>
+                    <p class="step-desc">
+                      Truy cập hệ thống LMS và tham gia lớp học đầu tiên.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 64px;
+          "
+        >
+          <a href="#" class="jip-button btn-enroll" id="btn-next">
+            <span class="main-label">
+              Next <i class="fa-solid fa-arrow-right next-icon"></i>
+            </span>
+            <div class="divider"><span class="diamond"></span></div>
+            <span class="sub-label">Enrollment Open 2026</span>
+          </a>
+        </div>
+      </div>
     </div>
     <!-- Section hero banner -->
 
@@ -435,6 +755,86 @@
 
       document.getElementById("cream-picker").oninput = (e) =>
         root.style.setProperty("--base-cream-light", e.target.value);
+
+      const nextBtn = document.getElementById("btn-next");
+
+      // section content
+      let sectionStep = 1;
+      const sections = document.querySelectorAll(".jip-admission-section.step");
+
+      // journey indicator
+      let journeyStep = 1;
+      const journeySteps = document.querySelectorAll(".jip-step");
+      const LAST_STEP = journeySteps.length;
+
+      nextBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // --- SECTION CONTENT ---
+        if (sectionStep < sections.length) {
+          sections[sectionStep - 1].classList.remove("active");
+          sections[sectionStep].classList.add("active");
+          sections[sectionStep].scrollIntoView({ behavior: "smooth" });
+          sectionStep++;
+        }
+
+        // --- JOURNEY STEPS ---
+        if (journeyStep < journeySteps.length) {
+          journeyStep++;
+          updateJourney(journeyStep);
+        }
+      });
+
+      function updateJourney(activeStep) {
+        journeySteps.forEach((step) => {
+          const n = Number(step.dataset.step);
+          const indicator = step.querySelector(".step-indicator");
+          const icon = indicator.querySelector(".step-icon");
+
+          // reset state
+          step.classList.remove(
+            "state-completed",
+            "state-active",
+            "state-pending",
+          );
+
+          // remove pulse nếu có
+          const pulse = indicator.querySelector(".pulse-ring");
+          if (pulse) pulse.remove();
+
+          // --- COMPLETED ---
+          if (n < activeStep) {
+            step.classList.add("state-completed");
+            icon.textContent = "✓";
+          }
+
+          // --- ACTIVE ---
+          else if (n === activeStep) {
+            step.classList.add("state-active");
+            icon.textContent = String(n).padStart(2, "0");
+
+            // thêm pulse-ring
+            const ring = document.createElement("div");
+            ring.className = "pulse-ring";
+            indicator.appendChild(ring);
+          }
+
+          // --- PENDING ---
+          else {
+            step.classList.add("state-pending");
+            icon.textContent = String(n).padStart(2, "0");
+          }
+          // 👇 LOGIC NÚT NEXT
+          if (activeStep >= LAST_STEP) {
+            nextBtn.classList.add("hidden");
+          } else {
+            nextBtn.style.display = "flex";
+          }
+        });
+      }
+
+      // init
+      updateJourney(1);
     </script>
   </body>
 </html>

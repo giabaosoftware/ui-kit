@@ -1,0 +1,211 @@
+/* Container & Header */
+.jip-form-container {
+  width: 100%;
+}
+
+.jip-breadcrumb {
+  font: var(--typo-caption);
+  color: var(--jip-action-primary);
+  margin-bottom: var(--jip-spacing-8);
+}
+
+.jip-form-title {
+  font: var(--typo-display-l); /* Sử dụng Cinzel Bold */
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-32);
+}
+
+/* Label & Input tinh chỉnh từ code cũ */
+.jip-label {
+  font: var(--typo-label);
+  color: var(--jip-text-primary);
+  margin-bottom: var(--jip-spacing-4);
+}
+
+.required {
+  color: var(--jip-error);
+}
+
+/* Note & Instructions */
+.jip-form-note {
+  font: var(--typo-body-s);
+  color: var(--jip-error);
+  line-height: 1.5;
+  margin-top: var(--jip-spacing-16);
+  padding: var(--jip-spacing-16);
+  background: rgba(165, 42, 42, 0.03);
+  border-radius: 8px;
+}
+
+.jip-form-note .highlight {
+  text-decoration: underline;
+  font-weight: var(--fw-semibold);
+}
+
+.jip-instruction-box {
+  margin: var(--jip-spacing-32) 0;
+  padding: var(--jip-spacing-24);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+}
+
+.ins-title {
+  font: var(--typo-h3);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-16);
+}
+
+.ins-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.ins-list li {
+  font: var(--typo-body-m);
+  margin-bottom: 8px;
+  color: var(--jip-text-secondary);
+}
+
+.tag-req {
+  color: var(--jip-error);
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+/* Custom File Input */
+.jip-file-custom {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn-choose {
+  background: #eee;
+  padding: 10px 20px;
+  font: var(--typo-label);
+  border-right: 1px solid var(--jip-border-gold);
+}
+
+.file-name {
+  padding-left: 15px;
+  font: var(--typo-body-s);
+  color: #888;
+}
+
+.jip-file-input {
+  display: none;
+}
+
+/* Textarea & Submit */
+.jip-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.jip-btn-submit {
+  background-color: var(--jip-action-primary);
+  color: white;
+  padding: 14px 48px;
+  border: none;
+  border-radius: 4px; /* Form này dùng nút vuông vắn hơn theo ảnh gốc */
+  font: var(--typo-h3);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.jip-btn-submit:hover {
+  background-color: var(--jip-action-hover);
+}
+
+/* Sidebar Card Container */
+.jip-job-summary-card {
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+  padding: var(--jip-spacing-32);
+  top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Nút Back - Style Outlined Luxury */
+.jip-btn-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--jip-spacing-8);
+  padding: 12px;
+  border: 1px solid var(--jip-color-navy);
+  border-radius: 4px;
+  color: var(--jip-color-navy);
+  text-decoration: none;
+  font: var(--typo-body-m);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--jip-spacing-32);
+  transition: all 0.2s ease;
+}
+
+.jip-btn-back:hover {
+  background-color: rgba(0, 32, 96, 0.05);
+  transform: translateX(-4px);
+}
+
+/* Nội dung tóm tắt */
+.summary-item {
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.summary-label {
+  display: block;
+  font: var(--typo-body-s);
+  color: var(--jip-text-secondary);
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  margin: 0;
+  color: var(--jip-text-primary);
+}
+
+.title-serif {
+  font: var(--typo-h2); /* Sử dụng Cinzel từ token cũ */
+  line-height: 1.4;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: var(--jip-spacing-24) 0;
+  width: 50%;
+}
+
+/* Quy trình Tuyển dụng (Phong cách tối giản Nhật Bản) */
+.process-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-24);
+}
+
+.process-label {
+  display: block;
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  margin-bottom: 4px;
+}
+
+.process-value {
+  display: block;
+  font: var(--typo-h2);
+  font-weight: var(--fw-bold);
+  color: var(--jip-text-primary);
+}
+
+/* Hiệu ứng Responsive */
+@media (max-width: 1024px) {
+  .jip-sidebar-right {
+    display: none; /* Ẩn trên mobile để ưu tiên form */
+  }
+}

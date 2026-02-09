@@ -141,3 +141,13 @@
 .jip-card-footer .jip-button:active {
   transform: scale(0.95);
 }
+
+.jip-button .next-icon {
+  margin-left: 0.5rem;
+  font-size: 0.85em;
+  transition: transform 0.2s ease;
+}
+
+.jip-button:hover .next-icon {
+  transform: translateX(4px);
+}

@@ -4,8 +4,7 @@
   flex-direction: column;
   gap: var(--jip-spacing-8);
   margin-bottom: var(--jip-spacing-16);
-  width: 100%;
-  min-width: 400px; /* Khớp với độ rộng Card/Calendar của bạn */
+  width: 100%; /* Khớp với độ rộng Card/Calendar của bạn */
 }
 
 .jip-input-wrapper {

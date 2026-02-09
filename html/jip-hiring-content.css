@@ -1,6 +1,5 @@
 /* Container chính */
 .jip-admission-section {
-  padding: var(--jip-spacing-48);
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
@@ -69,7 +68,9 @@
   margin: var(--jip-spacing-48) 0;
   opacity: 0.6;
 }
-
+.jip-screening-content {
+  width: 100%;
+}
 /* Screening Content */
 .jip-screening-content p {
   font: var(--typo-body-l);
@@ -89,5 +90,122 @@
   }
   .jip-section-title {
     font: var(--typo-h1); /* Hạ size xuống 28px trên mobile */
+  }
+}
+
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+
+.step-indicator {
+  position: relative; /* anchor */
+  overflow: visible; /* cho phép pulse tràn ra */
+}
+
+/* pulse ring chỉ xuất hiện khi ACTIVE */
+.state-active .step-indicator::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--jip-color-gold);
+  animation: jip-pulse 2s infinite;
+  pointer-events: none;
+}
+.state-completed .step-icon {
+  content: "✓";
+  color: var(--jip-color-navy);
+  font-weight: 700;
+}
+
+.state-active .step-icon {
+  color: var(--jip-color-gold);
+}
+
+.state-pending .step-icon {
+  opacity: 0.6;
+}
+
+#btn-next.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: 0.3s ease;
+}
+strong {
+  font-weight: bold;
+}
+
+/* ===============================
+   FLOATING NEXT BUTTON (TOP)
+================================ */
+.btn-next-floating {
+  position: fixed;
+  top: 96px; /* dưới header */
+  right: 32px;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* khi ẩn */
+.btn-next-floating.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+
+/* mobile: đưa xuống bottom */
+@media (max-width: 768px) {
+  .btn-next-floating {
+    top: auto;
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+/* ===============================
+   FLOATING NEXT BUTTON (TOP)
+================================ */
+.btn-next-floating {
+  position: fixed;
+  top: 96px; /* dưới header */
+  right: 32px;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* khi ẩn */
+.btn-next-floating.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+
+/* mobile: đưa xuống bottom */
+@media (max-width: 768px) {
+  .btn-next-floating {
+    top: auto;
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
