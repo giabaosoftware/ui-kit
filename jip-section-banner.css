@@ -20,6 +20,8 @@
 /* Main Title Group */
 .jip-title-group {
   display: flex;
+  position: relative;
+
   align-items: center;
   justify-content: center;
   gap: var(--jip-spacing-24);

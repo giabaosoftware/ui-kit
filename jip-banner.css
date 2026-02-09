@@ -53,7 +53,14 @@
 
 .jip-banner-title {
   font: var(--typo-display-l);
-  color: var(--jip-text-on-brand);
+  color: var(--jip-color-cream);
+  margin: 0;
+  line-height: 1.1; /* Khớp với token display-l */
+}
+
+html[data-theme="dark"] .jip-banner-title {
+  font: var(--typo-display-l);
+  color: var(--jip-color-navy);
   margin: 0;
   line-height: 1.1; /* Khớp với token display-l */
 }
@@ -70,7 +77,15 @@
 
 .jip-banner-description {
   font: var(--typo-body-l);
-  color: var(--jip-text-on-brand);
+  color: var(--jip-color-cream);
+  max-width: 640px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+html[data-theme="dark"] .jip-banner-description {
+  font: var(--typo-body-l);
+  color: var(--jip-color-navy);
   max-width: 640px;
   line-height: 1.6;
   opacity: 0.9;

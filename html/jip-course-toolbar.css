@@ -1,0 +1,289 @@
+/* Toolbar Container */
+.jip-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--jip-spacing-8) var(--jip-spacing-24);
+  border-bottom: 1px solid var(--jip-border-gold);
+  gap: var(--jip-spacing-24);
+  min-width: 1028px;
+}
+
+/* Bên trái: Menu Title */
+.jip-category-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--jip-spacing-8);
+  color: var(--jip-text-secondary);
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.jip-category-trigger:hover {
+  background: var(--jip-bg-subtle);
+  color: var(--jip-color-navy);
+}
+
+.jip-toolbar-title {
+  font: var(--typo-body-m);
+  font-weight: var(--fw-medium);
+}
+
+/* Bên phải: Search + Stats */
+.jip-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--jip-spacing-32);
+}
+
+/* Tùy chỉnh riêng cho Search trong Toolbar */
+.toolbar-search {
+  width: 320px;
+}
+
+.toolbar-search .jip-input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: var(--jip-btn-radius); /* Bo tròn kiểu Pill như ảnh */
+}
+
+/* User Info & XP Badge */
+.jip-user-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--jip-spacing-16);
+}
+
+.jip-academy-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.academy-name {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+}
+
+.jip-xp-badge {
+  background: #eeeeee;
+  padding: 4px 12px;
+  border-radius: 6px;
+  display: flex;
+  gap: 4px;
+  align-items: baseline;
+}
+
+.xp-value {
+  font: var(--typo-label);
+  color: var(--jip-text-primary);
+}
+
+.xp-unit {
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+}
+
+/* Mini Logo Placeholder */
+.mini-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--jip-color-gold);
+}
+
+/* --- Layout chính cho Filter Bar --- */
+.jip-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--jip-spacing-16) var(--jip-container-gutter);
+  background: var(--jip-bg-subtle);
+  border-radius: 12px;
+  gap: var(--jip-spacing-24);
+  flex-wrap: wrap;
+}
+
+.jip-filter-group {
+  display: flex;
+  gap: var(--jip-spacing-16);
+  flex: 1;
+}
+
+/* Tận dụng lại Trigger của bạn nhưng chỉnh size gọn hơn cho Filter */
+.jip-filter-group .jip-select-trigger {
+  padding: 8px 16px;
+  min-width: 180px;
+  background-color: var(--jip-bg-default);
+}
+
+/* --- Quick Filter Pills --- */
+.jip-quick-filters {
+  display: flex;
+  gap: var(--jip-spacing-8);
+}
+
+.jip-btn-pill {
+  padding: 6px 16px;
+  border-radius: var(--jip-btn-radius);
+  border: 1px solid var(--jip-border-gold);
+  background: transparent;
+  font: var(--typo-label);
+  color: var(--jip-text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.jip-btn-pill:hover {
+  border-color: var(--jip-color-gold);
+  color: var(--jip-color-navy);
+}
+
+.jip-btn-pill.active {
+  background: var(--jip-color-navy);
+  color: var(--jip-text-on-brand);
+  border-color: var(--jip-color-navy);
+}
+
+/* --- Filter Actions --- */
+.jip-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--jip-spacing-16);
+}
+
+.jip-btn-text {
+  background: none;
+  border: none;
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.jip-btn-apply {
+  padding: 8px 24px;
+  border-radius: var(--jip-btn-radius);
+  border: none;
+  background: var(--jip-gradient-gold-metallic);
+  color: var(--jip-color-navy);
+  font: var(--typo-label);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.jip-btn-apply:hover {
+  transform: scale(1.05);
+  box-shadow: var(--jip-shadow-glow);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .jip-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Container chính của Search Bar */
+.jip-search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Có thể điều chỉnh tùy layout */
+  background-color: var(--jip-bg-default);
+  border: 1.5px solid var(--jip-border-gold);
+  border-radius: 8px; /* Khớp với jip-input */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hiệu ứng Focus toàn thanh Search (Glow metallic) */
+.jip-search-bar:focus-within {
+  border-color: transparent;
+  background-image:
+    linear-gradient(var(--jip-bg-default), var(--jip-bg-default)),
+    var(--jip-gradient-gold-metallic);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--jip-checkbox-glow);
+  transform: translateY(-1px);
+}
+
+/* Phần bên trái: Category */
+.jip-search-category {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--jip-spacing-16);
+  gap: var(--jip-spacing-8);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-icon {
+  color: var(--jip-color-gold-dark);
+  font-size: 14px;
+}
+
+.category-text {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+}
+
+.category-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--jip-border-gold);
+  margin-left: var(--jip-spacing-8);
+}
+
+/* Phần Input */
+.jip-search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.jip-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 var(--jip-spacing-16);
+  font: var(--typo-body-m);
+  color: var(--jip-color-navy);
+}
+
+.jip-search-input::placeholder {
+  color: #ccc;
+  font-style: italic;
+  font: var(--typo-body-s);
+}
+
+/* Nút Submit (Metallic Style) */
+.jip-search-submit {
+  height: 100%;
+  padding: 0 var(--jip-spacing-24);
+  background: var(--jip-color-gold);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jip-search-submit:hover {
+  background: var(--jip-gradient-gold-metallic);
+  color: var(--jip-color-navy);
+}
+
+.jip-search-submit i {
+  font-size: 16px;
+}

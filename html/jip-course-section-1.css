@@ -1,0 +1,106 @@
+.jip-promo-section {
+  padding: var(--jip-section-gap) var(--jip-container-gutter);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.jip-promo-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 400px;
+  background-color: var(--jip-color-navy); /* Nền Navy làm base */
+  border-radius: 40px; /* Bo góc lớn như ảnh */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.jip-promo-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--jip-spacing-64);
+  max-width: 60%;
+  color: var(--jip-text-on-brand);
+}
+
+.jip-promo-display {
+  font: var(--typo-display-l);
+  margin-bottom: var(--jip-spacing-8);
+  background: var(--jip-gradient-gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Tiêu đề hiệu ứng Gold Metallic */
+}
+
+.jip-promo-subtitle {
+  font: var(--typo-h1);
+  margin-bottom: var(--jip-spacing-24);
+  color: var(--jip-color-cream);
+}
+
+.jip-promo-description {
+  font: var(--typo-body-l);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--jip-spacing-32);
+  line-height: 1.6;
+}
+
+.jip-promo-btn {
+  background: var(--jip-gradient-gold-metallic);
+  color: var(--jip-color-navy);
+  border: none;
+  padding: 14px 40px;
+  border-radius: var(--jip-btn-radius);
+  font: var(--typo-h3);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jip-promo-btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--jip-checkbox-glow);
+}
+
+/* Phần trang trí hình khối (DNA từ ảnh gốc) */
+.jip-promo-decoration {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: var(--jip-color-gold);
+  clip-path: polygon(
+    25% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  ); /* Tạo đường cắt chéo */
+  z-index: 1;
+}
+
+.jip-shape-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--jip-gradient-gold-metallic);
+  opacity: 0.8;
+  border-top-left-radius: 100px; /* Bo góc đặc trưng của ảnh */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jip-promo-content {
+    max-width: 100%;
+    padding: var(--jip-spacing-32);
+    text-align: center;
+  }
+  .jip-promo-decoration {
+    display: none;
+  }
+  .jip-promo-container {
+    flex-direction: column;
+  }
+}
