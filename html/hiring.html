@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../jip-checkbox.css" />
+    <link rel="stylesheet" href="../jip-card.css" />
+    <link rel="stylesheet" href="../jip-calendar.css" />
+    <link rel="stylesheet" href="../jip-input.css" />
+    <link rel="stylesheet" href="../jip-textarea.css" />
+    <link rel="stylesheet" href="../jip-cta.css" />
+    <link rel="stylesheet" href="../jip-select.css" />
+    <link rel="stylesheet" href="../jip-radio.css" />
+    <link rel="stylesheet" href="../jip-banner.css" />
+    <link rel="stylesheet" href="../jip-steps.css" />
+    <link rel="stylesheet" href="../jip-partners.css" />
+    <link rel="stylesheet" href="../jip-section-banner.css" />
+    <link rel="stylesheet" href="../jip-section-1.css" />
+    <link rel="stylesheet" href="../jip-promo-card.css" />
+    <link rel="stylesheet" href="../jip-media-section.css" />
+    <link rel="stylesheet" href="../jip-form.css" />
+    <link rel="stylesheet" href="./jip-course-section-1.css" />
+    <link rel="stylesheet" href="./jip-course-toolbar.css" />
+    <link rel="stylesheet" href="./jip-course-layout.css" />
+    <link rel="stylesheet" href="./jip-hiring-banner.css" />
+    <link rel="stylesheet" href="./jip-hiring-content.css" />
+
+
+    <link rel="stylesheet" href="../page-config-ui.css" />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+Georgian:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-color: var(--jip-color-cream-light)">
+    <!-- Setting -->
+    <button id="settings-toggle">⚙</button>
+    <div id="settings-panel">
+      <div class="jip-settings-group">
+        <label class="jip-settings-label">
+          Heading Typeface
+          <select id="font-heading-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Body Typeface
+          <select id="font-body-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Brand Primary (Navy)
+          <input
+            type="color"
+            id="navy-picker"
+            class="jip-settings-color"
+            data-token="--base-navy"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Brand Accent (Gold)
+          <input
+            type="color"
+            id="gold-picker"
+            class="jip-settings-color"
+            data-token="--base-gold"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Surface Background (Light)
+          <input
+            type="color"
+            id="cream-picker"
+            class="jip-settings-color"
+            data-token="--base-cream-light"
+          />
+        </label>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="jip-header">
+      <div class="jip-header-container">
+        <div class="jip-logo">
+          <img src="../img/aaaaaaaaaaaaaaaaa.webp" alt="" width="80px" />
+        </div>
+
+        <nav class="jip-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="./course.html" class="nav-link active">Courses</a></li>
+            <li><a href="./component.html" class="nav-link">Component</a></li>
+            <li><a href="./hiring.html" class="nav-link">Hiring</a></li>
+          </ul>
+        </nav>
+
+        <div class="jip-header-actions">
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="jip-button btn-enroll">
+            <span class="main-label">Contact</span>
+            <div class="divider"><span class="diamond"></span></div>
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="jip-hero-banner">
+        <div class="jip-hero-glow"></div>
+        <div class="jip-hero-particles" id="particles-js"></div>
+
+        <div class="jip-hero-container">
+          <div class="jip-hero-content">
+            <span class="jip-hero-subtitle">Admissions</span>
+            <h1 class="jip-hero-title">How to apply to JIPA</h1>
+            <p class="jip-hero-description">
+              Khám phá lộ trình trở thành học viên chính thức tại Học viện Sở
+              hữu Trí tuệ Nhật Bản.
+            </p>
+            <div class="jip-hero-actions">
+              <a href="#" class="jip-button btn-learn-outline">
+                <span class="main-label">Learn More</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Our Curriculum</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="jip-hero-image-wrapper">
+            <div class="jip-image-frame">
+              <img
+                src="../img/Gemini_Generated_Image_jc121djc121djc12.png"
+                alt="JIPA Students"
+              />
+            </div>
+          </div>
+      </section>
+    <div class="container">
+      <!-- Banner -->
+      
+      <!-- Section content -->
+       <section class="jip-admission-section">
+            <div class="jip-requirement-card">
+                <h2 class="jip-section-title">1. Requirements</h2>
+                <ul class="jip-requirement-list">
+                <li>You must be at least 22 years of age.</li>
+                <li>You must have a minimum 1 year of professional working experience.<span class="jip-marker">*</span></li>
+                <li>You must be proficient in Japanese or English.</li>
+                <li>You must possess a bachelor’s degree, or equivalent degree.<span class="jip-marker">*</span></li>
+                </ul>
+                <p class="jip-disclaimer">
+                <span class="jip-marker">*</span>If you do not have a bachelor’s degree or equivalent by the time of entrance, you will need to undergo a Preliminary Screening to determine if your background and work experience is sufficient.
+                </p>
+            </div>
+
+            <hr class="jip-divider">
+
+            <div class="jip-screening-card">
+                <h2 class="jip-section-title">3.Application Process</h2>
+                <div class="jip-screening-content">
+                <p>
+                    If you are 18 years of age but do not meet one or more of the admission requirements listed above, you may still apply for the JIPA programs. However, you will first need to pass a <strong>Preliminary Screening</strong>, which includes a review of your language skills and essays.
+                </p>
+                </div>
+            </div>
+             <hr class="jip-divider">
+
+            <div class="jip-screening-card">
+                <h2 class="jip-section-title">2. Preliminary Screening</h2>
+                <div class="jip-screening-content">
+                <div class="jip-journey-container">
+        <div class="jip-journey-steps">
+          <div class="jip-step state-completed">
+            <div class="step-connector"></div>
+            <div class="step-indicator">
+              <span class="step-icon">✓</span>
+            </div>
+            <div class="step-content">
+              <span class="step-number">Bước 01</span>
+              <h4 class="step-title">Tư vấn mục tiêu</h4>
+              <p class="step-desc">
+                Xác định lộ trình học tập cá nhân hóa cùng chuyên gia.
+              </p>
+            </div>
+          </div>
+
+          <div class="jip-step state-active">
+            <div class="step-connector"></div>
+            <div class="step-indicator">
+              <div class="pulse-ring"></div>
+              <span class="step-icon">02</span>
+            </div>
+            <div class="step-content">
+              <span class="step-number">Bước 02</span>
+              <h4 class="step-title">Đăng ký nhập học</h4>
+              <p class="step-desc">
+                Hoàn thiện hồ sơ và thanh toán học phí trực tuyến.
+              </p>
+            </div>
+          </div>
+
+          <div class="jip-step state-pending">
+            <div class="step-connector"></div>
+            <div class="step-indicator">
+              <span class="step-icon">03</span>
+            </div>
+            <div class="step-content">
+              <span class="step-number">Bước 03</span>
+              <h4 class="step-title">Bắt đầu khóa học</h4>
+              <p class="step-desc">
+                Truy cập hệ thống LMS và tham gia lớp học đầu tiên.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    <!-- Section hero banner -->
+
+    <footer class="jip-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-text">JIP</span>
+            <div class="divider">
+              <span class="diamond"></span>
+            </div>
+            <span class="logo-subtext">ACADEMY</span>
+          </div>
+          <p class="brand-description">
+            Elevating knowledge and skills through internationally standardized
+            courses with in-depth learning pathways.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">LI</a>
+            <a href="#" class="social-icon">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Programs</h4>
+          <ul>
+            <li><a href="#">Expert Courses</a></li>
+            <li><a href="#">Corporate Training</a></li>
+            <li><a href="#">Upcoming Schedule</a></li>
+            <li><a href="#">JIP Scholarships</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p>
+            Subscribe to receive updates on new courses and exclusive offers.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email address..."
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider">
+          <span class="diamond"></span>
+        </div>
+        <p class="copyright">
+          © 2026 JIP ACADEMY. All rights reserved. Designed for Excellence.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const wrapper = document.querySelector(".jip-select-wrapper");
+
+      if (wrapper) {
+        const trigger = wrapper.querySelector(".jip-select-trigger");
+        const items = wrapper.querySelectorAll(
+          ".jip-select-item:not(.disabled)",
+        );
+        const label = trigger.querySelector("span");
+
+        trigger.addEventListener("click", () => {
+          wrapper.classList.toggle("active");
+        });
+
+        items.forEach((item) => {
+          item.addEventListener("click", () => {
+            label.textContent = item.textContent.trim();
+            wrapper
+              .querySelectorAll(".jip-select-item")
+              .forEach((i) => i.classList.remove("selected"));
+
+            item.classList.add("selected");
+            wrapper.classList.remove("active");
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!wrapper.contains(e.target)) {
+            wrapper.classList.remove("active");
+          }
+        });
+      }
+      (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved) {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.dataset.theme;
+
+        if (current === "dark") {
+          html.dataset.theme = "light";
+          localStorage.setItem("theme", "light");
+        } else {
+          html.dataset.theme = "dark";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+      media.addEventListener("change", () => {
+        const saved = localStorage.getItem("theme");
+        if (!saved) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      });
+
+      //logic thay doi font
+      const settingsToggle = document.getElementById("settings-toggle");
+      const settingsPanel = document.getElementById("settings-panel");
+
+      settingsToggle.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
+      });
+      const fonts = [
+        "Cinzel",
+        "Playfair Display",
+        "Cormorant Garamond",
+        "Libre Baskerville",
+        "Inter",
+        "Roboto",
+        "PT Sans",
+      ];
+
+      const headingSelect = document.getElementById("font-heading-select");
+      const bodySelect = document.getElementById("font-body-select");
+
+      fonts.forEach((font) => {
+        const opt1 = document.createElement("option");
+        opt1.value = font;
+        opt1.textContent = font;
+        headingSelect.appendChild(opt1);
+
+        const opt2 = opt1.cloneNode(true);
+        bodySelect.appendChild(opt2);
+      });
+
+      const root = document.documentElement;
+
+      function loadFont(font) {
+        const id = `font-${font.replace(/\s+/g, "-")}`;
+        if (document.getElementById(id)) return;
+
+        const link = document.createElement("link");
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = `https://fonts.googleapis.com/css2?family=${font.replace(
+          /\s+/g,
+          "+",
+        )}:wght@300;400;500;600;700&display=swap`;
+        document.head.appendChild(link);
+      }
+
+      headingSelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-heading",
+          `"${e.target.value}", serif`,
+        );
+      });
+
+      bodySelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-body",
+          `"${e.target.value}", sans-serif`,
+        );
+      });
+
+      document.getElementById("navy-picker").oninput = (e) =>
+        root.style.setProperty("--base-navy", e.target.value);
+
+      document.getElementById("gold-picker").oninput = (e) =>
+        root.style.setProperty("--base-gold", e.target.value);
+
+      document.getElementById("cream-picker").oninput = (e) =>
+        root.style.setProperty("--base-cream-light", e.target.value);
+    </script>
+  </body>
+</html>

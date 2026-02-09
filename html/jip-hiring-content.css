@@ -1,0 +1,93 @@
+/* Container chính */
+.jip-admission-section {
+  padding: var(--jip-spacing-48);
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+  font-family: var(--font-body);
+}
+
+/* Tiêu đề Section (Sử dụng font Cinzel - Serif) */
+.jip-section-title {
+  font: var(--typo-display-s); /* 32px Cinzel */
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-24);
+  letter-spacing: -0.02em;
+}
+
+/* List Requirements */
+.jip-requirement-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.jip-requirement-list li {
+  font: var(--typo-body-l); /* 16px Inter */
+  color: var(--jip-text-primary);
+  padding-left: var(--jip-spacing-24);
+  position: relative;
+  margin-bottom: var(--jip-spacing-8);
+  line-height: 1.6;
+}
+
+/* Tùy chỉnh Bullet Point thành hình vuông Gold nhỏ cho sang */
+.jip-requirement-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--jip-color-gold);
+  border-radius: 1px;
+}
+
+/* Disclaimer (Chữ đỏ/nâu nhạt đặc trưng trong ảnh) */
+.jip-disclaimer {
+  font: var(--typo-body-m);
+  color: var(--jip-error); /* Sử dụng mã màu #a52a2a bạn đã định nghĩa */
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.jip-marker {
+  font-weight: var(--fw-bold);
+  margin-right: 4px;
+}
+
+/* Divider */
+.jip-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--jip-border-gold),
+    transparent
+  );
+  margin: var(--jip-spacing-48) 0;
+  opacity: 0.6;
+}
+
+/* Screening Content */
+.jip-screening-content p {
+  font: var(--typo-body-l);
+  color: var(--jip-text-secondary);
+  line-height: 1.7;
+}
+
+.jip-screening-content strong {
+  color: var(--jip-color-navy);
+  font-weight: var(--fw-semibold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jip-admission-section {
+    padding: var(--jip-spacing-24);
+  }
+  .jip-section-title {
+    font: var(--typo-h1); /* Hạ size xuống 28px trên mobile */
+  }
+}

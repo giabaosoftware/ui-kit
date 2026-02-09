@@ -1,112 +1,177 @@
+/* Grid Container - Thay thế style inline cũ */
+.jip-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--jip-spacing-32);
+  padding: var(--jip-spacing-48) var(--jip-container-gutter);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Course Card - Thiết kế lại UI */
 .jip-course-card {
-  max-width: 400px;
   background: var(--jip-bg-default);
-  border: 1px solid var(--jip-border-gold);
-  border-radius: 16px;
+  border: 1px solid rgba(184, 134, 11, 0.2); /* Gold mờ */
+  border-radius: 16px; /* Bo góc mềm mại hơn */
   overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 .jip-course-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--jip-shadow-glow);
+  transform: translateY(-10px);
+  border-color: var(--jip-color-gold);
+  box-shadow: 0 20px 40px rgba(184, 134, 11, 0.12);
 }
 
 /* Image Section */
-.jip-card-image {
+.jip-card-media {
   position: relative;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
-.jip-card-image img {
+.jip-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.jip-badge {
+.jip-course-card:hover .jip-card-media img {
+  transform: scale(1.1);
+}
+
+.jip-badge-category {
   position: absolute;
-  top: var(--jip-spacing-16);
-  left: var(--jip-spacing-16);
+  top: 15px;
+  left: 15px;
   background: var(--jip-gradient-gold-metallic);
   color: var(--jip-color-navy);
-  font: var(--typo-label);
-  padding: 4px 12px;
-  border-radius: var(--jip-btn-radius);
-  text-transform: uppercase;
-  z-index: 1;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Content Section */
 .jip-card-content {
-  padding: var(--jip-card-padding);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: var(--jip-spacing-8);
-}
-
-.jip-course-category {
-  font: var(--typo-caption);
-  color: var(--jip-text-accent);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  flex-grow: 1;
 }
 
 .jip-course-title {
-  font: var(--typo-h2);
+  font: var(--typo-h3); /* Dùng h3 để vừa vặn hơn trong card */
   color: var(--jip-color-navy);
-  margin: 0;
-  min-height: 52px; /* Đảm bảo chiều cao cho 2 dòng tiêu đề */
+  margin-bottom: 12px;
+  line-height: 1.4;
+  min-height: 3em; /* Đảm bảo các card đều dòng */
 }
 
 .jip-course-description {
-  font: var(--typo-body-m);
+  font: var(--typo-body-s);
   color: var(--jip-text-secondary);
+  margin-bottom: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: var(--jip-spacing-8) 0;
 }
 
-/* Footer Section */
+/* Meta Info Area */
+.jip-course-meta {
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.meta-value {
+  font-weight: 600;
+  color: var(--jip-color-navy);
+  font-size: 13px;
+}
+
+/* Footer & Price */
 .jip-card-footer {
-  margin-top: var(--jip-spacing-16);
-  padding-top: var(--jip-spacing-16);
-  border-top: 1px solid var(--jip-border-gold);
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.jip-price-stack {
+  display: flex;
+  flex-direction: column;
+}
+
 .jip-price-label {
-  display: block;
-  font: var(--typo-caption);
+  font-size: 11px;
   color: var(--jip-text-secondary);
 }
 
-.jip-price-value {
-  font: var(--typo-h3);
-  color: var(--jip-color-navy);
+.jip-price {
+  color: var(--jip-color-gold-dark);
+  font-weight: 700;
 }
 
-/* Button Styling */
+.jip-price .currency {
+  font-size: 1rem;
+}
+
+.jip-price .amount {
+  font-size: 1.5rem;
+  font-family: var(--font-display);
+}
+
+/* Button Enroll */
 .jip-btn-enroll {
-  background: var(--jip-action-primary);
-  color: var(--jip-text-on-brand);
+  background: var(--jip-color-navy);
+  color: white;
   border: none;
-  padding: 10px 24px;
-  border-radius: var(--jip-btn-radius);
-  font: var(--typo-label);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .jip-btn-enroll:hover {
-  background: var(--jip-action-hover);
-  box-shadow: 0 4px 12px rgba(0, 32, 96, 0.2);
+  background: var(--jip-color-gold);
+  transform: scale(1.05);
+}
+
+/* Dark Mode */
+html[data-theme="dark"] .jip-course-card {
+  background: #1a1a1a;
+  border-color: rgba(212, 175, 55, 0.1);
+}
+
+html[data-theme="dark"] .jip-course-title {
+  color: #fff;
+}
+
+html[data-theme="dark"] .jip-course-meta {
+  border-color: rgba(255, 255, 255, 0.05);
 }

@@ -1,106 +1,163 @@
+/* --- PROMO SECTION IMPROVEMENTS --- */
 .jip-promo-section {
   padding: var(--jip-section-gap) var(--jip-container-gutter);
   display: flex;
   justify-content: center;
+  max-width: 1280px; /* Tăng nhẹ để thoáng hơn */
   width: 100%;
+  margin: 0 auto;
 }
 
 .jip-promo-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  min-height: 400px;
-  background-color: var(--jip-color-navy); /* Nền Navy làm base */
-  border-radius: 40px; /* Bo góc lớn như ảnh */
+  min-height: 480px; /* Tăng chiều cao để tạo độ vĩ mô */
+  background: var(--jip-color-navy);
+  border-radius: 40px;
   overflow: hidden;
   display: flex;
   align-items: center;
+  /* Thêm viền sáng nhẹ để tách biệt với nền trang */
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .jip-promo-content {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   padding: var(--jip-spacing-64);
-  max-width: 60%;
-  color: var(--jip-text-on-brand);
+  max-width: 55%;
+  color: #fff;
 }
 
+/* Hiệu ứng chữ Display nổi bật hơn */
 .jip-promo-display {
   font: var(--typo-display-l);
-  margin-bottom: var(--jip-spacing-8);
+  font-weight: 900;
+  margin-bottom: 8px;
   background: var(--jip-gradient-gold-metallic);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Tiêu đề hiệu ứng Gold Metallic */
+  -webkit-text-fill-color: transparent;
 }
 
 .jip-promo-subtitle {
   font: var(--typo-h1);
-  margin-bottom: var(--jip-spacing-24);
-  color: var(--jip-color-cream);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--jip-color-cream); /* Cream sáng */
 }
 
 .jip-promo-description {
   font: var(--typo-body-l);
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: var(--jip-spacing-32);
-  line-height: 1.6;
+  color: var(--jip-color-cream);
+  margin-bottom: 40px;
+  max-width: 90%;
 }
 
+/* Nút bấm hiệu ứng Glow chuyên nghiệp */
 .jip-promo-btn {
   background: var(--jip-gradient-gold-metallic);
   color: var(--jip-color-navy);
+  padding: 16px 48px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   border: none;
-  padding: 14px 40px;
-  border-radius: var(--jip-btn-radius);
-  font: var(--typo-h3);
-  font-weight: var(--fw-bold);
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(184, 134, 11, 0.3);
 }
 
 .jip-promo-btn:hover {
-  transform: scale(1.05);
-  box-shadow: var(--jip-checkbox-glow);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(184, 134, 11, 0.5);
 }
 
-/* Phần trang trí hình khối (DNA từ ảnh gốc) */
+/* --- PHẦN TRANG TRÍ (DECORATION) --- */
 .jip-promo-decoration {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: -5%;
+  top: -10%;
+  bottom: -10%;
   width: 50%;
-  background: var(--jip-color-gold);
-  clip-path: polygon(
-    25% 0%,
-    100% 0%,
-    100% 100%,
-    0% 100%
-  ); /* Tạo đường cắt chéo */
   z-index: 1;
+  /* Kết hợp clip-path và rotate để tạo góc nhìn hiện đại */
+  transform: rotate(-5deg);
 }
 
 .jip-shape-overlay {
   position: absolute;
   inset: 0;
   background: var(--jip-gradient-gold-metallic);
-  opacity: 0.8;
-  border-top-left-radius: 100px; /* Bo góc đặc trưng của ảnh */
+  border-radius: 80px;
+  opacity: 0.9;
+  /* Thêm hiệu ứng bóng đổ cho khối hình */
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Thêm hiệu ứng lấp lánh (Shimmer) chạy ngầm trong khối Gold */
+.jip-shape-overlay::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: promoShine 6s infinite linear;
+}
+
+@keyframes promoShine {
+  0% {
+    transform: translateX(-30%) translateY(-30%);
+  }
+  100% {
+    transform: translateX(30%) translateY(30%);
+  }
+}
+
+/* Thêm các chấm hạt (Pattern) cho background thêm tinh tế */
+.jip-promo-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+  opacity: 0.5;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .jip-promo-content {
-    max-width: 100%;
-    padding: var(--jip-spacing-32);
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .jip-promo-container {
+    min-height: auto;
+    padding: 60px 20px;
     text-align: center;
   }
-  .jip-promo-decoration {
-    display: none;
+  .jip-promo-content {
+    max-width: 100%;
+    padding: 0;
   }
-  .jip-promo-container {
-    flex-direction: column;
+  .jip-promo-decoration {
+    display: none; /* Ẩn decoration trên mobile để tối ưu không gian */
+  }
+  .jip-promo-description {
+    max-width: 100%;
   }
 }

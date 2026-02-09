@@ -1058,7 +1058,9 @@ html[data-theme="dark"] .jip-footer {
   border: none;
   cursor: pointer;
   font-size: 18px;
-  background: var(--jip-color-navy);
+  color: var(--jip-color-cream);
+  background-color: var(--jip-color-navy);
+  border: 1px solid var(--jip-color-cream);
   color: white;
   z-index: 2000;
 }
