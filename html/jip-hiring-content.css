@@ -61,6 +61,74 @@
   box-shadow: 0 0 4px var(--jip-border-gold); /* Thêm glow nhẹ cho bullet */
 }
 
+/* --- DANH SÁCH HIGHLIGHT (01, 02, 03) --- */
+.jip-highlight-list {
+  padding: 0;
+  margin: var(--jip-spacing-48) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-32);
+}
+
+.jip-highlight-item {
+  list-style: none;
+  padding: var(--jip-spacing-24);
+  border: 1px solid transparent;
+  border-left: 4px solid var(--jip-color-gold); /* Điểm nhấn ADN JIP */
+  border-radius: 4px 12px 12px 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jip-highlight-item:hover {
+  border-color: var(--jip-border-gold);
+  border-left-color: var(--jip-color-navy);
+  box-shadow: 0 10px 30px rgba(0, 32, 96, 0.05);
+  transform: translateX(8px);
+}
+
+/* Tiêu đề có số (01, 02...) */
+.jip-highlight-title {
+  display: block;
+  font: var(--typo-h2); /* Cinzel hoặc font heading */
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-16);
+  letter-spacing: 0.5px;
+}
+
+/* Danh sách con bên trong */
+.jip-highlight-item ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-12);
+}
+
+.jip-highlight-item ul li {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  padding-left: var(--jip-spacing-24);
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Bullet point cho danh sách con */
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+  .jip-highlight-item {
+    padding: var(--jip-spacing-16);
+  }
+
+  .jip-highlight-item:hover {
+    transform: none; /* Tránh giật lag trên mobile */
+  }
+
+  .jip-highlight-title {
+    font-size: 18px;
+  }
+}
+
 /* --- CHÚ THÍCH & PHÂN TÁCH --- */
 .jip-disclaimer {
   font: var(--typo-body-m);
