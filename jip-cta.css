@@ -10,7 +10,6 @@
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border: var(--jip-btn-border-width) solid transparent;
   text-decoration: none;
-  min-width: 200px; /* Thu nhỏ từ 280px */
   outline: none;
   background: none;
 }
