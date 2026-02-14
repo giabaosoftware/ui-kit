@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đội ngũ giảng viên | Học viện JIP Nhật Bản</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../jip-card.css" />
+    <link rel="stylesheet" href="../jip-cta.css" />
+    <link rel="stylesheet" href="../jip-banner.css" />
+    <link rel="stylesheet" href="../jip-section-1.css" />
+    <link rel="stylesheet" href="../jip-promo-card.css" />
+    <link rel="stylesheet" href="./jip-trainer.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="background-color: var(--jip-color-cream-light)">
+    <button id="settings-toggle">⚙</button>
+    <div id="settings-panel">
+      <div class="jip-settings-group">
+        <label class="jip-settings-label">
+          Phông tiêu đề
+          <select id="font-heading-select" class="jip-settings-select"></select>
+        </label>
+        <label class="jip-settings-label">
+          Phông nội dung
+          <select id="font-body-select" class="jip-settings-select"></select>
+        </label>
+        <label class="jip-settings-label">
+          Màu thương hiệu chính (Xanh navy)
+          <input type="color" id="navy-picker" class="jip-settings-color" />
+        </label>
+        <label class="jip-settings-label">
+          Màu nhấn thương hiệu (Vàng)
+          <input type="color" id="gold-picker" class="jip-settings-color" />
+        </label>
+        <label class="jip-settings-label">
+          Nền bề mặt (Sáng)
+          <input type="color" id="cream-picker" class="jip-settings-color" />
+        </label>
+      </div>
+    </div>
+
+    <header class="jip-header">
+      <div class="jip-header-container">
+        <div class="jip-logo">
+          <img src="../img/aaaaaaaaaaaaaaaaa.webp" alt="" width="80" />
+        </div>
+        <nav class="jip-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Trang chủ</a></li>
+            <li><a href="./course.html" class="nav-link">Khóa học</a></li>
+            <li>
+              <a href="./trainer.html" class="nav-link active">Giảng viên</a>
+            </li>
+            <li><a href="./hiring.html" class="nav-link">Tuyển dụng</a></li>
+          </ul>
+        </nav>
+        <div class="jip-header-actions">
+          <button id="theme-toggle" aria-label="Chuyển giao diện">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="jip-button btn-enroll">
+            <span class="main-label">Liên hệ</span>
+            <div class="divider"><span class="diamond"></span></div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="container"
+      style="
+        gap: 48px;
+        padding: 40px var(--jip-spacing-32) 72px;
+        max-width: 1280px;
+        margin: 0 auto;
+      "
+    >
+      <section class="jip-instructor-hero">
+        <div class="jip-decor-glow"></div>
+
+        <div class="jip-instructor-hero-inner">
+          <div class="jip-hero-content-text">
+            <p class="jip-instructor-tag">Đội ngũ chuyên gia JIP Nhật Bản</p>
+            <h1 class="jip-instructor-title">
+              Giảng viên doanh nghiệp đồng hành cùng năng lực lãnh đạo của bạn
+            </h1>
+            <p class="jip-instructor-desc">
+              Học viện JIP quy tụ các chuyên gia đã trực tiếp triển khai đào tạo
+              tại Tokyo, Osaka và Fukuoka cho doanh nghiệp công nghệ, tài chính
+              và sản xuất. Mỗi giảng viên đều có lộ trình mentoring theo chuẩn
+              Nhật Bản.
+            </p>
+          </div>
+
+          <div class="jip-hero-visual">
+            <div class="jip-experience-badge">
+              <span class="number">15+</span>
+              <span class="label"
+                >Năm kinh nghiệm <br />
+                thực chiến tại Nhật</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="width: 100%">
+        <div class="jip-section-header">
+          <h2 class="jip-category-title">Giảng viên tiêu biểu</h2>
+          <a href="#" class="jip-view-all">
+            <span>Xem toàn bộ</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="jip-experts-grid">
+            <article class="jip-expert-card">
+              <div class="jip-expert-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
+                  alt="GS. Alexander Reed"
+                />
+                <div class="jip-expert-overlay">
+                  <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+                </div>
+              </div>
+
+              <div class="jip-expert-info">
+                <div class="jip-expert-header">
+                  <h3 class="jip-expert-name">GS. Alexander Reed</h3>
+                  <p class="jip-expert-position">
+                    Giám đốc học thuật JIP Tokyo
+                  </p>
+                </div>
+
+                <div class="jip-expert-stats">
+                  <div class="jip-stat">
+                    <span class="jip-stat-label">Kinh nghiệm</span>
+                    <span class="jip-stat-value">15+ năm</span>
+                  </div>
+                  <div class="jip-stat">
+                    <span class="jip-stat-label">Ngôn ngữ</span>
+                    <span class="jip-stat-value">JP / EN</span>
+                  </div>
+                </div>
+
+                <button class="jip-button btn-learn-outline">
+                  <span class="main-label">Xem hồ sơ</span>
+                  <div class="divider"><span class="diamond"></span></div>
+                  <span class="sub-label">Chuyên môn chuyên sâu</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="jip-expert-card">
+              <div class="jip-expert-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
+                  alt="GS. Alexander Reed"
+                />
+                <div class="jip-expert-overlay">
+                  <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+                </div>
+              </div>
+
+              <div class="jip-expert-info">
+                <div class="jip-expert-header">
+                  <h3 class="jip-expert-name">GS. Alexander Reed</h3>
+                  <p class="jip-expert-position">
+                    Giám đốc học thuật JIP Tokyo
+                  </p>
+                </div>
+
+                <div class="jip-expert-stats">
+                  <div class="jip-stat">
+                    <span class="jip-stat-label">Kinh nghiệm</span>
+                    <span class="jip-stat-value">15+ năm</span>
+                  </div>
+                  <div class="jip-stat">
+                    <span class="jip-stat-label">Ngôn ngữ</span>
+                    <span class="jip-stat-value">JP / EN</span>
+                  </div>
+                </div>
+
+                <button class="jip-button btn-learn-outline">
+                  <span class="main-label">Xem hồ sơ</span>
+                  <div class="divider"><span class="diamond"></span></div>
+                  <span class="sub-label">Chuyên môn chuyên sâu</span>
+                </button>
+              </div>
+            </article>
+            <article class="jip-expert-card">
+              <div class="jip-expert-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
+                  alt="GS. Alexander Reed"
+                />
+                <div class="jip-expert-overlay">
+                  <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+                </div>
+              </div>
+
+              <div class="jip-expert-info">
+                <div class="jip-expert-header">
+                  <h3 class="jip-expert-name">GS. Alexander Reed</h3>
+                  <p class="jip-expert-position">
+                    Giám đốc học thuật JIP Tokyo
+                  </p>
+                </div>
+
+                <div class="jip-expert-stats">
+                  <div class="jip-stat">
+                    <span class="jip-stat-label">Kinh nghiệm</span>
+                    <span class="jip-stat-value">15+ năm</span>
+                  </div>
+                  <div class="jip-stat">
+                    <span class="jip-stat-label">Ngôn ngữ</span>
+                    <span class="jip-stat-value">JP / EN</span>
+                  </div>
+                </div>
+
+                <button class="jip-button btn-learn-outline">
+                  <span class="main-label">Xem hồ sơ</span>
+                  <div class="divider"><span class="diamond"></span></div>
+                  <span class="sub-label">Chuyên môn chuyên sâu</span>
+                </button>
+              </div>
+            </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="jip-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-text">JIP</span>
+            <div class="divider"><span class="diamond"></span></div>
+            <span class="logo-subtext">HỌC VIỆN</span>
+          </div>
+          <p class="brand-description">
+            Nâng tầm năng lực chuyên môn thông qua các khóa học chuẩn quốc tế và
+            lộ trình học tập chuyên sâu tại Nhật Bản.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">LI</a>
+            <a href="#" class="social-icon">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Chương trình</h4>
+          <ul>
+            <li><a href="#">Khóa học chuyên sâu</a></li>
+            <li><a href="#">Đào tạo doanh nghiệp</a></li>
+            <li><a href="#">Lịch khai giảng</a></li>
+            <li><a href="#">Học bổng JIP</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Hỗ trợ</h4>
+          <ul>
+            <li><a href="#">Trung tâm trợ giúp</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Bản tin</h4>
+          <p>Đăng ký nhận cập nhật về khóa học mới và ưu đãi độc quyền.</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Email của bạn..."
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">GỬI</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider"><span class="diamond"></span></div>
+        <p class="copyright">
+          © 2026 Học viện JIP Nhật Bản. Bảo lưu mọi quyền. Thiết kế theo chuẩn
+          đào tạo tinh hoa.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved) document.documentElement.dataset.theme = saved;
+      })();
+
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.dataset.theme;
+        const next = current === "dark" ? "light" : "dark";
+        html.dataset.theme = next;
+        localStorage.setItem("theme", next);
+      }
+
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
+
+      const settingsToggle = document.getElementById("settings-toggle");
+      const settingsPanel = document.getElementById("settings-panel");
+      settingsToggle.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
+      });
+
+      const fonts = [
+        "Playfair Display",
+        "Cinzel",
+        "Cormorant Garamond",
+        "Libre Baskerville",
+        "Inter",
+        "Roboto",
+        "PT Sans",
+      ];
+      const headingSelect = document.getElementById("font-heading-select");
+      const bodySelect = document.getElementById("font-body-select");
+      fonts.forEach((font) => {
+        const opt1 = document.createElement("option");
+        opt1.value = font;
+        opt1.textContent = font;
+        headingSelect.appendChild(opt1);
+        const opt2 = opt1.cloneNode(true);
+        bodySelect.appendChild(opt2);
+      });
+
+      const root = document.documentElement;
+      function loadFont(font) {
+        const id = `font-${font.replace(/\s+/g, "-")}`;
+        if (document.getElementById(id)) return;
+        const link = document.createElement("link");
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = `https://fonts.googleapis.com/css2?family=${font.replace(
+          /\s+/g,
+          "+",
+        )}:wght@300;400;500;600;700&display=swap`;
+        document.head.appendChild(link);
+      }
+
+      headingSelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-heading",
+          `"${e.target.value}", serif`,
+        );
+      });
+      bodySelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-body",
+          `"${e.target.value}", sans-serif`,
+        );
+      });
+
+      document.getElementById("navy-picker").oninput = (e) =>
+        root.style.setProperty("--base-navy", e.target.value);
+      document.getElementById("gold-picker").oninput = (e) =>
+        root.style.setProperty("--base-gold", e.target.value);
+      document.getElementById("cream-picker").oninput = (e) =>
+        root.style.setProperty("--base-cream-light", e.target.value);
+    </script>
+  </body>
+</html>

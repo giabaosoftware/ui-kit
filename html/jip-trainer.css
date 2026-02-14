@@ -1,0 +1,495 @@
+.jip-instructor-hero {
+  background-color: var(--jip-color-navy);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 28px;
+  padding: var(--jip-spacing-48) var(--jip-spacing-48);
+  position: relative;
+  overflow: hidden;
+  /* Kết hợp gradient tĩnh và hiệu ứng chuyển động */
+  background-image:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(212, 175, 55, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(212, 175, 55, 0.05) 0%,
+      transparent 30%
+    );
+}
+
+/* Hiệu ứng quầng sáng chạy ngầm phía sau */
+.jip-instructor-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.03) 0%,
+    transparent 50%
+  );
+  animation: rotate-glow 20s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Đường line vàng trang trí tinh tế */
+.jip-instructor-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--jip-color-gold),
+    transparent
+  );
+  opacity: 0.3;
+}
+
+.jip-instructor-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  /* Animation hiện hình cho toàn bộ block */
+  animation: fade-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.jip-instructor-tag {
+  font: var(--typo-label);
+  color: var(--jip-color-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--jip-spacing-16);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Thêm một dấu gạch ngang nhỏ động cạnh tag */
+.jip-instructor-tag::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  display: inline-block;
+  animation: expand-width 1s ease forwards;
+}
+
+.jip-instructor-title {
+  font: var(--typo-display-l);
+  color: var(--jip-color-cream-light);
+  margin-bottom: var(--jip-spacing-24);
+  line-height: 1.2;
+  /* Đổ bóng nhẹ cho chữ để nổi bật trên nền gradient */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.jip-instructor-desc {
+  font: var(--typo-body-l);
+  color: var(--jip-color-cream-light);
+  opacity: 0.85;
+  max-width: 860px;
+  line-height: 1.6;
+}
+
+/* Keyframes cho các hiệu ứng */
+@keyframes rotate-glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expand-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24px;
+  }
+}
+
+/* Tối ưu hóa cho Dark Mode */
+html[data-theme="dark"] .jip-instructor-hero {
+  background-color: var(--jip-bg-subtle);
+  border-color: rgba(212, 175, 55, 0.15);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+  .jip-instructor-hero {
+    padding: var(--jip-spacing-48) var(--jip-spacing-24);
+    text-align: center;
+  }
+
+  .jip-instructor-tag {
+    justify-content: center;
+  }
+
+  .jip-instructor-desc {
+    margin: 0 auto;
+  }
+}
+
+.jip-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Căn lề dưới để tạo cảm giác vững chãi */
+  margin-bottom: var(--jip-spacing-32);
+  padding-bottom: var(--jip-spacing-16);
+  border-bottom: 1px solid var(--jip-border-gold);
+  position: relative;
+}
+
+/* Hiệu ứng thanh trang trí nhỏ dưới tiêu đề */
+.jip-section-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--jip-color-gold);
+  border-radius: var(--jip-btn-radius);
+}
+
+.jip-category-title {
+  font: var(--typo-h1);
+  color: var(--jip-color-navy);
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.jip-view-all {
+  font: var(--typo-label);
+  color: var(--jip-color-gold-dark);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--jip-spacing-8);
+  transition: all 0.3s ease;
+  padding: 4px 0;
+}
+
+.jip-view-all i {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng Hover lung linh hơn */
+.jip-view-all:hover {
+  color: var(--jip-color-navy);
+  letter-spacing: 0.5px;
+}
+
+.jip-view-all:hover i {
+  transform: translateX(5px);
+}
+
+/* Tối ưu cho Dark Mode */
+html[data-theme="dark"] .jip-category-title {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-view-all:hover {
+  color: var(--jip-color-gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jip-section-header {
+    align-items: center;
+    margin-bottom: var(--jip-spacing-24);
+  }
+
+  .jip-category-title {
+    font: var(--typo-h2); /* Thu nhỏ font trên mobile */
+  }
+}
+
+/* Grid Container */
+.jip-experts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--jip-spacing-32);
+  padding: var(--jip-spacing-16) 0;
+}
+
+@media (max-width: 1024px) {
+  .jip-experts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .jip-experts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Thẻ chuyên gia chính */
+.jip-expert-card {
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Xử lý hình ảnh */
+.jip-expert-image-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.jip-expert-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Lớp phủ thông tin trên ảnh */
+.jip-expert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 32, 96, 0.8) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: var(--jip-spacing-24);
+}
+
+.jip-expert-tag {
+  font: var(--typo-label);
+  background: var(--jip-color-gold);
+  color: var(--jip-color-navy);
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* Nội dung thông tin */
+.jip-expert-info {
+  padding: var(--jip-spacing-24);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--jip-spacing-20);
+}
+
+.jip-expert-name {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  margin: 0 0 4px 0;
+}
+
+.jip-expert-position {
+  font: var(--typo-body-s);
+  color: var(--jip-text-secondary);
+  font-style: italic;
+}
+
+/* Stats (Kinh nghiệm & Ngôn ngữ) */
+.jip-expert-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--jip-spacing-16) 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.jip-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jip-stat-label {
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  text-transform: uppercase;
+}
+
+.jip-stat-value {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+}
+
+/* Nút bấm full-width */
+.jip-expert-card .jip-button {
+  width: 100%;
+  min-width: unset;
+}
+
+/* --- Hiệu ứng Hover --- */
+.jip-expert-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 32, 96, 0.1);
+  border-color: var(--jip-color-gold-dark);
+}
+
+.jip-expert-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Dark Mode */
+html[data-theme="dark"] .jip-expert-card {
+  background: var(--jip-bg-subtle);
+}
+.jip-instructor-hero {
+  width: 90%;
+  background-color: var(--jip-color-navy);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 40px; /* Tăng độ bo góc để trông hiện đại hơn */
+  padding: var(--jip-spacing-80) var(--jip-spacing-64);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Hiệu ứng vệt sáng gradient chạy ngầm */
+.jip-decor-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 140%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.jip-instructor-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Chia tỉ lệ văn bản và hình ảnh trang trí */
+  gap: var(--jip-spacing-48);
+  align-items: center;
+  width: 100%;
+}
+
+.jip-instructor-tag {
+  font: var(--typo-label);
+  color: var(--jip-color-gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: var(--jip-spacing-24);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Dấu gạch ngang màu gold tinh tế */
+.jip-instructor-tag::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: var(--jip-color-gold);
+}
+
+.jip-instructor-title {
+  font: var(--typo-display-l);
+  color: var(--jip-color-cream-light);
+  margin-bottom: var(--jip-spacing-24);
+  line-height: 1.1;
+  max-width: 18ch; /* Giới hạn số ký tự mỗi dòng để title trông gọn hơn */
+}
+
+.jip-instructor-desc {
+  font: var(--typo-body-l);
+  color: var(--jip-color-cream-light);
+  opacity: 0.8;
+  max-width: 540px;
+  line-height: 1.7;
+  border-left: 2px solid rgba(212, 175, 55, 0.3);
+  padding-left: 24px;
+}
+
+/* Badge trang trí bên phải */
+.jip-experience-badge {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  transform: rotate(3deg);
+  transition: transform 0.5s ease;
+}
+
+.jip-experience-badge:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.jip-experience-badge .number {
+  display: block;
+  font: var(--typo-display-l);
+  color: var(--jip-color-gold);
+  font-size: 64px;
+  line-height: 1;
+}
+
+.jip-experience-badge .label {
+  font: var(--typo-caption);
+  color: var(--jip-color-cream-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .jip-instructor-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .jip-instructor-desc {
+    margin: 0 auto;
+    border-left: none;
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  .jip-experience-badge {
+    margin: 40px auto 0;
+  }
+}

@@ -113,11 +113,7 @@
   position: absolute;
   inset: 0;
   /* Gradient từ tối sang trong suốt để làm nổi bật text bên trái nếu cần */
-  background: linear-gradient(
-    45deg,
-    rgba(0, 32, 77, 0.4) 0%,
-    rgba(212, 175, 55, 0.1) 100%
-  );
+
   z-index: 1;
   transition: opacity 0.5s ease;
 }
@@ -233,7 +229,7 @@
   padding: var(--jip-spacing-16);
   border: 1px solid var(--jip-border-gold);
   border-radius: 12px;
-  background: var(--jip-bg-subtle);
+  background: var(--jip-color-cream);
 }
 
 .jip-syllabus-item + .jip-syllabus-item {
@@ -718,7 +714,6 @@ html[data-theme="dark"] .jip-instructor-block {
   border: 1px solid var(--jip-color-gold);
   border-radius: 30px;
   opacity: 0.3;
-  animation: pulse-gold 4s infinite alternate;
 }
 
 .jip-course-hero-media img {
@@ -990,4 +985,96 @@ html[data-theme="dark"] .jip-course-hero-media::after {
     rgba(0, 0, 0, 0.42) 0%,
     rgba(212, 175, 55, 0.12) 100%
   );
+}
+/* Container chính cho lộ trình */
+.jip-detail-block {
+  margin-bottom: var(--jip-spacing-64);
+}
+
+.jip-detail-block h2 {
+  font: var(--typo-h1);
+  color: var(--jip-text-primary);
+  margin-bottom: var(--jip-spacing-32);
+  display: flex;
+  align-items: center;
+  gap: var(--jip-spacing-16);
+}
+
+/* Tạo trục dọc trang trí bằng Token */
+.jip-detail-block > .jip-syllabus-item {
+  position: relative;
+  padding-left: var(--jip-spacing-48);
+  margin-bottom: 0; /* Gộp margin vào container chung */
+  padding-bottom: var(--jip-spacing-32);
+}
+
+/* Đường kẻ nối giữa các học phần */
+.jip-detail-block > .jip-syllabus-item::before {
+  content: "";
+  position: absolute;
+  left: 7px; /* Căn giữa theo dot */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--jip-border-gold);
+}
+
+/* Dấu chấm mốc (Timeline Dot) */
+.jip-detail-block > .jip-syllabus-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--jip-bg-default);
+  border: 2px solid var(--jip-color-gold);
+  z-index: 1;
+}
+
+/* Item cuối cùng không có đường kẻ kéo dài */
+.jip-detail-block > .jip-syllabus-item:last-child::before {
+  display: none;
+}
+
+/* Nội dung bên trong mỗi Module */
+.jip-syllabus-item h3 {
+  font: var(--typo-h3);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-8);
+  transition: color 0.3s ease;
+}
+
+.jip-syllabus-item p {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Hiệu ứng tương tác mượt mà */
+.jip-syllabus-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.jip-syllabus-item:hover {
+  transform: translateX(8px);
+}
+
+.jip-syllabus-item:hover h3 {
+  color: var(--jip-text-accent);
+}
+
+.jip-syllabus-item:hover::after {
+  background: var(--jip-color-gold);
+  box-shadow: var(--jip-shadow-glow);
+}
+
+/* Responsive tinh chỉnh */
+@media (max-width: 768px) {
+  .jip-detail-block > .jip-syllabus-item {
+    padding-left: var(--jip-spacing-32);
+  }
 }
