@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../jip-section-1.css" />
     <link rel="stylesheet" href="../jip-promo-card.css" />
     <link rel="stylesheet" href="./jip-trainer.css" />
+    <link rel="stylesheet" href="./jip-course.css" />
+    <link rel="stylesheet" href="./jip-course-section-1.css" />
+
     <link rel="stylesheet" href="../style.css" />
     <link
       rel="stylesheet"
@@ -77,37 +80,34 @@
     <main
       class="container"
       style="
+        width: 100%;
         gap: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
         padding: 40px var(--jip-spacing-32) 72px;
         max-width: 1280px;
         margin: 0 auto;
       "
     >
-      <section class="jip-instructor-hero">
-        <div class="jip-decor-glow"></div>
-
-        <div class="jip-instructor-hero-inner">
-          <div class="jip-hero-content-text">
-            <p class="jip-instructor-tag">Đội ngũ chuyên gia JIP Nhật Bản</p>
-            <h1 class="jip-instructor-title">
+      <section class="jip-promo-trainer-section">
+        <div class="jip-promo-container">
+          <div class="jip-promo-content">
+            <h1 class="jip-promo-display">Đội ngũ chuyên gia JIP Nhật Bản</h1>
+            <h2 class="jip-promo-subtitle">
               Giảng viên doanh nghiệp đồng hành cùng năng lực lãnh đạo của bạn
-            </h1>
-            <p class="jip-instructor-desc">
+            </h2>
+
+            <div class="jip-promo-description">
               Học viện JIP quy tụ các chuyên gia đã trực tiếp triển khai đào tạo
               tại Tokyo, Osaka và Fukuoka cho doanh nghiệp công nghệ, tài chính
               và sản xuất. Mỗi giảng viên đều có lộ trình mentoring theo chuẩn
               Nhật Bản.
-            </p>
+            </div>
           </div>
 
-          <div class="jip-hero-visual">
-            <div class="jip-experience-badge">
-              <span class="number">15+</span>
-              <span class="label"
-                >Năm kinh nghiệm <br />
-                thực chiến tại Nhật</span
-              >
-            </div>
+          <div class="jip-promo-decoration">
+            <div class="jip-shape-overlay"></div>
           </div>
         </div>
       </section>
@@ -122,118 +122,112 @@
         </div>
 
         <div class="jip-experts-grid">
-            <article class="jip-expert-card">
-              <div class="jip-expert-image-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
-                  alt="GS. Alexander Reed"
-                />
-                <div class="jip-expert-overlay">
-                  <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+          <article class="jip-expert-card">
+            <div class="jip-expert-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
+                alt="GS. Alexander Reed"
+              />
+              <div class="jip-expert-overlay">
+                <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+              </div>
+            </div>
+
+            <div class="jip-expert-info">
+              <div class="jip-expert-header">
+                <h3 class="jip-expert-name">GS. Alexander Reed</h3>
+                <p class="jip-expert-position">Giám đốc học thuật JIP Tokyo</p>
+              </div>
+
+              <div class="jip-expert-stats">
+                <div class="jip-stat">
+                  <span class="jip-stat-label">Kinh nghiệm</span>
+                  <span class="jip-stat-value">15+ năm</span>
+                </div>
+                <div class="jip-stat">
+                  <span class="jip-stat-label">Ngôn ngữ</span>
+                  <span class="jip-stat-value">JP / EN</span>
                 </div>
               </div>
 
-              <div class="jip-expert-info">
-                <div class="jip-expert-header">
-                  <h3 class="jip-expert-name">GS. Alexander Reed</h3>
-                  <p class="jip-expert-position">
-                    Giám đốc học thuật JIP Tokyo
-                  </p>
-                </div>
+              <button class="jip-button btn-learn-outline">
+                <span class="main-label">Xem hồ sơ</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Chuyên môn chuyên sâu</span>
+              </button>
+            </div>
+          </article>
 
-                <div class="jip-expert-stats">
-                  <div class="jip-stat">
-                    <span class="jip-stat-label">Kinh nghiệm</span>
-                    <span class="jip-stat-value">15+ năm</span>
-                  </div>
-                  <div class="jip-stat">
-                    <span class="jip-stat-label">Ngôn ngữ</span>
-                    <span class="jip-stat-value">JP / EN</span>
-                  </div>
-                </div>
-
-                <button class="jip-button btn-learn-outline">
-                  <span class="main-label">Xem hồ sơ</span>
-                  <div class="divider"><span class="diamond"></span></div>
-                  <span class="sub-label">Chuyên môn chuyên sâu</span>
-                </button>
+          <article class="jip-expert-card">
+            <div class="jip-expert-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
+                alt="GS. Alexander Reed"
+              />
+              <div class="jip-expert-overlay">
+                <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
               </div>
-            </article>
+            </div>
 
-            <article class="jip-expert-card">
-              <div class="jip-expert-image-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
-                  alt="GS. Alexander Reed"
-                />
-                <div class="jip-expert-overlay">
-                  <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+            <div class="jip-expert-info">
+              <div class="jip-expert-header">
+                <h3 class="jip-expert-name">GS. Alexander Reed</h3>
+                <p class="jip-expert-position">Giám đốc học thuật JIP Tokyo</p>
+              </div>
+
+              <div class="jip-expert-stats">
+                <div class="jip-stat">
+                  <span class="jip-stat-label">Kinh nghiệm</span>
+                  <span class="jip-stat-value">15+ năm</span>
+                </div>
+                <div class="jip-stat">
+                  <span class="jip-stat-label">Ngôn ngữ</span>
+                  <span class="jip-stat-value">JP / EN</span>
                 </div>
               </div>
 
-              <div class="jip-expert-info">
-                <div class="jip-expert-header">
-                  <h3 class="jip-expert-name">GS. Alexander Reed</h3>
-                  <p class="jip-expert-position">
-                    Giám đốc học thuật JIP Tokyo
-                  </p>
-                </div>
-
-                <div class="jip-expert-stats">
-                  <div class="jip-stat">
-                    <span class="jip-stat-label">Kinh nghiệm</span>
-                    <span class="jip-stat-value">15+ năm</span>
-                  </div>
-                  <div class="jip-stat">
-                    <span class="jip-stat-label">Ngôn ngữ</span>
-                    <span class="jip-stat-value">JP / EN</span>
-                  </div>
-                </div>
-
-                <button class="jip-button btn-learn-outline">
-                  <span class="main-label">Xem hồ sơ</span>
-                  <div class="divider"><span class="diamond"></span></div>
-                  <span class="sub-label">Chuyên môn chuyên sâu</span>
-                </button>
+              <button class="jip-button btn-learn-outline">
+                <span class="main-label">Xem hồ sơ</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Chuyên môn chuyên sâu</span>
+              </button>
+            </div>
+          </article>
+          <article class="jip-expert-card">
+            <div class="jip-expert-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
+                alt="GS. Alexander Reed"
+              />
+              <div class="jip-expert-overlay">
+                <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
               </div>
-            </article>
-            <article class="jip-expert-card">
-              <div class="jip-expert-image-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1200&auto=format&fit=crop"
-                  alt="GS. Alexander Reed"
-                />
-                <div class="jip-expert-overlay">
-                  <span class="jip-expert-tag">Chiến lược lãnh đạo</span>
+            </div>
+
+            <div class="jip-expert-info">
+              <div class="jip-expert-header">
+                <h3 class="jip-expert-name">GS. Alexander Reed</h3>
+                <p class="jip-expert-position">Giám đốc học thuật JIP Tokyo</p>
+              </div>
+
+              <div class="jip-expert-stats">
+                <div class="jip-stat">
+                  <span class="jip-stat-label">Kinh nghiệm</span>
+                  <span class="jip-stat-value">15+ năm</span>
+                </div>
+                <div class="jip-stat">
+                  <span class="jip-stat-label">Ngôn ngữ</span>
+                  <span class="jip-stat-value">JP / EN</span>
                 </div>
               </div>
 
-              <div class="jip-expert-info">
-                <div class="jip-expert-header">
-                  <h3 class="jip-expert-name">GS. Alexander Reed</h3>
-                  <p class="jip-expert-position">
-                    Giám đốc học thuật JIP Tokyo
-                  </p>
-                </div>
-
-                <div class="jip-expert-stats">
-                  <div class="jip-stat">
-                    <span class="jip-stat-label">Kinh nghiệm</span>
-                    <span class="jip-stat-value">15+ năm</span>
-                  </div>
-                  <div class="jip-stat">
-                    <span class="jip-stat-label">Ngôn ngữ</span>
-                    <span class="jip-stat-value">JP / EN</span>
-                  </div>
-                </div>
-
-                <button class="jip-button btn-learn-outline">
-                  <span class="main-label">Xem hồ sơ</span>
-                  <div class="divider"><span class="diamond"></span></div>
-                  <span class="sub-label">Chuyên môn chuyên sâu</span>
-                </button>
-              </div>
-            </article>
+              <button class="jip-button btn-learn-outline">
+                <span class="main-label">Xem hồ sơ</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Chuyên môn chuyên sâu</span>
+              </button>
+            </div>
+          </article>
         </div>
       </section>
     </main>

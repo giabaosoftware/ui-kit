@@ -196,10 +196,6 @@ html[data-theme="dark"] {
   gap: 30px;
 }
 
-html[data-theme="dark"] .container {
-  background-color: #141414;
-}
-
 #theme-toggle {
   width: 44px;
   height: 44px;

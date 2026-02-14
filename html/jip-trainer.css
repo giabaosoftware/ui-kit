@@ -1,3 +1,16 @@
+.jip-promo-section {
+  padding: var(--jip-section-gap) var(--jip-container-gutter);
+  display: flex;
+  justify-content: center;
+  max-width: 1280px; /* Tăng nhẹ để thoáng hơn */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.jip-promo-container {
+  width: 100%;
+}
+
 .jip-instructor-hero {
   background-color: var(--jip-color-navy);
   border: 1px solid var(--jip-border-gold);
@@ -492,4 +505,72 @@ html[data-theme="dark"] .jip-expert-card {
   .jip-experience-badge {
     margin: 40px auto 0;
   }
+}
+
+/* ============================== */
+/* Dark Theme - Token Compliance */
+/* ============================== */
+html[data-theme="dark"] .jip-instructor-hero {
+  background-color: var(--jip-bg-subtle);
+  border-color: var(--jip-border-gold);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .jip-instructor-title,
+html[data-theme="dark"] .jip-instructor-desc,
+html[data-theme="dark"] .jip-experience-badge .label {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-instructor-desc {
+  border-left-color: var(--jip-border-gold);
+}
+
+html[data-theme="dark"] .jip-experience-badge {
+  background: color-mix(in srgb, var(--jip-bg-default), transparent 65%);
+  border-color: var(--jip-border-gold);
+}
+
+html[data-theme="dark"] .jip-section-header {
+  border-bottom-color: var(--jip-border-gold);
+}
+
+html[data-theme="dark"] .jip-category-title {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-view-all {
+  color: var(--jip-color-gold-dark);
+}
+
+html[data-theme="dark"] .jip-view-all:hover {
+  color: var(--jip-color-gold);
+}
+
+html[data-theme="dark"] .jip-expert-card {
+  background: var(--jip-bg-subtle);
+  border-color: var(--jip-border-gold);
+}
+
+html[data-theme="dark"] .jip-expert-name,
+html[data-theme="dark"] .jip-stat-value {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-expert-position,
+html[data-theme="dark"] .jip-stat-label {
+  color: var(--jip-text-secondary);
+}
+
+html[data-theme="dark"] .jip-expert-stats {
+  border-top-color: var(--jip-border-gold);
+  border-bottom-color: var(--jip-border-gold);
+}
+
+html[data-theme="dark"] .jip-expert-overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    color-mix(in srgb, var(--jip-bg-brand), black 35%) 100%
+  );
 }
