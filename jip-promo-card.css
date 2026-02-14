@@ -2,7 +2,7 @@
 .jip-course-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: var(--jip-spacing-32);
+  gap: var(--jip-spacing-16);
   padding: var(--jip-spacing-48) var(--jip-container-gutter);
   max-width: 1240px;
   margin: 0 auto;

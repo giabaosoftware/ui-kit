@@ -12,6 +12,7 @@
   text-decoration: none;
   outline: none;
   background: none;
+  min-width: 180px;
 }
 
 /* Typography - Điều chỉnh tỉ lệ nhỏ hơn */
