@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   --base-navy: #002060;
@@ -7,7 +7,7 @@
   --base-cream: #f5f5dc;
   --base-cream-light: #fdfdf5;
 
-  --base-font-heading: "Cinzel", serif;
+  --base-font-heading: "Playfair Display", serif;
   --base-font-body: "Inter", sans-serif;
 
   /* Brand Colors */

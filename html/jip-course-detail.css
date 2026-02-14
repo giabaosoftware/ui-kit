@@ -1,0 +1,891 @@
+.jip-course-detail-page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--jip-spacing-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-section-gap);
+}
+
+.jip-course-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 28px;
+  padding: var(--jip-spacing-32);
+}
+
+.jip-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--jip-color-gold);
+  gap: var(--jip-spacing-8);
+  font: var(--typo-caption);
+  opacity: 0.9;
+}
+
+.jip-breadcrumb a {
+  color: var(--jip-color-gold);
+}
+
+.jip-course-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-16);
+}
+
+.jip-detail-badges {
+  display: flex;
+  gap: var(--jip-spacing-8);
+}
+
+.jip-tag {
+  padding: 6px 12px;
+  border-radius: var(--jip-btn-radius);
+  font: var(--typo-label);
+}
+
+.jip-tag-soft {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--jip-border-gold);
+  color: var(--jip-text-on-brand);
+}
+
+.jip-detail-title {
+  margin: 0;
+  font: var(--typo-display-l);
+  color: var(--jip-color-cream-light);
+}
+
+.jip-detail-subtitle {
+  margin: 0;
+  font: var(--typo-body-l);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 92%;
+}
+
+.jip-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--jip-spacing-8);
+}
+
+.jip-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--jip-border-gold);
+  border-radius: var(--jip-btn-radius);
+  padding: 8px 14px;
+  font: var(--typo-body-s);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.jip-detail-actions {
+  display: flex;
+  gap: var(--jip-spacing-16);
+  flex-wrap: wrap;
+}
+
+.jip-detail-actions .jip-button {
+  min-width: 240px;
+}
+
+.jip-course-hero-media {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--jip-border-gold);
+}
+
+.jip-course-hero-media {
+  position: relative;
+  overflow: hidden; /* Cần thiết để bao bọc các hiệu ứng tràn viền */
+  border-radius: 20px; /* Bo góc mềm mại */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Đổ bóng sâu tạo khối */
+}
+
+/* Hiệu ứng lớp phủ Gradient mờ ảo */
+.jip-course-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Gradient từ tối sang trong suốt để làm nổi bật text bên trái nếu cần */
+  background: linear-gradient(
+    45deg,
+    rgba(0, 32, 77, 0.4) 0%,
+    rgba(212, 175, 55, 0.1) 100%
+  );
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Nâng cấp Image với Animation */
+.jip-course-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* Hiệu ứng khi Hover: Ảnh phóng to nhẹ và sáng lên */
+.jip-course-hero-media:hover img {
+  transform: scale(1.08); /* Phóng to nhẹ nhàng */
+  filter: brightness(1.05) contrast(1.1);
+}
+
+/* Thêm một lớp lấp lánh (Shine effect) quét qua khi hover */
+.jip-course-hero-media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  z-index: 2;
+}
+
+.jip-course-hero-media:hover::before {
+  left: 150%;
+  transition: all 0.6s ease;
+}
+
+.jip-course-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--jip-spacing-32);
+}
+
+.jip-course-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-24);
+}
+
+.jip-detail-block {
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 18px;
+  padding: var(--jip-card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-16);
+}
+
+.jip-detail-block h2 {
+  margin: 0;
+  font: var(--typo-h1);
+  color: var(--jip-color-navy);
+}
+
+.jip-detail-block h3 {
+  margin: 0;
+  font: var(--typo-h3);
+  color: var(--jip-text-primary);
+}
+
+.jip-detail-block p {
+  margin: 0;
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+}
+
+.jip-learn-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jip-learn-list li {
+  font: var(--typo-body-m);
+  color: var(--jip-text-primary);
+  padding-left: 18px;
+  position: relative;
+}
+
+.jip-learn-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  background: var(--jip-gradient-gold-metallic);
+}
+
+.jip-syllabus-item {
+  padding: var(--jip-spacing-16);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 12px;
+  background: var(--jip-bg-subtle);
+}
+
+.jip-syllabus-item + .jip-syllabus-item {
+  margin-top: var(--jip-spacing-8);
+}
+
+.jip-instructor-block {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: var(--jip-spacing-24);
+}
+
+.jip-instructor-block img {
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--jip-border-gold);
+}
+
+.jip-course-sidebar {
+  position: sticky;
+  top: calc(80px + var(--jip-spacing-16));
+  height: fit-content;
+}
+
+.jip-enroll-card {
+  background: var(--jip-bg-default);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 18px;
+  padding: var(--jip-card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-16);
+}
+
+.jip-price-label {
+  margin: 0;
+  font: var(--typo-caption);
+  color: var(--jip-text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.jip-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--jip-spacing-8);
+}
+
+.jip-price-wrap strong {
+  font: var(--typo-display-s);
+  color: var(--jip-color-navy);
+}
+
+.jip-price-wrap span {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  text-decoration: line-through;
+}
+
+.jip-price-note {
+  margin: 0;
+  font: var(--typo-body-s);
+  color: var(--jip-text-accent);
+}
+
+.jip-include-list {
+  margin: 0;
+  padding-left: var(--jip-spacing-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-8);
+}
+
+.jip-include-list li {
+  font: var(--typo-body-s);
+  color: var(--jip-text-secondary);
+}
+
+.jip-related-courses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-24);
+}
+
+.jip-related-courses .course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--jip-spacing-32);
+}
+
+.jip-related-courses .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0;
+  border-left: 4px solid var(--jip-color-gold);
+  padding-left: var(--jip-spacing-16);
+}
+
+.jip-related-courses .category-title {
+  margin: 0;
+  font: var(--typo-h1);
+  color: var(--jip-color-navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.jip-related-courses .view-all {
+  font: var(--typo-label);
+  color: var(--jip-text-accent);
+  transition: color 0.2s;
+}
+
+.jip-related-courses .view-all:hover {
+  color: var(--jip-color-navy);
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .jip-course-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .jip-course-hero-media {
+    min-height: 300px;
+  }
+
+  .jip-course-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .jip-course-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .jip-course-detail-page {
+    padding: var(--jip-spacing-16);
+    gap: var(--jip-spacing-32);
+  }
+
+  .jip-course-hero {
+    padding: var(--jip-spacing-24);
+    border-radius: 22px;
+  }
+
+  .jip-detail-title {
+    font: var(--typo-display-s);
+  }
+
+  .jip-detail-subtitle {
+    max-width: 100%;
+  }
+
+  .jip-detail-actions .jip-button {
+    min-width: 100%;
+  }
+
+  .jip-instructor-block {
+    grid-template-columns: 1fr;
+  }
+
+  .jip-instructor-block img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .jip-related-courses .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Container chính cho Hero Content */
+.jip-course-hero-content {
+  max-width: 800px; /* Giới hạn độ rộng để dễ đọc */
+  padding: var(--jip-spacing-64) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--jip-spacing-24);
+  color: var(--jip-color-navy);
+}
+
+/* 1. Breadcrumb: Làm mờ và nhỏ gọn */
+.jip-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.jip-breadcrumb a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.jip-breadcrumb a:hover {
+  opacity: 1;
+  color: var(--jip-color-gold);
+}
+
+/* 2. Badges: Tạo điểm nhấn bằng Gradient hoặc Border tinh tế */
+.jip-detail-badges {
+  display: flex;
+  gap: 12px;
+}
+
+.jip-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--jip-color-gold);
+  background-color: var(--jip-gradient-gold-metallic);
+}
+
+.jip-tag-soft {
+  background: var(--jip-color-navy);
+  color: var(--jip-color-cream);
+  border: none;
+}
+
+/* 3. Typography: Phóng đại tiêu đề để tạo sự choáng ngợp */
+.jip-detail-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Tự điều chỉnh theo màn hình */
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0;
+  color: var(--jip-color-navy);
+  text-wrap: balance; /* Tránh ngắt dòng xấu */
+}
+
+.jip-detail-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  opacity: 0.85;
+  border-left: 3px solid var(--jip-color-gold);
+  padding-left: 20px;
+  color: var(--jip-color-navy);
+}
+
+/* 4. Meta Pills: Dàn hàng ngang tinh tế */
+.jip-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 12px 0;
+  padding: 16px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.jip-meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.jip-meta-pill i {
+  color: var(--jip-color-gold);
+  font-size: 16px;
+}
+
+/* 5. Actions: Khoảng cách giữa các nút */
+.jip-detail-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Hiệu ứng Responsive cho Mobile */
+@media (max-width: 768px) {
+  .jip-detail-actions {
+    flex-direction: column;
+  }
+  .jip-button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+.jip-course-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* Sidebar cố định độ rộng */
+  gap: var(--jip-spacing-64);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--jip-spacing-48) 20px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .jip-course-detail-layout {
+    grid-template-columns: 1fr; /* Chuyển về 1 cột trên tablet/mobile */
+    gap: var(--jip-spacing-32);
+  }
+}
+
+.jip-detail-block {
+  margin-bottom: var(--jip-spacing-48);
+}
+
+.jip-detail-block h2 {
+  font-size: 1.75rem;
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-24);
+  position: relative;
+}
+
+/* Hiệu ứng gạch chân trang trí cho tiêu đề */
+.jip-detail-block h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--jip-color-gold);
+  margin-top: 8px;
+}
+
+/* List học được gì (Checkmark list) */
+.jip-learn-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Chia 2 cột cho danh sách */
+  gap: 16px;
+}
+
+.jip-learn-list li {
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.5;
+}
+
+.jip-learn-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60; /* Màu xanh lá thành công */
+  font-weight: bold;
+}
+
+/* Syllabus Item (Accordion-style look) */
+.jip-syllabus-item {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.jip-syllabus-item:hover {
+  border-color: var(--jip-color-gold);
+  background: var(--jip-bg-default);
+}
+
+.jip-syllabus-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--jip-color-navy);
+}
+
+/* Instructor Block */
+.jip-instructor-block {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 32px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+html[data-theme="dark"] .jip-instructor-block {
+  background: #131313;
+}
+
+.jip-instructor-block img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.jip-course-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Tỉ lệ vàng cho nội dung và ảnh */
+  gap: var(--jip-spacing-64);
+  align-items: center;
+  padding: 80px 4%;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(212, 175, 55, 0.05) 0%,
+      transparent 50%
+    ),
+    linear-gradient(to bottom, #ffffff, var(--jip-bg-default));
+  overflow: hidden;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 1024px) {
+  .jip-course-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .jip-detail-meta,
+  .jip-detail-badges,
+  .jip-detail-actions {
+    justify-content: center;
+  }
+
+  .jip-detail-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+    border-left: none; /* Bỏ border khi ở mobile để căn giữa đẹp hơn */
+    padding-left: 0;
+  }
+}
+
+/* Badge hiệu ứng nổi */
+.jip-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Meta Pills: Thay đổi giao diện thành các thẻ nhỏ */
+.jip-meta-pill {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--jip-color-navy);
+  transition: transform 0.3s ease;
+}
+
+.jip-meta-pill:hover {
+  transform: translateY(-3px);
+  border-color: var(--jip-color-gold);
+}
+
+.jip-course-hero-media {
+  position: relative;
+  z-index: 2;
+  padding: 15px; /* Khoảng cách để tạo hiệu ứng viền kép */
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.2) 0%,
+    transparent 100%
+  );
+  border-radius: 30px;
+}
+
+.jip-course-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--jip-color-gold);
+  border-radius: 30px;
+  opacity: 0.3;
+  animation: pulse-gold 4s infinite alternate;
+}
+
+.jip-course-hero-media img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hiệu ứng khi lướt chuột vào ảnh */
+.jip-course-hero-media:hover img {
+  transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
+  box-shadow: 30px 30px 70px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes pulse-gold {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+.jip-detail-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Tinh chỉnh riêng cho nút Enroll để nó trông "Primary" hơn */
+.btn-enroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-enroll::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+}
+
+.btn-enroll:hover::after {
+  left: 120%;
+}
+
+.jip-course-sidebar {
+  position: sticky;
+  top: 100px; /* Cách đỉnh trình duyệt khi cuộn */
+  z-index: 10;
+}
+
+.jip-enroll-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  /* Đổ bóng sâu để tạo cảm giác card nổi hẳn lên khỏi nền */
+  box-shadow:
+    0 10px 30px rgba(0, 32, 77, 0.05),
+    0 20px 60px rgba(0, 32, 77, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hiệu ứng tia sáng chạy dọc viền Card (tùy chọn) */
+.jip-enroll-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--jip-gradient-gold-metallic);
+}
+
+.jip-price-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.jip-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.jip-price-wrap strong {
+  font-size: 3rem; /* Phóng đại giá chính */
+  color: var(--jip-color-navy);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.jip-price-wrap span {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.jip-price-note {
+  background: rgba(239, 68, 68, 0.08); /* Nền đỏ nhạt cực nhẹ */
+  color: #dc2626;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 12px;
+  border-left: 3px solid #dc2626;
+}
+
+.jip-include-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jip-include-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+/* Custom Checkmark Icon */
+.jip-include-list li::before {
+  content: "\f058"; /* FontAwesome check-circle */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--jip-color-gold);
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.jip-enroll-card .jip-button {
+  width: 100%; /* Chiếm toàn bộ chiều rộng card */
+  height: auto;
+  padding: 16px 20px;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+.jip-enroll-card .jip-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+}
+
+.jip-enroll-card .jip-button .main-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+}

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết khóa học</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../jip-checkbox.css" />
+    <link rel="stylesheet" href="../jip-card.css" />
+    <link rel="stylesheet" href="../jip-calendar.css" />
+    <link rel="stylesheet" href="../jip-input.css" />
+    <link rel="stylesheet" href="../jip-textarea.css" />
+    <link rel="stylesheet" href="../jip-cta.css" />
+    <link rel="stylesheet" href="../jip-select.css" />
+    <link rel="stylesheet" href="../jip-radio.css" />
+    <link rel="stylesheet" href="../jip-banner.css" />
+    <link rel="stylesheet" href="../jip-steps.css" />
+    <link rel="stylesheet" href="../jip-partners.css" />
+    <link rel="stylesheet" href="../jip-section-banner.css" />
+    <link rel="stylesheet" href="../jip-section-1.css" />
+    <link rel="stylesheet" href="../jip-promo-card.css" />
+    <link rel="stylesheet" href="../jip-media-section.css" />
+    <link rel="stylesheet" href="../jip-form.css" />
+    <link rel="stylesheet" href="./jip-course-section-1.css" />
+    <link rel="stylesheet" href="./jip-course-toolbar.css" />
+    <link rel="stylesheet" href="./jip-course-layout.css" />
+
+    <link rel="stylesheet" href="../page-config-ui.css" />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./jip-course-detail.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+Georgian:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-color: var(--jip-color-cream-light)">
+    <button id="settings-toggle">⚙</button>
+    <div id="settings-panel">
+      <div class="jip-settings-group">
+        <label class="jip-settings-label">
+          Phông tiêu đề
+          <select id="font-heading-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Phông nội dung
+          <select id="font-body-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Màu thương hiệu chính (Xanh navy)
+          <input
+            type="color"
+            id="navy-picker"
+            class="jip-settings-color"
+            data-token="--base-navy"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Màu nhấn thương hiệu (Vàng)
+          <input
+            type="color"
+            id="gold-picker"
+            class="jip-settings-color"
+            data-token="--base-gold"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Nền bề mặt (Sáng)
+          <input
+            type="color"
+            id="cream-picker"
+            class="jip-settings-color"
+            data-token="--base-cream-light"
+          />
+        </label>
+      </div>
+    </div>
+
+    <header class="jip-header">
+      <div class="jip-header-container">
+        <div class="jip-logo">
+          <img src="../img/aaaaaaaaaaaaaaaaa.webp" alt="" width="80px" />
+        </div>
+
+        <nav class="jip-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Trang chủ</a></li>
+            <li>
+              <a href="./course.html" class="nav-link active">Khóa học</a>
+            </li>
+            <li><a href="./component.html" class="nav-link">Thành phần</a></li>
+            <li><a href="./hiring.html" class="nav-link">Tuyển dụng</a></li>
+          </ul>
+        </nav>
+
+        <div class="jip-header-actions">
+          <button id="theme-toggle" aria-label="Chuyển giao diện">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="jip-button btn-enroll">
+            <span class="main-label">Liên hệ</span>
+            <div class="divider"><span class="diamond"></span></div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="jip-course-detail-page">
+      <section class="jip-course-hero">
+        <div class="jip-course-hero-content">
+          <nav class="jip-breadcrumb" aria-label="Điều hướng">
+            <a href="./course.html">Khóa học</a>
+            <span>/</span>
+            <span>Lãnh đạo</span>
+            <span>/</span>
+            <span aria-current="page">Nghệ thuật lãnh đạo toàn diện</span>
+          </nav>
+
+          <div class="jip-detail-badges">
+            <span
+              class="jip-tag"
+              style="background-color: var(--jip-gradient-gold-metallic)"
+              >Chương trình cao cấp</span
+            >
+            <span class="jip-tag jip-tag-soft">Đánh giá cao 4.9</span>
+          </div>
+
+          <h1 class="jip-detail-title">Nghệ thuật lãnh đạo toàn diện</h1>
+          <p class="jip-detail-subtitle">
+            Khóa học thực chiến giúp bạn xây dựng tư duy lãnh đạo, điều phối đội
+            nhóm và ra quyết định chiến lược trong môi trường tăng trưởng cao.
+          </p>
+
+          <div class="jip-detail-meta">
+            <div class="jip-meta-pill">
+              <i class="fa-regular fa-clock"></i>
+              <span>12 tuần</span>
+            </div>
+            <div class="jip-meta-pill">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Trung cấp</span>
+            </div>
+            <div class="jip-meta-pill">
+              <i class="fa-solid fa-globe"></i>
+              <span>Tiếng Anh + Tiếng Việt</span>
+            </div>
+            <div class="jip-meta-pill">
+              <i class="fa-solid fa-users"></i>
+              <span>2.600+ học viên</span>
+            </div>
+          </div>
+
+          <div class="jip-detail-actions">
+            <button class="jip-button btn-enroll">
+              <span class="main-label">Đăng ký ngay</span>
+              <div class="divider"><span class="diamond"></span></div>
+              <span class="sub-label">Tham gia kỳ học sắp tới</span>
+            </button>
+            <button class="jip-button btn-learn-outline">
+              <span class="main-label">Tải đề cương</span>
+              <div class="divider"><span class="diamond"></span></div>
+              <span class="sub-label">Chi tiết nội dung từng học phần</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="jip-course-hero-media">
+          <img src="../img/1000007087.png" alt="Ảnh khóa học" />
+        </div>
+      </section>
+
+      <section class="jip-course-detail-layout">
+        <div class="jip-course-content">
+          <article class="jip-detail-block">
+            <h2>Tổng quan khóa học</h2>
+            <p>
+              Chương trình tập trung vào framework lãnh đạo hiện đại: giao tiếp
+              chiến lược, huấn luyện nhân tài và ra quyết định dưới áp lực. Bạn
+              sẽ học qua tình huống thực tế, chuyên đề nhóm và dự án cuối kỳ
+              theo bối cảnh doanh nghiệp của bạn.
+            </p>
+            <p>
+              Sau mỗi tuần, bạn nhận phản hồi từ cố vấn để cải thiện phong cách
+              lãnh đạo và khả năng triển khai hành động ở cấp team/department.
+            </p>
+          </article>
+
+          <article class="jip-detail-block">
+            <h2>Bạn sẽ học được gì</h2>
+            <ul class="jip-learn-list">
+              <li>Xây dựng tuyên ngôn lãnh đạo rõ ràng cho đội nhóm.</li>
+              <li>Thiết kế mô hình quản trị hiệu suất theo mục tiêu.</li>
+              <li>Huấn luyện 1:1 và xử lý xung đột nội bộ hiệu quả.</li>
+              <li>Ra quyết định chiến lược dựa trên dữ liệu thực tế.</li>
+              <li>Triển khai lộ trình 90 ngày cho đội ngũ của bạn.</li>
+            </ul>
+          </article>
+
+          <article class="jip-detail-block">
+            <h2>Lộ trình học</h2>
+            <div class="jip-syllabus-item">
+              <h3>Học phần 01 - Nền tảng lãnh đạo</h3>
+              <p>
+                Tư duy, thương hiệu cá nhân và đánh giá phong cách lãnh đạo.
+              </p>
+            </div>
+            <div class="jip-syllabus-item">
+              <h3>Học phần 02 - Hệ thống hiệu suất đội nhóm</h3>
+              <p>
+                Thiết lập mục tiêu, cơ chế chịu trách nhiệm và cấu trúc họp hiệu
+                quả.
+              </p>
+            </div>
+            <div class="jip-syllabus-item">
+              <h3>Học phần 03 - Giao tiếp chiến lược</h3>
+              <p>
+                Kể chuyện lãnh đạo, xử lý hội thoại khó và kỹ năng tạo ảnh
+                hưởng.
+              </p>
+            </div>
+            <div class="jip-syllabus-item">
+              <h3>Học phần 04 - Dự án lãnh đạo cuối khóa</h3>
+              <p>
+                Dự án capstone có phản hồi từ cố vấn và kế hoạch phát triển khả
+                thi.
+              </p>
+            </div>
+          </article>
+
+          <article class="jip-detail-block jip-instructor-block">
+            <img
+              src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?q=80&w=1586&auto=format&fit=crop"
+              alt="Ảnh giảng viên"
+            />
+            <div>
+              <h2>Giảng viên</h2>
+              <h3>GS. Alexander Reed</h3>
+              <p>
+                15+ năm kinh nghiệm đào tạo năng lực lãnh đạo cho startup,
+                scale-up và tập đoàn đa quốc gia tại Nhật Bản, Singapore và Việt
+                Nam.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="jip-course-sidebar">
+          <div class="jip-enroll-card">
+            <p class="jip-price-label">Học phí chương trình</p>
+            <div class="jip-price-wrap">
+              <strong>$249</strong>
+              <span>$399</span>
+            </div>
+            <p class="jip-price-note">Ưu đãi đến hết tuần này cho khóa 03.</p>
+
+            <ul class="jip-include-list">
+              <li>12 tuần học + 8 buổi chuyên đề trực tiếp</li>
+              <li>Phản hồi từ cố vấn theo tuần</li>
+              <li>Cộng đồng học viên riêng tư</li>
+              <li>Chứng nhận chuẩn Học viện JIP Nhật Bản</li>
+            </ul>
+
+            <button class="jip-button btn-learn-gold">
+              <span class="main-label">Giữ chỗ ngay</span>
+              <div class="divider"><span class="diamond"></span></div>
+              <span class="sub-label">Số lượng chỗ có hạn</span>
+            </button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="jip-related-courses">
+        <div class="section-header">
+          <h2 class="category-title">Khóa học liên quan</h2>
+          <a href="./course.html" class="view-all">Xem tất cả</a>
+        </div>
+
+        <div class="course-grid">
+          <div class="jip-course-card">
+            <div class="jip-card-media">
+              <img src="../img/1000007087.png" alt="Ảnh khóa học" />
+              <div class="jip-badge-category">Khóa học cao cấp</div>
+            </div>
+
+            <div class="jip-card-content">
+              <div class="jip-card-header">
+                <h3 class="jip-course-title">Giao tiếp tinh hoa</h3>
+                <p class="jip-course-instructor">
+                  Giảng viên: TS. Michelle Tan
+                </p>
+              </div>
+
+              <div class="divider">
+                <div class="diamond"></div>
+              </div>
+
+              <div class="jip-course-meta">
+                <div class="meta-item">
+                  <span class="meta-label">Thời lượng:</span>
+                  <span class="meta-value">8 tuần</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Cấp độ:</span>
+                  <span class="meta-value">Cơ bản</span>
+                </div>
+              </div>
+
+              <button class="jip-button btn-enroll">
+                <span class="main-label">Đăng ký ngay</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Bắt đầu hành trình học tập</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="jip-course-card">
+            <div class="jip-card-media">
+              <img src="../img/1000007097.png" alt="Ảnh khóa học" />
+            </div>
+
+            <div class="jip-card-content">
+              <div class="jip-card-header">
+                <h3 class="jip-course-title">Ra quyết định cho nhà quản lý</h3>
+                <p class="jip-course-instructor">Giảng viên: Kenji Nakamura</p>
+              </div>
+
+              <div class="divider">
+                <div class="diamond"></div>
+              </div>
+
+              <div class="jip-course-meta">
+                <div class="meta-item">
+                  <span class="meta-label">Thời lượng:</span>
+                  <span class="meta-value">10 tuần</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Cấp độ:</span>
+                  <span class="meta-value">Trung cấp</span>
+                </div>
+              </div>
+
+              <button class="jip-button btn-learn-outline">
+                <span class="main-label">Tìm hiểu thêm</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Khám phá lộ trình học</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="jip-course-card">
+            <div class="jip-card-media">
+              <img
+                src="../img/Gemini_Generated_Image_t6j6yvt6j6yvt6j6.png"
+                alt="Ảnh khóa học"
+              />
+            </div>
+
+            <div class="jip-card-content">
+              <div class="jip-card-header">
+                <h3 class="jip-course-title">
+                  Huấn luyện đội ngũ hiệu suất cao
+                </h3>
+                <p class="jip-course-instructor">Giảng viên: Yuki Sato</p>
+              </div>
+
+              <div class="divider">
+                <div class="diamond"></div>
+              </div>
+
+              <div class="jip-course-meta">
+                <div class="meta-item">
+                  <span class="meta-label">Thời lượng:</span>
+                  <span class="meta-value">6 tuần</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Cấp độ:</span>
+                  <span class="meta-value">Nâng cao</span>
+                </div>
+              </div>
+
+              <button class="jip-button btn-enroll">
+                <span class="main-label">Đăng ký ngay</span>
+                <div class="divider"><span class="diamond"></span></div>
+                <span class="sub-label">Bắt đầu hành trình học tập</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="jip-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-text">JIP</span>
+            <div class="divider">
+              <span class="diamond"></span>
+            </div>
+            <span class="logo-subtext">HỌC VIỆN</span>
+          </div>
+          <p class="brand-description">
+            Nâng tầm năng lực chuyên môn thông qua các khóa học chuẩn quốc tế và
+            lộ trình học tập chuyên sâu tại Nhật Bản.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">LI</a>
+            <a href="#" class="social-icon">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Chương trình</h4>
+          <ul>
+            <li><a href="#">Khóa học chuyên sâu</a></li>
+            <li><a href="#">Đào tạo doanh nghiệp</a></li>
+            <li><a href="#">Lịch khai giảng</a></li>
+            <li><a href="#">Học bổng JIP</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Hỗ trợ</h4>
+          <ul>
+            <li><a href="#">Trung tâm trợ giúp</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Bản tin</h4>
+          <p>Đăng ký nhận cập nhật về khóa học mới và ưu đãi độc quyền.</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Email của bạn..."
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">GỬI</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider">
+          <span class="diamond"></span>
+        </div>
+        <p class="copyright">
+          © 2026 Học viện JIP Nhật Bản. Bảo lưu mọi quyền. Thiết kế theo chuẩn
+          đào tạo tinh hoa.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved) {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.dataset.theme;
+
+        if (current === "dark") {
+          html.dataset.theme = "light";
+          localStorage.setItem("theme", "light");
+        } else {
+          html.dataset.theme = "dark";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
+
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      media.addEventListener("change", () => {
+        const saved = localStorage.getItem("theme");
+        if (!saved) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      });
+
+      const settingsToggle = document.getElementById("settings-toggle");
+      const settingsPanel = document.getElementById("settings-panel");
+
+      settingsToggle.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
+      });
+
+      const fonts = [
+        "Cinzel",
+        "Playfair Display",
+        "Cormorant Garamond",
+        "Libre Baskerville",
+        "Inter",
+        "Roboto",
+        "PT Sans",
+      ];
+
+      const headingSelect = document.getElementById("font-heading-select");
+      const bodySelect = document.getElementById("font-body-select");
+
+      fonts.forEach((font) => {
+        const opt1 = document.createElement("option");
+        opt1.value = font;
+        opt1.textContent = font;
+        headingSelect.appendChild(opt1);
+
+        const opt2 = opt1.cloneNode(true);
+        bodySelect.appendChild(opt2);
+      });
+
+      const root = document.documentElement;
+
+      function loadFont(font) {
+        const id = `font-${font.replace(/\s+/g, "-")}`;
+        if (document.getElementById(id)) return;
+
+        const link = document.createElement("link");
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = `https://fonts.googleapis.com/css2?family=${font.replace(
+          /\s+/g,
+          "+",
+        )}:wght@300;400;500;600;700&display=swap`;
+        document.head.appendChild(link);
+      }
+
+      headingSelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-heading",
+          `"${e.target.value}", serif`,
+        );
+      });
+
+      bodySelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-body",
+          `"${e.target.value}", sans-serif`,
+        );
+      });
+
+      document.getElementById("navy-picker").oninput = (e) =>
+        root.style.setProperty("--base-navy", e.target.value);
+      document.getElementById("gold-picker").oninput = (e) =>
+        root.style.setProperty("--base-gold", e.target.value);
+      document.getElementById("cream-picker").oninput = (e) =>
+        root.style.setProperty("--base-cream-light", e.target.value);
+    </script>
+  </body>
+</html>
