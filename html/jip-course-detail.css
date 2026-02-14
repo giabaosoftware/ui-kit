@@ -889,3 +889,105 @@ html[data-theme="dark"] .jip-instructor-block {
   font-size: 1.1rem;
   font-weight: 700;
 }
+
+/* Dark theme tuning for course detail */
+html[data-theme="dark"] .jip-course-hero {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(212, 175, 55, 0.12) 0%,
+      transparent 48%
+    ),
+    linear-gradient(180deg, #1b1b1b 0%, #121212 100%);
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+html[data-theme="dark"] .jip-course-hero-content {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-breadcrumb,
+html[data-theme="dark"] .jip-breadcrumb a {
+  color: var(--jip-color-gold-dark);
+}
+
+html[data-theme="dark"] .jip-tag {
+  background: rgba(212, 175, 55, 0.16);
+  border-color: rgba(212, 175, 55, 0.42);
+  color: #f7e7b7;
+}
+
+html[data-theme="dark"] .jip-tag-soft {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--jip-text-primary);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+html[data-theme="dark"] .jip-detail-title,
+html[data-theme="dark"] .jip-detail-subtitle {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-detail-subtitle {
+  border-left-color: rgba(212, 175, 55, 0.5);
+}
+
+html[data-theme="dark"] .jip-detail-meta {
+  border-top-color: rgba(255, 255, 255, 0.08);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .jip-meta-pill {
+  color: var(--jip-text-primary);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+html[data-theme="dark"] .jip-detail-block,
+html[data-theme="dark"] .jip-syllabus-item,
+html[data-theme="dark"] .jip-enroll-card {
+  background: #1b1b1b;
+  border-color: rgba(212, 175, 55, 0.22);
+}
+
+html[data-theme="dark"] .jip-detail-block h2,
+html[data-theme="dark"] .jip-detail-block h3,
+html[data-theme="dark"] .jip-price-wrap strong,
+html[data-theme="dark"] .jip-related-courses .category-title,
+html[data-theme="dark"] .jip-meta-pill {
+  color: var(--jip-text-primary);
+}
+
+html[data-theme="dark"] .jip-detail-block p,
+html[data-theme="dark"] .jip-learn-list li,
+html[data-theme="dark"] .jip-include-list li,
+html[data-theme="dark"] .jip-price-label,
+html[data-theme="dark"] .jip-price-wrap span {
+  color: var(--jip-text-secondary);
+}
+
+html[data-theme="dark"] .jip-price-note {
+  background: rgba(220, 38, 38, 0.16);
+  color: #fca5a5;
+  border-left-color: rgba(220, 38, 38, 0.8);
+}
+
+html[data-theme="dark"] .jip-related-courses .section-header {
+  border-left-color: var(--jip-color-gold-dark);
+}
+
+html[data-theme="dark"] .jip-related-courses .view-all {
+  color: var(--jip-color-gold-dark);
+}
+
+html[data-theme="dark"] .jip-related-courses .view-all:hover {
+  color: #f7e7b7;
+}
+
+html[data-theme="dark"] .jip-course-hero-media::after {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(212, 175, 55, 0.12) 100%
+  );
+}

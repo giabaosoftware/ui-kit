@@ -35,6 +35,10 @@
   z-index: 5;
 }
 
+.jip-course-instructor {
+  color: var(--jip-color-navy);
+}
+
 .jip-course-card:hover::before {
   left: 125%;
 }
