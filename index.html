@@ -24,6 +24,64 @@
     <link rel="stylesheet" href="./page-config-ui.css" />
 
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      .index-enterprise-motion .jip-banner-content {
+        animation: indexHeroEnter 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+
+      @keyframes indexHeroEnter {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .index-enterprise-motion.js-motion .reveal-enterprise {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(1px);
+        transition:
+          opacity 0.72s cubic-bezier(0.2, 0.8, 0.2, 1),
+          transform 0.72s cubic-bezier(0.2, 0.8, 0.2, 1),
+          filter 0.6s ease;
+        will-change: transform, opacity;
+      }
+
+      .index-enterprise-motion.js-motion .reveal-enterprise.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      .index-enterprise-motion.js-motion .jip-course-grid .reveal-enterprise:nth-child(2),
+      .index-enterprise-motion.js-motion .video-grid .reveal-enterprise:nth-child(2),
+      .index-enterprise-motion.js-motion .jip-journey-steps .reveal-enterprise:nth-child(2) {
+        transition-delay: 0.08s;
+      }
+
+      .index-enterprise-motion.js-motion .jip-course-grid .reveal-enterprise:nth-child(3),
+      .index-enterprise-motion.js-motion .video-grid .reveal-enterprise:nth-child(3),
+      .index-enterprise-motion.js-motion .jip-journey-steps .reveal-enterprise:nth-child(3) {
+        transition-delay: 0.16s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .index-enterprise-motion .jip-banner-content {
+          animation: none;
+        }
+
+        .index-enterprise-motion.js-motion .reveal-enterprise {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          transition: none;
+        }
+      }
+    </style>
 
     <link
       rel="stylesheet"
@@ -39,7 +97,10 @@
       rel="stylesheet"
     />
   </head>
-  <body style="background-color: var(--jip-color-cream-light)">
+  <body
+    class="index-enterprise-motion"
+    style="background-color: var(--jip-color-cream-light)"
+  >
     <!-- Setting -->
     <button id="settings-toggle">⚙</button>
     <div id="settings-panel">
@@ -879,5 +940,34 @@
 
     document.getElementById("cream-picker").oninput = (e) =>
       root.style.setProperty("--base-cream-light", e.target.value);
+
+    // Enterprise motion system for index page
+    const motionTargets = document.querySelectorAll(
+      ".jip-journey-container .jip-step, .jip-section-header, .jip-hero, .jip-course-grid .jip-course-card, .video-grid .video-card, .register-container .jip-registration-card, .jip-footer .footer-container > *",
+    );
+    document.body.classList.add("js-motion");
+    motionTargets.forEach((el) => el.classList.add("reveal-enterprise"));
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+    if (prefersReducedMotion.matches) {
+      motionTargets.forEach((el) => el.classList.add("is-visible"));
+    } else if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+      );
+      motionTargets.forEach((el) => observer.observe(el));
+    } else {
+      motionTargets.forEach((el) => el.classList.add("is-visible"));
+    }
   </script>
 </html>

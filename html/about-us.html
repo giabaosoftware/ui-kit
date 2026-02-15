@@ -27,7 +27,10 @@
     />
   </head>
 
-  <body style="background-color: var(--jip-color-cream-light)">
+  <body
+    class="about-enterprise"
+    style="background-color: var(--jip-color-cream-light)"
+  >
     <button id="settings-toggle">⚙</button>
     <div id="settings-panel">
       <div class="jip-settings-group">
@@ -111,25 +114,51 @@
           <span class="dna-strand"></span>
         </div>
 
-        <div class="jip-container">
-          <span class="jip-banner-tagline">About Us</span>
-          <h1 class="jip-banner-title">
-            Học viện JIP
-            <span class="text-gradient"
-              >Đào tạo năng lực doanh nghiệp theo chuẩn Nhật Bản</span
-            >
-          </h1>
-          <p class="jip-banner-description">
-            JIP là hệ sinh thái đào tạo enterprise tập trung vào chuyển hóa năng
-            lực làm việc thành kết quả kinh doanh. Chúng tôi triển khai mô hình
-            học tập có cấu trúc, đánh giá định lượng và cơ chế đồng hành xuyên
-            suốt cho cá nhân, quản lý và tổ chức.
-          </p>
-          <button class="jip-button btn-learn-gold btn-gold-glow">
-            <span class="main-label">Tìm hiểu thêm</span>
-            <div class="divider"><span class="diamond"></span></div>
-            <span class="sub-label">Khám phá khóa học</span>
-          </button>
+        <div class="jip-container about-hero-layout">
+          <div class="about-hero-main">
+            <span class="jip-banner-tagline">About Us</span>
+            <h1 class="jip-banner-title">
+              Học viện JIP
+              <span class="text-gradient"
+                >Đào tạo năng lực doanh nghiệp theo chuẩn Nhật Bản</span
+              >
+            </h1>
+            <p class="jip-banner-description">
+              JIP là hệ sinh thái đào tạo enterprise tập trung vào chuyển hóa
+              năng lực làm việc thành kết quả kinh doanh. Chúng tôi triển khai
+              mô hình học tập có cấu trúc, đánh giá định lượng và cơ chế đồng
+              hành xuyên suốt cho cá nhân, quản lý và tổ chức.
+            </p>
+            <button class="jip-button btn-learn-gold btn-gold-glow hero-cta">
+              <span class="main-label">Tìm hiểu thêm</span>
+              <div class="divider"><span class="diamond"></span></div>
+              <span class="sub-label">Khám phá khóa học</span>
+            </button>
+          </div>
+
+          <aside class="about-hero-panel" aria-label="Năng lực triển khai JIP">
+            <h3 class="panel-title">Enterprise Proof</h3>
+            <div class="panel-line"></div>
+            <div class="panel-metrics">
+              <div class="metric-item">
+                <span class="metric-value">15+</span>
+                <span class="metric-label">Năm triển khai đào tạo</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">120+</span>
+                <span class="metric-label">Đối tác doanh nghiệp</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">9.2/10</span>
+                <span class="metric-label">Điểm hài lòng học viên</span>
+              </div>
+            </div>
+            <ul class="panel-notes">
+              <li>Framework năng lực theo vai trò và cấp bậc.</li>
+              <li>Đo lường đầu ra theo KPI công việc thực tế.</li>
+              <li>Mentoring đa tầng cho cá nhân và đội ngũ.</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
@@ -157,6 +186,64 @@
             cải tiến định kỳ.
           </p>
         </article>
+      </section>
+
+      <section class="jip-section jip-programs">
+        <div class="jip-section-header">
+          <span class="jip-subtitle">Program Architecture</span>
+          <h2 class="jip-main-heading">Hệ chương trình đào tạo</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="jip-track-grid">
+          <article class="track-card leadership-track">
+            <div class="track-body">
+              <span class="track-tag">Strategic</span>
+              <h3 class="track-name">Leadership Track</h3>
+              <p class="track-desc">
+                Nâng năng lực lãnh đạo, ra quyết định, điều phối nhóm và quản
+                trị thay đổi cho cấp quản lý.
+              </p>
+              <div class="track-footer">Khung năng lực quản lý →</div>
+            </div>
+          </article>
+
+          <article class="track-card operation-track">
+            <div class="track-body">
+              <span class="track-tag">Efficiency</span>
+              <h3 class="track-name">Operation Excellence</h3>
+              <p class="track-desc">
+                Chuẩn hóa vận hành, tối ưu quy trình, cải thiện chất lượng dịch
+                vụ nội bộ và năng suất tổ chức.
+              </p>
+              <div class="track-footer">Khung năng lực vận hành →</div>
+            </div>
+          </article>
+
+          <article class="track-card professional-track">
+            <div class="track-body">
+              <span class="track-tag">Professional</span>
+              <h3 class="track-name">Professional Skill</h3>
+              <p class="track-desc">
+                Tăng cường năng lực giao tiếp, thuyết trình, báo cáo và phối hợp
+                đa phòng ban.
+              </p>
+              <div class="track-footer">Khung năng lực cá nhân →</div>
+            </div>
+          </article>
+
+          <article class="track-card corporate-track">
+            <div class="track-body">
+              <span class="track-tag">Enterprise</span>
+              <h3 class="track-name">Corporate Academy</h3>
+              <p class="track-desc">
+                Xây dựng học viện nội bộ theo ADN doanh nghiệp: nội dung, chuẩn
+                đánh giá và hệ vận hành tùy chỉnh.
+              </p>
+              <div class="track-footer">Giải pháp cho doanh nghiệp →</div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="jip-section jip-about-mission">
@@ -308,64 +395,6 @@
           </article>
         </div>
       </section>
-
-      <section class="jip-section jip-programs">
-        <div class="jip-section-header">
-          <span class="jip-subtitle">Program Architecture</span>
-          <h2 class="jip-main-heading">Hệ chương trình đào tạo</h2>
-          <div class="header-line"></div>
-        </div>
-
-        <div class="jip-track-grid">
-          <article class="track-card leadership-track">
-            <div class="track-body">
-              <span class="track-tag">Strategic</span>
-              <h3 class="track-name">Leadership Track</h3>
-              <p class="track-desc">
-                Nâng năng lực lãnh đạo, ra quyết định, điều phối nhóm và quản
-                trị thay đổi cho cấp quản lý.
-              </p>
-              <div class="track-footer">Khung năng lực quản lý →</div>
-            </div>
-          </article>
-
-          <article class="track-card operation-track">
-            <div class="track-body">
-              <span class="track-tag">Efficiency</span>
-              <h3 class="track-name">Operation Excellence</h3>
-              <p class="track-desc">
-                Chuẩn hóa vận hành, tối ưu quy trình, cải thiện chất lượng dịch
-                vụ nội bộ và năng suất tổ chức.
-              </p>
-              <div class="track-footer">Khung năng lực vận hành →</div>
-            </div>
-          </article>
-
-          <article class="track-card professional-track">
-            <div class="track-body">
-              <span class="track-tag">Professional</span>
-              <h3 class="track-name">Professional Skill</h3>
-              <p class="track-desc">
-                Tăng cường năng lực giao tiếp, thuyết trình, báo cáo và phối hợp
-                đa phòng ban.
-              </p>
-              <div class="track-footer">Khung năng lực cá nhân →</div>
-            </div>
-          </article>
-
-          <article class="track-card corporate-track">
-            <div class="track-body">
-              <span class="track-tag">Enterprise</span>
-              <h3 class="track-name">Corporate Academy</h3>
-              <p class="track-desc">
-                Xây dựng học viện nội bộ theo ADN doanh nghiệp: nội dung, chuẩn
-                đánh giá và hệ vận hành tùy chỉnh.
-              </p>
-              <div class="track-footer">Giải pháp cho doanh nghiệp →</div>
-            </div>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="jip-footer">
@@ -373,7 +402,9 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <span class="logo-text">JIP</span>
-            <div class="divider"><span class="diamond"></span></div>
+            <div class="divider">
+              <span class="diamond"></span>
+            </div>
             <span class="logo-subtext">HỌC VIỆN</span>
           </div>
           <p class="brand-description">
@@ -403,20 +434,34 @@
             <li><a href="#">Trung tâm trợ giúp</a></li>
             <li><a href="#">Chính sách bảo mật</a></li>
             <li><a href="#">Điều khoản dịch vụ</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Đăng nhập</a></li>
           </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Bản tin</h4>
+          <p>Đăng ký nhận cập nhật về khóa học mới và ưu đãi độc quyền.</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Email của bạn..."
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">GỬI</button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div class="divider"><span class="diamond"></span></div>
+        <div class="divider">
+          <span class="diamond"></span>
+        </div>
         <p class="copyright">
           © 2026 Học viện JIP Nhật Bản. Bảo lưu mọi quyền. Thiết kế theo chuẩn
           đào tạo tinh hoa.
         </p>
       </div>
     </footer>
-
     <script>
       (function () {
         const saved = localStorage.getItem("theme");
@@ -511,6 +556,35 @@
 
       document.getElementById("cream-picker").oninput = (e) =>
         root.style.setProperty("--base-cream-light", e.target.value);
+
+      // Enterprise motion: reveal blocks on scroll
+      const animatedTargets = document.querySelectorAll(
+        ".jip-section-header, .jip-card-premium, .jip-mission-card, .jip-value-card, .jip-step-card, .track-card",
+      );
+      document.body.classList.add("js-motion");
+      animatedTargets.forEach((el) => el.classList.add("reveal-enterprise"));
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      if (reduceMotion.matches) {
+        animatedTargets.forEach((el) => el.classList.add("is-visible"));
+      } else if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+        );
+        animatedTargets.forEach((el) => observer.observe(el));
+      } else {
+        animatedTargets.forEach((el) => el.classList.add("is-visible"));
+      }
     </script>
   </body>
 </html>
