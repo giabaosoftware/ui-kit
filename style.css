@@ -853,6 +853,8 @@ html[data-theme="dark"] #theme-toggle i::before {
 }
 
 .jip-nav {
+  box-shadow: none !important;
+
   position: absolute;
   left: 50%;
   transform: translateX(
