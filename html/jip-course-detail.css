@@ -1,4 +1,5 @@
 .jip-course-detail-page {
+  position: relative;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -12,7 +13,6 @@
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
 
-  border: 1px solid var(--jip-border-gold);
   border-radius: 28px;
   padding: var(--jip-spacing-32);
 }
@@ -130,10 +130,6 @@
 }
 
 /* Hiệu ứng khi Hover: Ảnh phóng to nhẹ và sáng lên */
-.jip-course-hero-media:hover img {
-  transform: scale(1.08); /* Phóng to nhẹ nhàng */
-  filter: brightness(1.05) contrast(1.1);
-}
 
 /* Thêm một lớp lấp lánh (Shine effect) quét qua khi hover */
 .jip-course-hero-media::before {
@@ -639,7 +635,7 @@ html[data-theme="dark"] .jip-instructor-block {
       rgba(212, 175, 55, 0.05) 0%,
       transparent 50%
     ),
-    linear-gradient(to bottom, #ffffff, var(--jip-bg-default));
+    linear-gradient(to bottom, #ffffff, var(--jip-color-navy));
   overflow: hidden;
 }
 
@@ -699,6 +695,7 @@ html[data-theme="dark"] .jip-instructor-block {
   position: relative;
   z-index: 2;
   padding: 15px; /* Khoảng cách để tạo hiệu ứng viền kép */
+  height: 40vh;
   background: linear-gradient(
     135deg,
     rgba(212, 175, 55, 0.2) 0%,
@@ -711,7 +708,6 @@ html[data-theme="dark"] .jip-instructor-block {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid var(--jip-color-gold);
   border-radius: 30px;
   opacity: 0.3;
 }
@@ -720,7 +716,6 @@ html[data-theme="dark"] .jip-instructor-block {
   width: 100%;
   border-radius: 20px;
   display: block;
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -918,7 +913,6 @@ html[data-theme="dark"] .jip-tag-soft {
   border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
-html[data-theme="dark"] .jip-detail-title,
 html[data-theme="dark"] .jip-detail-subtitle {
   color: var(--jip-text-primary);
 }

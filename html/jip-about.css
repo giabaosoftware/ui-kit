@@ -1,0 +1,711 @@
+/* --- HERO SECTION BASE --- */
+.jip-about-hero {
+  position: relative;
+  min-height: 60vh; /* Tăng chiều cao để tạo cảm giác thoáng đạt (Zen) */
+  display: flex;
+  align-items: center;
+  background-color: var(--jip-color-navy);
+  overflow: hidden;
+  padding: var(--jip-spacing-80) 0;
+}
+
+.jip-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--jip-container-gutter);
+  position: relative;
+  z-index: 10;
+}
+
+/* --- TEXT STYLING --- */
+.jip-banner-tagline {
+  font: var(--typo-label);
+  color: var(--jip-color-gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: var(--jip-spacing-16);
+  border-left: 3px solid var(--jip-color-gold);
+  padding-left: var(--jip-spacing-16);
+}
+
+.jip-banner-title {
+  font: var(--typo-display-l);
+  color: var(--jip-text-on-brand);
+  margin-bottom: var(--jip-spacing-24);
+  line-height: 1.1;
+}
+
+.text-gradient {
+  background: var(--jip-gradient-gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.jip-banner-description {
+  font: var(--typo-body-l);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* --- ADN ANIMATION (THE GOLDEN THREAD) --- */
+.jip-dna-flow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.dna-strand {
+  position: absolute;
+  width: 150%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--jip-color-gold),
+    transparent
+  );
+  left: -25%;
+  transform: rotate(-25deg);
+  filter: blur(1px);
+  animation: dna-flow 12s linear infinite;
+}
+
+.dna-strand:nth-child(1) {
+  top: 20%;
+  animation-duration: 15s;
+}
+.dna-strand:nth-child(2) {
+  top: 50%;
+  animation-duration: 20s;
+  animation-delay: -5s;
+  opacity: 0.5;
+}
+.dna-strand:nth-child(3) {
+  top: 80%;
+  animation-duration: 18s;
+  animation-delay: -2s;
+}
+
+@keyframes dna-flow {
+  0% {
+    transform: rotate(-25deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(-25deg) translateX(100%);
+  }
+}
+
+/* --- INTERACTIVE ELEMENT --- */
+.btn-gold-glow {
+  margin-top: var(--jip-spacing-32);
+  padding: 14px 32px;
+  background: var(--jip-gradient-gold-metallic);
+  border: none;
+  border-radius: var(--jip-btn-radius);
+  font: var(--typo-h3);
+  color: var(--jip-color-navy);
+  cursor: pointer;
+  box-shadow: var(--jip-checkbox-glow);
+  transition: var(--transition-smooth);
+}
+
+.btn-gold-glow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* 1. Header Decor: Gạch chân kiểu phân cấp của Nhật */
+.jip-heading-decorated {
+  position: relative;
+  display: inline-block;
+  padding-bottom: var(--jip-spacing-8);
+  color: var(--jip-color-navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.jip-heading-decorated::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--jip-gradient-gold-metallic);
+}
+
+/* 2. Card Premium: Hiệu ứng chiều sâu và chất liệu */
+.jip-card-premium {
+  position: relative;
+  background: var(--jip-color-cream-light);
+  border: 1px solid var(--jip-border-gold);
+  border-left: 5px solid var(--jip-color-navy); /* Nhấn mạnh sự kỷ luật */
+  box-shadow: 0 10px 30px rgba(0, 32, 96, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.jip-card-premium:hover {
+  box-shadow: var(--jip-shadow-glow);
+  transform: translateX(5px); /* Hiệu ứng nhích nhẹ sang phải khi hover */
+}
+
+/* 3. Text & Dividers */
+.jp-highlight-text {
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-16);
+  line-height: 1.6;
+}
+
+.jip-divider-gold {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--jip-color-gold), transparent);
+  margin: var(--jip-spacing-24) 0;
+  opacity: 0.4;
+}
+
+/* 4. Góc trang trí (ADN Nhật Bản) */
+.jip-corner-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    var(--jip-border-gold) 50%
+  );
+  opacity: 0.5;
+}
+
+/* Layout chung cho Section */
+.jip-section {
+  padding: var(--jip-spacing-64) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jip-subtitle {
+  font: var(--typo-label);
+  color: var(--jip-color-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: var(--jip-spacing-8);
+}
+
+.jip-main-heading {
+  font: var(--typo-display-s);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-48);
+}
+
+/* Grid & Cards */
+.jip-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--jip-spacing-24);
+}
+
+.jip-mission-card {
+  position: relative;
+  background: var(--jip-color-cream-light);
+  border: 1px solid var(--jip-border-gold);
+  padding: var(--jip-card-padding);
+  border-radius: 12px;
+  transition: var(--transition-smooth, all 0.4s ease);
+  overflow: hidden; /* Để hiệu ứng glow không tràn ra ngoài */
+  display: flex;
+  flex-direction: column;
+}
+
+.jip-mission-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--jip-color-gold);
+  box-shadow: var(--jip-shadow-glow);
+  background: #ffffff; /* Sáng hơn khi hover */
+}
+
+/* Tiêu đề trong Card */
+.jip-card-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-16);
+  position: relative;
+}
+
+/* Đường kẻ phân cách phong cách Nhật Bản tối giản */
+.jip-card-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--jip-gradient-gold-metallic);
+  margin-bottom: var(--jip-spacing-16);
+  transition: width 0.3s ease;
+}
+
+.jip-mission-card:hover .jip-card-divider {
+  width: 80px; /* Hiệu ứng kéo dài đường kẻ khi hover */
+}
+
+.jip-card-text {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.6;
+}
+
+/* Hiệu ứng Background ADN chìm */
+.card-glow-element {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 150px;
+  height: 150px;
+  background: var(--jip-color-gold);
+  filter: blur(80px);
+  opacity: 0.05;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.jip-mission-card:hover .card-glow-element {
+  opacity: 0.15;
+}
+
+/* Container Layout */
+.jip-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--jip-spacing-24);
+  margin-top: var(--jip-spacing-32);
+}
+
+/* Card Style cao cấp */
+.jip-value-card {
+  position: relative;
+  background: var(--jip-color-cream-light);
+  border: 1px solid var(--jip-border-gold);
+  padding: var(--jip-spacing-32) var(--jip-spacing-24);
+  border-radius: 4px; /* Enterprise chuộng bo góc nhẹ, vuông vắn hơn */
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hiệu ứng số thứ tự chìm (Watermark) */
+.value-number {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  font: var(--typo-display-l);
+  font-family: var(--font-heading);
+  color: var(--jip-color-gold);
+  opacity: 0.1; /* Rất mờ, tạo cảm giác tinh tế */
+  pointer-events: none;
+}
+
+/* Typography cho giá trị */
+.value-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-16);
+  position: relative;
+  display: inline-block;
+}
+
+/* Gạch chân trang trí dưới tiêu đề */
+.value-title::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--jip-gradient-gold-metallic);
+}
+
+.value-desc {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.6;
+}
+
+/* Hover Interaction */
+.jip-value-card:hover {
+  border-color: var(--jip-color-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--jip-shadow-glow);
+  background: #ffffff;
+}
+
+.jip-value-card:hover .value-number {
+  opacity: 0.25;
+  transform: scale(1.1);
+  transition: all 0.4s ease;
+}
+
+/* Card cuối cùng (Cải tiến) làm nổi bật hơn một chút */
+.jip-value-card.highlight-gold {
+  border-left: 4px solid var(--jip-color-gold);
+}
+
+/* Container chính */
+.jip-enterprise-model {
+  padding: var(--jip-spacing-64) 0;
+  background-color: var(--jip-bg-default);
+}
+
+/* Header Line - ADN đặc trưng */
+.header-line {
+  width: 60px;
+  height: 4px;
+  background: var(--jip-gradient-gold-metallic);
+  margin-top: var(--jip-spacing-8);
+  border-radius: 2px;
+}
+
+/* Grid Layout cho 4 giai đoạn */
+.jip-process-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--jip-spacing-24);
+  margin-top: var(--jip-spacing-48);
+  position: relative;
+}
+
+/* Card Giai đoạn */
+.jip-step-card {
+  background: var(--jip-color-cream-light);
+  border: 1px solid var(--jip-border-gold);
+  padding: var(--jip-spacing-32) var(--jip-spacing-24);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Hiệu ứng Hover - Đưa ADN Vàng vào */
+.jip-step-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--jip-color-gold);
+  box-shadow: var(--jip-checkbox-glow);
+  background: #ffffff;
+}
+
+/* Badge Phase (A, B, C, D) */
+.step-badge {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+  background: var(--jip-gradient-gold-metallic);
+  padding: 4px 12px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: var(--jip-spacing-16);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Typography cho Step */
+.step-title {
+  font: var(--typo-h2); /* Dùng font Cinzel nếu là Heading */
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-12);
+  min-height: 2.6em; /* Giữ các dòng tiêu đề thẳng hàng */
+}
+
+.step-description {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.6;
+}
+
+/* Kết nối giữa các Phase (Chỉ hiển thị trên Desktop) */
+@media (min-width: 1024px) {
+  .jip-step-card:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--jip-color-gold);
+    font-size: 24px;
+    opacity: 0.5;
+  }
+}
+
+.jip-enterprise-model {
+  background: radial-gradient(
+    circle at top right,
+    var(--jip-color-cream),
+    var(--jip-bg-default)
+  );
+  padding: var(--jip-spacing-80) var(--jip-container-gutter);
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.jip-subtitle {
+  font: var(--typo-label);
+  color: var(--jip-color-gold-dark);
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.jip-process-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--jip-spacing-24);
+  margin-top: var(--jip-spacing-64);
+}
+
+.jip-step-card {
+  position: relative;
+  background: white;
+  border: 1px solid var(--jip-border-gold);
+  padding: 40px 24px;
+  border-radius: 4px; /* Enterprise thường dùng bo góc nhẹ hoặc vuông cho sang */
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Số chữ cái chìm tinh tế */
+.step-number-bg {
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+  font-family: var(--font-heading);
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--jip-color-navy);
+  opacity: 0.03;
+  z-index: -1;
+  transition: 0.5s ease;
+}
+
+/* Hiệu ứng Glow ẩn */
+.step-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(212, 175, 55, 0.15) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.jip-step-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--jip-color-gold);
+  box-shadow: 0 20px 40px rgba(0, 32, 96, 0.08);
+}
+
+.jip-step-card:hover .step-glow {
+  opacity: 1;
+}
+
+.jip-step-card:hover .step-number-bg {
+  transform: scale(1.1) translateY(-10px);
+  opacity: 0.06;
+  color: var(--jip-color-gold);
+}
+
+/* Phase Badge nâng cấp */
+.step-badge {
+  font: var(--typo-caption);
+  font-weight: bold;
+  background: var(--jip-color-navy);
+  color: white;
+  padding: 6px 14px;
+  display: inline-block;
+  margin-bottom: 24px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    85% 100%,
+    0% 100%
+  ); /* Cắt vát tạo vẻ hiện đại */
+}
+
+.step-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+/* Gạch chân nhỏ dưới Title */
+.step-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--jip-gradient-gold-metallic);
+  transition: width 0.3s ease;
+}
+
+.jip-step-card:hover .step-title::after {
+  width: 60px;
+}
+
+.step-description {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.7;
+}
+
+.jip-programs {
+  padding: var(--jip-spacing-80) 0;
+}
+
+.section-subtitle {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  margin-top: -16px;
+  margin-bottom: var(--jip-spacing-48);
+}
+
+/* Grid Layout */
+.jip-track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--jip-spacing-24);
+}
+
+/* Card Styling */
+.track-card {
+  position: relative;
+  background: var(--jip-color-cream-light);
+  border: 1px solid var(--jip-border-gold);
+  border-radius: 4px; /* Bo góc nhẹ tạo cảm giác chuyên nghiệp hơn */
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hiệu ứng tia sáng chạy qua viền (Gold Shine) */
+.track-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.track-card:hover::before {
+  left: 100%;
+}
+
+.track-card:hover {
+  transform: scale(1.02);
+  border-color: var(--jip-color-gold);
+  box-shadow: 0 20px 40px rgba(0, 32, 96, 0.08);
+}
+
+/* Nội dung bên trong */
+.track-body {
+  padding: var(--jip-spacing-32);
+  z-index: 1;
+}
+
+.track-tag {
+  font: var(--typo-caption);
+  text-transform: uppercase;
+  color: var(--jip-color-gold-dark);
+  letter-spacing: 2px;
+  margin-bottom: var(--jip-spacing-16);
+  display: block;
+}
+
+.track-name {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-16);
+  position: relative;
+}
+
+.track-desc {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.track-footer {
+  font: var(--typo-label);
+  color: var(--jip-color-navy);
+  margin-top: auto;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.track-card:hover .track-footer {
+  opacity: 1;
+  color: var(--jip-color-gold-dark);
+  padding-left: 8px;
+}
+
+/* Đặc biệt hóa cho Corporate Academy - Card điểm nhấn */
+.corporate-track {
+  background: var(--jip-color-navy);
+  border: none;
+}
+
+.corporate-track .track-name,
+.corporate-track .track-desc,
+.corporate-track .track-footer {
+  color: var(--jip-text-on-brand);
+}
+
+.corporate-track .track-tag {
+  color: var(--jip-color-gold);
+}
+
+/* About Header Normalization */
+.jip-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--jip-spacing-8);
+  margin-bottom: var(--jip-spacing-32);
+}
+
+.jip-section-header .jip-main-heading {
+  margin-bottom: 0;
+}
+
+.jip-section-header .header-line {
+  width: 72px;
+  height: 3px;
+  margin-top: 0;
+  border-radius: 999px;
+  background: var(--jip-gradient-gold-metallic);
+}
+
+.jip-section-header .section-subtitle {
+  margin: 0;
+  max-width: 820px;
+}

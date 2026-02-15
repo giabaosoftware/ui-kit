@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Học viện Doanh nghiệp Nhật Bản JIP</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../jip-card.css" />
+    <link rel="stylesheet" href="../jip-cta.css" />
+    <link rel="stylesheet" href="../jip-banner.css" />
+    <link rel="stylesheet" href="../jip-section-1.css" />
+    <link rel="stylesheet" href="../jip-promo-card.css" />
+    <link rel="stylesheet" href="./jip-about.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+Georgian:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="background-color: var(--jip-color-cream-light)">
+    <button id="settings-toggle">⚙</button>
+    <div id="settings-panel">
+      <div class="jip-settings-group">
+        <label class="jip-settings-label">
+          Phông tiêu đề
+          <select id="font-heading-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Phông nội dung
+          <select id="font-body-select" class="jip-settings-select"></select>
+        </label>
+
+        <label class="jip-settings-label">
+          Màu thương hiệu chính (Xanh navy)
+          <input
+            type="color"
+            id="navy-picker"
+            class="jip-settings-color"
+            data-token="--base-navy"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Màu nhấn thương hiệu (Vàng)
+          <input
+            type="color"
+            id="gold-picker"
+            class="jip-settings-color"
+            data-token="--base-gold"
+          />
+        </label>
+
+        <label class="jip-settings-label">
+          Nền bề mặt (Sáng)
+          <input
+            type="color"
+            id="cream-picker"
+            class="jip-settings-color"
+            data-token="--base-cream-light"
+          />
+        </label>
+      </div>
+    </div>
+
+    <header class="jip-header">
+      <div class="jip-header-container">
+        <div class="jip-logo">
+          <img src="../img/aaaaaaaaaaaaaaaaa.webp" alt="" width="80" />
+        </div>
+
+        <nav class="jip-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Trang chủ</a></li>
+            <li>
+              <a href="./about-us.html" class="nav-link active">About Us</a>
+            </li>
+            <li><a href="./course.html" class="nav-link">Khóa học</a></li>
+            <li><a href="./trainer.html" class="nav-link">Giảng viên</a></li>
+            <li><a href="./hiring.html" class="nav-link">Tuyển dụng</a></li>
+          </ul>
+        </nav>
+
+        <div class="jip-header-actions">
+          <button id="theme-toggle" aria-label="Chuyển giao diện">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="jip-button btn-enroll">
+            <span class="main-label">Liên hệ</span>
+            <div class="divider"><span class="diamond"></span></div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="jip-about-hero">
+        <div class="jip-dna-flow" aria-hidden="true">
+          <span class="dna-strand"></span>
+          <span class="dna-strand"></span>
+          <span class="dna-strand"></span>
+        </div>
+
+        <div class="jip-container">
+          <span class="jip-banner-tagline">About Us</span>
+          <h1 class="jip-banner-title">
+            Học viện JIP
+            <span class="text-gradient"
+              >Đào tạo năng lực doanh nghiệp theo chuẩn Nhật Bản</span
+            >
+          </h1>
+          <p class="jip-banner-description">
+            JIP là hệ sinh thái đào tạo enterprise tập trung vào chuyển hóa năng
+            lực làm việc thành kết quả kinh doanh. Chúng tôi triển khai mô hình
+            học tập có cấu trúc, đánh giá định lượng và cơ chế đồng hành xuyên
+            suốt cho cá nhân, quản lý và tổ chức.
+          </p>
+          <button class="jip-button btn-learn-gold btn-gold-glow">
+            <span class="main-label">Tìm hiểu thêm</span>
+            <div class="divider"><span class="diamond"></span></div>
+            <span class="sub-label">Khám phá khóa học</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="jip-section">
+        <div class="jip-section-header">
+          <span class="jip-subtitle">Organizational Profile</span>
+          <h2 class="jip-main-heading">Tổng quan tổ chức</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <article
+          class="jip-card jip-card-premium"
+          style="padding: var(--jip-card-padding)"
+        >
+          <span class="jip-corner-accent"></span>
+          <p class="jp-highlight-text">
+            JIP được xây dựng như một Corporate Learning Platform, nơi chương
+            trình đào tạo được thiết kế theo role competency framework và liên
+            kết trực tiếp với KPI vận hành.
+          </p>
+          <div class="jip-divider-gold"></div>
+          <p class="jip-card-text">
+            Từ giai đoạn đánh giá năng lực đầu vào đến giai đoạn theo dõi sau
+            đào tạo, mọi bước đều có tiêu chí đo lường, chuẩn phản hồi và cơ chế
+            cải tiến định kỳ.
+          </p>
+        </article>
+      </section>
+
+      <section class="jip-section jip-about-mission">
+        <div class="jip-section-header">
+          <span class="jip-subtitle">Core Direction</span>
+          <h2 class="jip-main-heading">Sứ mệnh, tầm nhìn, định vị</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="jip-mission-grid">
+          <article class="jip-card jip-mission-card">
+            <span class="card-glow-element"></span>
+            <h3 class="jip-card-title">Sứ mệnh</h3>
+            <div class="jip-card-divider"></div>
+            <p class="jip-card-text">
+              Chuẩn hóa năng lực cá nhân và đội ngũ theo mô hình có thể đo
+              lường, giúp doanh nghiệp cải thiện hiệu suất, giảm sai lệch vận
+              hành và tăng tốc phát triển nhân sự.
+            </p>
+          </article>
+
+          <article class="jip-card jip-mission-card">
+            <span class="card-glow-element"></span>
+            <h3 class="jip-card-title">Tầm nhìn</h3>
+            <div class="jip-card-divider"></div>
+            <p class="jip-card-text">
+              Trở thành đơn vị đào tạo enterprise tiêu chuẩn cao tại châu Á, dẫn
+              đầu về mức độ chuyển hóa hành vi công việc và tác động kinh doanh
+              sau đào tạo.
+            </p>
+          </article>
+
+          <article class="jip-card jip-mission-card">
+            <span class="card-glow-element"></span>
+            <h3 class="jip-card-title">Định vị</h3>
+            <div class="jip-card-divider"></div>
+            <p class="jip-card-text">
+              Đối tác đào tạo thực chiến theo chuẩn Nhật Bản, kết hợp kỷ luật
+              triển khai, tư duy Kaizen và năng lực lãnh đạo hiện đại.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="jip-section">
+        <div class="jip-section-header">
+          <span class="jip-subtitle">Core Values</span>
+          <h2 class="jip-main-heading">Giá trị cốt lõi</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="jip-values-grid">
+          <article class="jip-value-card">
+            <span class="value-number">01</span>
+            <h3 class="value-title">Kỷ luật</h3>
+            <p class="value-desc">
+              Duy trì chuẩn triển khai nhất quán giữa học thuật, vận hành và
+              đánh giá đầu ra.
+            </p>
+          </article>
+
+          <article class="jip-value-card">
+            <span class="value-number">02</span>
+            <h3 class="value-title">Thực chiến</h3>
+            <p class="value-desc">
+              Nội dung học bám sát bối cảnh công việc thực tế và yêu cầu chuyển
+              đổi của doanh nghiệp.
+            </p>
+          </article>
+
+          <article class="jip-value-card">
+            <span class="value-number">03</span>
+            <h3 class="value-title">Đo lường</h3>
+            <p class="value-desc">
+              Mỗi giai đoạn học tập đều có KPI theo năng lực và theo kết quả
+              triển khai tại nơi làm việc.
+            </p>
+          </article>
+
+          <article class="jip-value-card highlight-gold">
+            <span class="value-number">04</span>
+            <h3 class="value-title">Cải tiến</h3>
+            <p class="value-desc">
+              Cập nhật chương trình định kỳ dựa trên dữ liệu học tập, phản hồi
+              doanh nghiệp và biến động thị trường.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="jip-section jip-enterprise-model">
+        <div class="jip-section-header">
+          <span class="jip-subtitle">JIP Strategy</span>
+          <h2 class="jip-main-heading">Mô hình đào tạo chuẩn enterprise</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="jip-process-container">
+          <article class="jip-step-card" data-step="01">
+            <span class="step-glow"></span>
+            <span class="step-badge">Phase A</span>
+            <div class="step-content">
+              <h3 class="step-title">Chẩn đoán năng lực</h3>
+              <p class="step-description">
+                Đánh giá năng lực đầu vào theo role matrix và xác định khoảng
+                cách so với chuẩn đầu ra.
+              </p>
+            </div>
+            <span class="step-number-bg">A</span>
+          </article>
+
+          <article class="jip-step-card" data-step="02">
+            <span class="step-glow"></span>
+            <span class="step-badge">Phase B</span>
+            <div class="step-content">
+              <h3 class="step-title">Thiết kế lộ trình</h3>
+              <p class="step-description">
+                Xây dựng learning roadmap theo vai trò, cấp bậc và mục tiêu phát
+                triển của tổ chức.
+              </p>
+            </div>
+            <span class="step-number-bg">B</span>
+          </article>
+
+          <article class="jip-step-card" data-step="03">
+            <span class="step-glow"></span>
+            <span class="step-badge">Phase C</span>
+            <div class="step-content">
+              <h3 class="step-title">Triển khai đa tầng</h3>
+              <p class="step-description">
+                Kết hợp workshop, project-based learning, mentoring và review
+                theo sprint.
+              </p>
+            </div>
+            <span class="step-number-bg">C</span>
+          </article>
+
+          <article class="jip-step-card" data-step="04">
+            <span class="step-glow"></span>
+            <span class="step-badge">Phase D</span>
+            <div class="step-content">
+              <h3 class="step-title">Đánh giá tác động</h3>
+              <p class="step-description">
+                Đo lường kết quả sau đào tạo theo năng lực hành vi và chỉ số
+                hiệu quả công việc.
+              </p>
+            </div>
+            <span class="step-number-bg">D</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="jip-section jip-programs">
+        <div class="jip-section-header">
+          <span class="jip-subtitle">Program Architecture</span>
+          <h2 class="jip-main-heading">Hệ chương trình đào tạo</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="jip-track-grid">
+          <article class="track-card leadership-track">
+            <div class="track-body">
+              <span class="track-tag">Strategic</span>
+              <h3 class="track-name">Leadership Track</h3>
+              <p class="track-desc">
+                Nâng năng lực lãnh đạo, ra quyết định, điều phối nhóm và quản
+                trị thay đổi cho cấp quản lý.
+              </p>
+              <div class="track-footer">Khung năng lực quản lý →</div>
+            </div>
+          </article>
+
+          <article class="track-card operation-track">
+            <div class="track-body">
+              <span class="track-tag">Efficiency</span>
+              <h3 class="track-name">Operation Excellence</h3>
+              <p class="track-desc">
+                Chuẩn hóa vận hành, tối ưu quy trình, cải thiện chất lượng dịch
+                vụ nội bộ và năng suất tổ chức.
+              </p>
+              <div class="track-footer">Khung năng lực vận hành →</div>
+            </div>
+          </article>
+
+          <article class="track-card professional-track">
+            <div class="track-body">
+              <span class="track-tag">Professional</span>
+              <h3 class="track-name">Professional Skill</h3>
+              <p class="track-desc">
+                Tăng cường năng lực giao tiếp, thuyết trình, báo cáo và phối hợp
+                đa phòng ban.
+              </p>
+              <div class="track-footer">Khung năng lực cá nhân →</div>
+            </div>
+          </article>
+
+          <article class="track-card corporate-track">
+            <div class="track-body">
+              <span class="track-tag">Enterprise</span>
+              <h3 class="track-name">Corporate Academy</h3>
+              <p class="track-desc">
+                Xây dựng học viện nội bộ theo ADN doanh nghiệp: nội dung, chuẩn
+                đánh giá và hệ vận hành tùy chỉnh.
+              </p>
+              <div class="track-footer">Giải pháp cho doanh nghiệp →</div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="jip-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-text">JIP</span>
+            <div class="divider"><span class="diamond"></span></div>
+            <span class="logo-subtext">HỌC VIỆN</span>
+          </div>
+          <p class="brand-description">
+            Nâng tầm năng lực chuyên môn thông qua các khóa học chuẩn quốc tế và
+            lộ trình học tập chuyên sâu tại Nhật Bản.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">LI</a>
+            <a href="#" class="social-icon">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Chương trình</h4>
+          <ul>
+            <li><a href="#">Khóa học chuyên sâu</a></li>
+            <li><a href="#">Đào tạo doanh nghiệp</a></li>
+            <li><a href="#">Lịch khai giảng</a></li>
+            <li><a href="#">Học bổng JIP</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Hỗ trợ</h4>
+          <ul>
+            <li><a href="#">Trung tâm trợ giúp</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider"><span class="diamond"></span></div>
+        <p class="copyright">
+          © 2026 Học viện JIP Nhật Bản. Bảo lưu mọi quyền. Thiết kế theo chuẩn
+          đào tạo tinh hoa.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved) {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.dataset.theme;
+
+        if (current === "dark") {
+          html.dataset.theme = "light";
+          localStorage.setItem("theme", "light");
+        } else {
+          html.dataset.theme = "dark";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
+
+      const settingsToggle = document.getElementById("settings-toggle");
+      const settingsPanel = document.getElementById("settings-panel");
+
+      settingsToggle.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
+      });
+
+      const fonts = [
+        "Cinzel",
+        "Playfair Display",
+        "Cormorant Garamond",
+        "Libre Baskerville",
+        "Inter",
+        "Roboto",
+        "PT Sans",
+      ];
+
+      const headingSelect = document.getElementById("font-heading-select");
+      const bodySelect = document.getElementById("font-body-select");
+
+      fonts.forEach((font) => {
+        const opt1 = document.createElement("option");
+        opt1.value = font;
+        opt1.textContent = font;
+        headingSelect.appendChild(opt1);
+
+        const opt2 = opt1.cloneNode(true);
+        bodySelect.appendChild(opt2);
+      });
+
+      const root = document.documentElement;
+
+      function loadFont(font) {
+        const id = `font-${font.replace(/\s+/g, "-")}`;
+        if (document.getElementById(id)) return;
+
+        const link = document.createElement("link");
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = `https://fonts.googleapis.com/css2?family=${font.replace(
+          /\s+/g,
+          "+",
+        )}:wght@300;400;500;600;700&display=swap`;
+        document.head.appendChild(link);
+      }
+
+      headingSelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-heading",
+          `"${e.target.value}", serif`,
+        );
+      });
+
+      bodySelect.addEventListener("change", (e) => {
+        loadFont(e.target.value);
+        root.style.setProperty(
+          "--base-font-body",
+          `"${e.target.value}", sans-serif`,
+        );
+      });
+
+      document.getElementById("navy-picker").oninput = (e) =>
+        root.style.setProperty("--base-navy", e.target.value);
+
+      document.getElementById("gold-picker").oninput = (e) =>
+        root.style.setProperty("--base-gold", e.target.value);
+
+      document.getElementById("cream-picker").oninput = (e) =>
+        root.style.setProperty("--base-cream-light", e.target.value);
+    </script>
+  </body>
+</html>

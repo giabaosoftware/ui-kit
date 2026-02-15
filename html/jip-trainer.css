@@ -767,3 +767,140 @@ html[data-theme="dark"] .jip-expert-overlay {
     width: 240px;
   }
 }
+
+.jip-main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Hero Section Modernized */
+.jip-trainer-hero {
+  position: relative;
+  min-height: 500px;
+  background: var(--jip-color-cream);
+  border-radius: 40px;
+  padding: 80px;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.jip-hero-headline {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 24px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealUp 0.8s forwards 0.2s;
+}
+
+.jip-text-gold {
+  color: var(--jip-gold-soft);
+  display: block;
+}
+
+/* Premium Seal Animation */
+.jip-premium-seal {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-circle-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateSeal 20s linear infinite;
+  opacity: 0.3;
+}
+
+.seal-circle-text text {
+  fill: var(--jip-gold-soft);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Experts Grid: Modern Card Hover */
+.jip-experts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.jip-expert-card {
+  perspective: 1000px;
+}
+
+.jip-card-inner {
+  background: #fff;
+  border-radius: 24px;
+  padding: 16px;
+  transition: var(--jip-transition-smooth);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.jip-image-container {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/5;
+}
+
+.expert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--jip-transition-smooth);
+}
+
+.jip-expert-card:hover .expert-img {
+  transform: scale(1.1);
+}
+
+.jip-expert-card:hover .jip-card-inner {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 26, 61, 0.1);
+  border-color: var(--jip-gold-soft);
+}
+
+/* Animations Definitions */
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateSeal {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Magnetic View All Link */
+.jip-view-all-magnetic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--jip-navy-deep);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--jip-transition-smooth);
+}
+
+.jip-view-all-magnetic:hover {
+  gap: 20px;
+  color: var(--jip-gold-soft);
+}
