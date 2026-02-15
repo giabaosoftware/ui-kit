@@ -54,7 +54,17 @@
         <div class="jip-logo">
           <img src="../img/aaaaaaaaaaaaaaaaa.webp" alt="" width="80" />
         </div>
-        <nav class="jip-nav">
+        <nav class="jip-nav" id="jip-mobile-nav" aria-label="Điều hướng chính">
+          <div class="jip-nav-head">
+            <span class="jip-nav-title">Menu</span>
+            <button
+              class="jip-menu-close"
+              type="button"
+              aria-label="Đóng menu điều hướng"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
           <ul class="nav-list">
             <li><a href="../index.html" class="nav-link">Trang chủ</a></li>
             <li><a href="./about-us.html" class="nav-link">About Us</a></li>
@@ -64,8 +74,20 @@
             </li>
             <li><a href="./hiring.html" class="nav-link">Tuyển dụng</a></li>
           </ul>
+          <a href="#" class="jip-nav-cta">Liên hệ tư vấn</a>
         </nav>
         <div class="jip-header-actions">
+          <button
+            class="jip-menu-toggle"
+            type="button"
+            aria-label="Mở menu điều hướng"
+            aria-controls="jip-mobile-nav"
+            aria-expanded="false"
+          >
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </button>
           <button id="theme-toggle" aria-label="Chuyển giao diện">
             <i class="fa-solid fa-sun"></i>
           </button>
@@ -76,6 +98,7 @@
         </div>
       </div>
     </header>
+    <div class="jip-nav-overlay" hidden></div>
 
     <main
       class="container"
@@ -317,6 +340,7 @@
       </div>
     </footer>
 
+    <script src="../jip-mobile-nav.js"></script>
     <script>
       (function () {
         const saved = localStorage.getItem("theme");

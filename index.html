@@ -24,64 +24,6 @@
     <link rel="stylesheet" href="./page-config-ui.css" />
 
     <link rel="stylesheet" href="./style.css" />
-    <style>
-      .index-enterprise-motion .jip-banner-content {
-        animation: indexHeroEnter 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-      }
-
-      @keyframes indexHeroEnter {
-        from {
-          opacity: 0;
-          transform: translateY(16px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .index-enterprise-motion.js-motion .reveal-enterprise {
-        opacity: 0;
-        transform: translateY(18px);
-        filter: blur(1px);
-        transition:
-          opacity 0.72s cubic-bezier(0.2, 0.8, 0.2, 1),
-          transform 0.72s cubic-bezier(0.2, 0.8, 0.2, 1),
-          filter 0.6s ease;
-        will-change: transform, opacity;
-      }
-
-      .index-enterprise-motion.js-motion .reveal-enterprise.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
-
-      .index-enterprise-motion.js-motion .jip-course-grid .reveal-enterprise:nth-child(2),
-      .index-enterprise-motion.js-motion .video-grid .reveal-enterprise:nth-child(2),
-      .index-enterprise-motion.js-motion .jip-journey-steps .reveal-enterprise:nth-child(2) {
-        transition-delay: 0.08s;
-      }
-
-      .index-enterprise-motion.js-motion .jip-course-grid .reveal-enterprise:nth-child(3),
-      .index-enterprise-motion.js-motion .video-grid .reveal-enterprise:nth-child(3),
-      .index-enterprise-motion.js-motion .jip-journey-steps .reveal-enterprise:nth-child(3) {
-        transition-delay: 0.16s;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .index-enterprise-motion .jip-banner-content {
-          animation: none;
-        }
-
-        .index-enterprise-motion.js-motion .reveal-enterprise {
-          opacity: 1;
-          transform: none;
-          filter: none;
-          transition: none;
-        }
-      }
-    </style>
 
     <link
       rel="stylesheet"
@@ -153,7 +95,17 @@
           <img src="./img/aaaaaaaaaaaaaaaaa.webp" alt="" width="80px" />
         </div>
 
-        <nav class="jip-nav">
+        <nav class="jip-nav" id="jip-mobile-nav" aria-label="Điều hướng chính">
+          <div class="jip-nav-head">
+            <span class="jip-nav-title">Menu</span>
+            <button
+              class="jip-menu-close"
+              type="button"
+              aria-label="Đóng menu điều hướng"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
           <ul class="nav-list">
             <li>
               <a href="./index.html" class="nav-link active">Trang chủ</a>
@@ -171,9 +123,21 @@
               <a href="./html/hiring.html" class="nav-link">Tuyển dụng</a>
             </li>
           </ul>
+          <a href="#" class="jip-nav-cta">Liên hệ tư vấn</a>
         </nav>
 
         <div class="jip-header-actions">
+          <button
+            class="jip-menu-toggle"
+            type="button"
+            aria-label="Mở menu điều hướng"
+            aria-controls="jip-mobile-nav"
+            aria-expanded="false"
+          >
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </button>
           <button id="theme-toggle" aria-label="Chuyển giao diện">
             <i class="fa-solid fa-sun"></i>
           </button>
@@ -184,6 +148,7 @@
         </div>
       </div>
     </header>
+    <div class="jip-nav-overlay" hidden></div>
 
     <div class="container">
       <!-- Banner -->
@@ -838,6 +803,7 @@
     </div>
   </footer>
 
+  <script src="./jip-mobile-nav.js"></script>
   <script>
     (function () {
       const saved = localStorage.getItem("theme");

@@ -1332,30 +1332,6 @@ html[data-theme="dark"] .about-enterprise .metric-item {
     overflow-x: hidden;
   }
 
-  .about-enterprise .jip-header-container {
-    height: 68px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .about-enterprise .jip-logo img {
-    width: 56px;
-    height: auto;
-  }
-
-  .about-enterprise .jip-header-actions {
-    gap: 8px;
-  }
-
-  .about-enterprise .jip-header-actions .btn-enroll {
-    min-width: 128px;
-    padding: 6px 14px;
-  }
-
-  .about-enterprise .jip-header-actions .btn-enroll .sub-label {
-    display: none;
-  }
-
   .about-enterprise .jip-banner-title {
     font-size: clamp(36px, 8vw, 54px);
     line-height: 1.1;
@@ -1384,27 +1360,6 @@ html[data-theme="dark"] .about-enterprise .metric-item {
 }
 
 @media (max-width: 767px) {
-  .about-enterprise .jip-header-container {
-    height: 64px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .about-enterprise .jip-header-actions .btn-enroll {
-    min-width: 104px;
-    padding: 6px 10px;
-  }
-
-  .about-enterprise .jip-header-actions .btn-enroll .divider {
-    display: none;
-  }
-
-  .about-enterprise .jip-header-actions .btn-enroll .main-label {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    margin: 0;
-  }
-
   .about-enterprise .jip-banner-title {
     font-size: clamp(30px, 10.4vw, 44px);
     line-height: 1.12;
@@ -1587,7 +1542,12 @@ body.about-enterprise {
 }
 
 html[data-theme="dark"] .about-enterprise .jip-about-mission {
-  background: radial-gradient(circle at 18% 12%, #3a4048 0%, #1c1f26 56%, #14161d 100%);
+  background: radial-gradient(
+    circle at 18% 12%,
+    #3a4048 0%,
+    #1c1f26 56%,
+    #14161d 100%
+  );
 }
 
 html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-main-heading {
@@ -1596,12 +1556,20 @@ html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-main-heading {
 
 html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-mission-card {
   border-color: rgba(230, 199, 116, 0.42);
-  background: linear-gradient(165deg, rgba(12, 28, 52, 0.9), rgba(10, 22, 42, 0.92));
+  background: linear-gradient(
+    165deg,
+    rgba(12, 28, 52, 0.9),
+    rgba(10, 22, 42, 0.92)
+  );
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
 }
 
 html[data-theme="dark"] .about-enterprise .jip-about-mission .card-inner {
-  background: linear-gradient(180deg, rgba(20, 34, 58, 0.96), rgba(15, 27, 48, 0.96));
+  background: linear-gradient(
+    180deg,
+    rgba(20, 34, 58, 0.96),
+    rgba(15, 27, 48, 0.96)
+  );
   border-color: rgba(230, 199, 116, 0.26);
 }
 
@@ -1618,7 +1586,11 @@ html[data-theme="dark"] .about-enterprise .jip-about-mission .card-number {
   opacity: 0.12;
 }
 
-html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-mission-card.featured .card-inner {
+html[data-theme="dark"]
+  .about-enterprise
+  .jip-about-mission
+  .jip-mission-card.featured
+  .card-inner {
   background: linear-gradient(180deg, #12315b, #0d2444);
   border-color: rgba(230, 199, 116, 0.34);
 }
