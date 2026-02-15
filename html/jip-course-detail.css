@@ -14,7 +14,7 @@
   grid-template-columns: 1.15fr 0.85fr;
 
   border-radius: 28px;
-  padding: var(--jip-spacing-32);
+  padding: var(--jip-spacing-64);
 }
 
 .jip-breadcrumb {
@@ -1070,5 +1070,171 @@ html[data-theme="dark"] .jip-course-hero-media::after {
 @media (max-width: 768px) {
   .jip-detail-block > .jip-syllabus-item {
     padding-left: var(--jip-spacing-32);
+  }
+}
+
+.jip-course-hero {
+  position: relative;
+  background-color: var(--jip-color-navy);
+  padding: var(--jip-spacing-80);
+  overflow: hidden;
+  color: var(--jip-color-cream-light);
+}
+
+/* Pattern nền mờ ảo */
+.jip-hero-pattern-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(212, 175, 55, 0.15) 0%,
+    transparent 50%
+  );
+  opacity: 0.5;
+}
+
+.jip-course-hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--jip-spacing-48);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--jip-spacing-64);
+  align-items: center;
+}
+
+/* Breadcrumb tinh tế */
+.jip-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: var(--typo-caption);
+  opacity: 0.7;
+  margin-bottom: var(--jip-spacing-32);
+}
+
+.jip-breadcrumb .separator {
+  font-size: 8px;
+  color: var(--jip-color-gold);
+}
+
+/* Badges section */
+.jip-detail-badges {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.jip-tag-premium {
+  background: var(--jip-gradient-gold-metallic);
+  color: var(--jip-color-navy);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font: var(--typo-label);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Title & Subtitle */
+.jip-detail-title {
+  font: var(--typo-display-l);
+  line-height: 1.1;
+  margin-bottom: var(--jip-spacing-24);
+}
+
+.jip-detail-subtitle {
+  font: var(--typo-body-l);
+  opacity: 0.85;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: var(--jip-spacing-40);
+}
+
+/* Meta Grid - Cải tiến từ Meta Pill */
+.jip-detail-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: var(--jip-spacing-48);
+  max-width: 500px;
+}
+
+.jip-meta-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.jip-meta-item .meta-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jip-color-gold);
+}
+
+.jip-meta-item .meta-text {
+  display: flex;
+  flex-direction: column;
+}
+.jip-meta-item .label {
+  font: var(--typo-caption);
+  opacity: 0.6;
+}
+.jip-meta-item .value {
+  font: var(--typo-body-m);
+  font-weight: 600;
+}
+
+/* Media Section */
+.jip-course-hero-media .media-frame {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.jip-course-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-badge .date {
+  color: var(--jip-color-gold);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .jip-course-hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .jip-course-hero-media {
+    order: -1;
+  }
+  .jip-detail-title {
+    font-size: 3rem;
   }
 }
