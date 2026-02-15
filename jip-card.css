@@ -37,6 +37,7 @@
 
 .jip-course-instructor {
   color: var(--jip-color-navy);
+  font-family: var(--base-font-heading);
 }
 
 .jip-course-card:hover::before {
