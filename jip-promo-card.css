@@ -1,10 +1,10 @@
 /* Grid Container - Thay thế style inline cũ */
 .jip-course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: var(--jip-spacing-16);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--jip-spacing-32);
   padding: var(--jip-spacing-48) var(--jip-container-gutter);
-  max-width: 1240px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 

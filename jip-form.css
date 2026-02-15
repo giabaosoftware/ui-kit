@@ -1,7 +1,7 @@
 /* Container của Form */
 .jip-registration-card {
   width: 100%;
-  max-width: 450px;
+  max-width: 350px;
   background: var(--jip-bg-default);
   border: 1px solid var(--jip-border-gold);
   border-radius: 16px;
