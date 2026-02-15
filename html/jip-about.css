@@ -101,12 +101,12 @@
 
 /* --- INTERACTIVE ELEMENT --- */
 .btn-gold-glow {
-  margin-top: var(--jip-spacing-32);
-  padding: 14px 32px;
+  margin-top: var(--jip-spacing-40);
+  padding: 16px 40px;
   background: var(--jip-gradient-gold-metallic);
   border: none;
   border-radius: var(--jip-btn-radius);
-  font: var(--typo-h3);
+  font: var(--typo-h4);
   color: var(--jip-color-navy);
   cursor: pointer;
   box-shadow: var(--jip-checkbox-glow);
