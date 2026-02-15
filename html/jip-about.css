@@ -840,18 +840,24 @@
 }
 
 /* Enterprise Motion System */
-.about-enterprise .jip-about-hero .jip-container {
-  animation: about-hero-enter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+/* Layer nền bay chậm hơn để tạo cảm giác depth enterprise */
+.jip-about-hero::before {
+  content: "";
+  animation: jip-enterprise-entrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0s;
+  opacity: 0.1; /* Giữ tinh tế */
 }
 
-@keyframes about-hero-enter {
-  from {
+@keyframes jip-enterprise-entrance {
+  0% {
     opacity: 0;
-    transform: translateY(14px);
+    filter: blur(8px);
+    transform: translateY(30px) scale(0.98);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -892,7 +898,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-enterprise .jip-about-hero .jip-container {
+  .about-enterprise .about-hero-main,
+  .about-enterprise .about-hero-panel,
+  .about-enterprise .jip-about-hero::before {
     animation: none;
   }
 
@@ -1048,4 +1056,569 @@ html[data-theme="dark"] .about-enterprise .metric-item {
   .about-hero-panel {
     animation: none;
   }
+}
+
+/* Container & Header */
+.jip-about-mission {
+  background: radial-gradient(
+    circle at top right,
+    var(--jip-color-cream-light),
+    #ffffff
+  );
+  padding: var(--jip-spacing-80) var(--jip-container-gutter);
+}
+
+.jip-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--jip-spacing-32);
+  margin-top: var(--jip-spacing-64);
+}
+
+/* Card Cơ bản */
+.jip-mission-card {
+  position: relative;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.card-inner {
+  padding: var(--jip-spacing-48) var(--jip-spacing-32);
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 32, 96, 0.03);
+}
+
+/* Hiệu ứng số mờ (01, 02, 03) */
+.card-number {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-family: var(--font-heading);
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--jip-color-gold);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Tiêu đề & Nội dung */
+.jip-card-title {
+  font: var(--typo-h2);
+  color: var(--jip-color-navy);
+  margin-bottom: var(--jip-spacing-24);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Divider vàng nhỏ dưới Title */
+.jip-card-title::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--jip-gradient-gold-metallic);
+  margin-top: 8px;
+}
+
+.jip-card-text {
+  font: var(--typo-body-m);
+  color: var(--jip-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Điểm nhấn góc card */
+.card-corner-accent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: transparent transparent var(--jip-color-gold) transparent;
+  transition: all 0.3s ease;
+}
+
+/* --- HOVER EFFECTS (The Magic) --- */
+.jip-mission-card:hover .card-inner {
+  transform: translateY(-10px) rotateX(2deg);
+  border-color: var(--jip-color-gold);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+  background: var(--jip-color-cream-light);
+}
+
+.jip-mission-card:hover .card-corner-accent {
+  border-width: 0 0 15px 15px;
+}
+
+/* Card Nổi bật (Featured - Tầm nhìn) */
+.jip-mission-card.featured .card-inner {
+  background: var(--jip-color-navy);
+  border: none;
+}
+
+.jip-mission-card.featured .jip-card-title,
+.jip-mission-card.featured .jip-card-text {
+  color: var(--jip-text-on-brand);
+}
+
+.jip-mission-card.featured .card-number {
+  opacity: 0.1;
+  color: #ffffff;
+}
+
+/* About responsive overrides */
+@media (max-width: 1024px) {
+  .jip-about-hero {
+    min-height: auto;
+    padding: var(--jip-spacing-64) 0;
+  }
+
+  .about-hero-layout {
+    grid-template-columns: 1fr;
+    gap: var(--jip-spacing-24);
+  }
+
+  .about-hero-main {
+    max-width: 100%;
+  }
+
+  .about-hero-panel {
+    width: 100%;
+    max-width: 680px;
+    justify-self: flex-start;
+  }
+
+  .jip-section {
+    padding: var(--jip-spacing-56) var(--jip-container-gutter);
+  }
+
+  .jip-main-heading {
+    margin-bottom: var(--jip-spacing-32);
+  }
+
+  .jip-mission-grid,
+  .jip-values-grid,
+  .jip-process-container,
+  .jip-track-grid,
+  .about-enterprise .jip-programs .jip-track-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-enterprise .jip-programs .jip-track-grid {
+    max-width: none;
+  }
+
+  .about-enterprise .jip-programs .track-card {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+
+  .jip-enterprise-model {
+    height: auto;
+    min-height: 0;
+    padding: var(--jip-spacing-64) var(--jip-container-gutter);
+  }
+
+  .card-inner {
+    padding: var(--jip-spacing-32) var(--jip-spacing-24);
+  }
+
+  .step-title {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .jip-about-hero {
+    padding: var(--jip-spacing-48) 0;
+  }
+
+  .jip-container {
+    padding: 0 clamp(16px, 4vw, 24px);
+  }
+
+  .jip-banner-tagline {
+    letter-spacing: 2px;
+    padding-left: 12px;
+  }
+
+  .jip-banner-title {
+    line-height: 1.2;
+  }
+
+  .jip-banner-description {
+    font: var(--typo-body-m);
+  }
+
+  .about-hero-panel {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .panel-metrics {
+    gap: 8px;
+  }
+
+  .metric-item {
+    padding: 10px;
+  }
+
+  .panel-notes {
+    padding-left: 16px;
+  }
+
+  .jip-section {
+    padding: var(--jip-spacing-40) clamp(16px, 4vw, 24px);
+  }
+
+  .jip-section-header {
+    margin-bottom: var(--jip-spacing-24);
+  }
+
+  .jip-mission-grid,
+  .jip-values-grid,
+  .jip-process-container,
+  .jip-track-grid,
+  .about-enterprise .jip-programs .jip-track-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .track-body {
+    padding: var(--jip-spacing-24);
+  }
+
+  .card-inner {
+    padding: var(--jip-spacing-24) var(--jip-spacing-20);
+  }
+
+  .card-number {
+    font-size: 56px;
+    top: 8px;
+    right: 12px;
+  }
+
+  .jip-step-card {
+    padding: 24px 20px;
+  }
+
+  .step-badge {
+    margin-bottom: 16px;
+  }
+
+  .step-title {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .jip-enterprise-model {
+    padding: var(--jip-spacing-48) clamp(16px, 4vw, 24px);
+  }
+
+  .jip-subtitle {
+    letter-spacing: 2px;
+  }
+}
+
+/* About layout stability fixes (tablet/mobile) */
+@media (max-width: 1024px) {
+  body.about-enterprise {
+    overflow-x: hidden;
+  }
+
+  .about-enterprise .jip-header-container {
+    height: 68px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .about-enterprise .jip-logo img {
+    width: 56px;
+    height: auto;
+  }
+
+  .about-enterprise .jip-header-actions {
+    gap: 8px;
+  }
+
+  .about-enterprise .jip-header-actions .btn-enroll {
+    min-width: 128px;
+    padding: 6px 14px;
+  }
+
+  .about-enterprise .jip-header-actions .btn-enroll .sub-label {
+    display: none;
+  }
+
+  .about-enterprise .jip-banner-title {
+    font-size: clamp(36px, 8vw, 54px);
+    line-height: 1.1;
+  }
+
+  .about-enterprise .jip-main-heading {
+    font-size: clamp(32px, 7.6vw, 42px);
+    line-height: 1.08;
+  }
+
+  .about-enterprise .jip-mission-card,
+  .about-enterprise .jip-value-card,
+  .about-enterprise .jip-step-card,
+  .about-enterprise .track-card,
+  .about-enterprise .jip-card-premium {
+    transform: none;
+  }
+
+  .about-enterprise .jip-mission-card:hover .card-inner,
+  .about-enterprise .jip-value-card:hover,
+  .about-enterprise .jip-step-card:hover,
+  .about-enterprise .track-card:hover,
+  .about-enterprise .jip-card-premium:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-enterprise .jip-header-container {
+    height: 64px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .about-enterprise .jip-header-actions .btn-enroll {
+    min-width: 104px;
+    padding: 6px 10px;
+  }
+
+  .about-enterprise .jip-header-actions .btn-enroll .divider {
+    display: none;
+  }
+
+  .about-enterprise .jip-header-actions .btn-enroll .main-label {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  .about-enterprise .jip-banner-title {
+    font-size: clamp(30px, 10.4vw, 44px);
+    line-height: 1.12;
+  }
+
+  .about-enterprise .jip-main-heading {
+    font-size: clamp(28px, 10vw, 36px);
+    line-height: 1.1;
+  }
+
+  .about-enterprise .hero-cta {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .about-enterprise .jip-card-premium {
+    border-left-width: 3px;
+  }
+
+  .about-enterprise .card-inner {
+    min-height: 0;
+  }
+
+  .about-enterprise .track-footer {
+    margin-top: 12px;
+  }
+
+  .about-enterprise #settings-panel {
+    width: min(92vw, 320px);
+    right: 12px;
+    bottom: 68px;
+  }
+
+  .about-enterprise #settings-toggle {
+    width: 40px;
+    height: 40px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 16px;
+  }
+}
+
+/* About overflow/spacing hard-fix */
+.about-enterprise,
+.about-enterprise *,
+.about-enterprise *::before,
+.about-enterprise *::after {
+  box-sizing: border-box;
+}
+
+html,
+body.about-enterprise {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body.about-enterprise {
+  margin: 0;
+}
+
+.about-enterprise .jip-enterprise-model {
+  height: auto;
+  min-height: 0;
+}
+
+@media (min-width: 1025px) {
+  .about-enterprise .jip-section,
+  .about-enterprise .jip-about-mission,
+  .about-enterprise .jip-enterprise-model {
+    max-width: 1280px;
+    width: min(100%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--jip-container-gutter);
+    padding-right: var(--jip-container-gutter);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-enterprise {
+    --about-side-gutter: clamp(14px, 3.8vw, 24px);
+  }
+
+  .about-enterprise main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-enterprise main > section + section {
+    margin-top: clamp(20px, 4vw, 40px);
+  }
+
+  .about-enterprise main {
+    padding-left: var(--about-side-gutter);
+    padding-right: var(--about-side-gutter);
+  }
+
+  .about-enterprise .jip-about-hero .jip-container {
+    padding-left: var(--about-side-gutter);
+    padding-right: var(--about-side-gutter);
+  }
+
+  .about-enterprise .jip-footer .footer-container,
+  .about-enterprise .jip-footer .footer-bottom {
+    padding-left: var(--about-side-gutter);
+    padding-right: var(--about-side-gutter);
+  }
+
+  .about-enterprise .jip-section,
+  .about-enterprise .jip-about-mission,
+  .about-enterprise .jip-enterprise-model {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: clamp(28px, 5vw, 44px);
+    padding-bottom: clamp(28px, 5vw, 44px);
+    overflow: clip;
+  }
+
+  .about-enterprise .jip-card-premium,
+  .about-enterprise .jip-track-grid,
+  .about-enterprise .jip-mission-grid,
+  .about-enterprise .jip-values-grid,
+  .about-enterprise .jip-process-container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-enterprise {
+    --about-side-gutter: 12px;
+  }
+
+  .about-enterprise main > section + section {
+    margin-top: 18px;
+  }
+
+  .about-enterprise .jip-section,
+  .about-enterprise .jip-about-mission,
+  .about-enterprise .jip-enterprise-model {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .about-enterprise .jip-section-header {
+    margin-bottom: 18px;
+  }
+
+  .about-enterprise .jip-main-heading {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Core Direction section hard-fix: spacing + dark theme */
+.about-enterprise .jip-about-mission .jip-mission-card {
+  padding: clamp(12px, 2.2vw, 24px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--jip-color-cream-light), white 25%);
+  overflow: hidden;
+}
+
+.about-enterprise .jip-about-mission .card-inner {
+  padding: clamp(18px, 3vw, 34px);
+  border-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .about-enterprise .jip-about-mission .jip-mission-card {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  .about-enterprise .jip-about-mission .card-inner {
+    padding: 16px;
+  }
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission {
+  background: radial-gradient(circle at 18% 12%, #3a4048 0%, #1c1f26 56%, #14161d 100%);
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-main-heading {
+  color: #f3f7ff;
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-mission-card {
+  border-color: rgba(230, 199, 116, 0.42);
+  background: linear-gradient(165deg, rgba(12, 28, 52, 0.9), rgba(10, 22, 42, 0.92));
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .card-inner {
+  background: linear-gradient(180deg, rgba(20, 34, 58, 0.96), rgba(15, 27, 48, 0.96));
+  border-color: rgba(230, 199, 116, 0.26);
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-card-title {
+  color: #f1f6ff;
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-card-text {
+  color: rgba(225, 234, 248, 0.9);
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .card-number {
+  color: #f2dc9b;
+  opacity: 0.12;
+}
+
+html[data-theme="dark"] .about-enterprise .jip-about-mission .jip-mission-card.featured .card-inner {
+  background: linear-gradient(180deg, #12315b, #0d2444);
+  border-color: rgba(230, 199, 116, 0.34);
 }
