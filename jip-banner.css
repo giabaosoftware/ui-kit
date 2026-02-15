@@ -165,3 +165,12 @@ html[data-theme="dark"] .jip-banner-overlay {
     color-mix(in srgb, var(--base-navy), transparent 10%) 100%
   );
 }
+
+html[data-theme="dark"] .jip-section-container {
+  background: linear-gradient(
+    to bottom,
+    rgba(42, 42, 42, 0.8) 0%,
+    rgba(48, 48, 48, 0.6) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}

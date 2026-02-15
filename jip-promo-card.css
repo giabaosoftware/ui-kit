@@ -148,7 +148,7 @@
 /* Button Enroll */
 .jip-btn-enroll {
   background: var(--jip-color-navy);
-  color: white;
+  color: var(--jip-color-cream);
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
