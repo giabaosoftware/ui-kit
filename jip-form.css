@@ -22,6 +22,7 @@
 }
 
 .form-subtitle {
+  margin-top: var(--jip-spacing-16);
   font: var(--typo-caption);
   color: var(--jip-color-gold-dark);
   text-transform: uppercase;

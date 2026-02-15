@@ -106,7 +106,7 @@
   background: var(--jip-gradient-gold-metallic);
   border: none;
   border-radius: var(--jip-btn-radius);
-  font: var(--typo-h4);
+  font: var(--typo-h3);
   color: var(--jip-color-navy);
   cursor: pointer;
   box-shadow: var(--jip-checkbox-glow);
