@@ -156,3 +156,12 @@ html[data-theme="dark"] .jip-banner-overlay {
     bottom: var(--jip-spacing-8);
   }
 }
+
+.jip-section-container {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--base-navy), transparent 15%) 0%,
+    color-mix(in srgb, var(--base-navy), transparent 40%) 50%,
+    color-mix(in srgb, var(--base-navy), transparent 10%) 100%
+  );
+}

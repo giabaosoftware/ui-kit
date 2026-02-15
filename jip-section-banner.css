@@ -35,6 +35,10 @@
   text-transform: uppercase;
 }
 
+.text-cream {
+  color: var(--jip-color-cream);
+}
+
 /* Chỉnh màu cho Dark Mode */
 html[data-theme="dark"] .jip-main-heading {
   color: var(--jip-text-primary);
