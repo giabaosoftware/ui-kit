@@ -25,7 +25,6 @@
   align-items: center;
   justify-content: center;
   gap: var(--jip-spacing-24);
-  margin-bottom: var(--jip-spacing-16);
 }
 
 .jip-main-heading {
