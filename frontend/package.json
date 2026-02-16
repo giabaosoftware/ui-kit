@@ -10,8 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^6.3.0",
+    "axios": "^1.13.5",
+    "i18next": "^25.8.9",
+    "moment": "^2.30.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.5.4",
+    "recoil": "^0.7.7",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
