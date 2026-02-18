@@ -10,6 +10,17 @@
   height: 80px;
   padding: var(--jip-spacing-24);
 
+  .jip-header-inner {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto; // 🔥 center thật sự
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--jip-spacing-24);
+  }
+
   .ant-menu-horizontal {
     border-bottom: none !important;
   }

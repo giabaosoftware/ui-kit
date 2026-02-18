@@ -38,43 +38,45 @@ function Navigation() {
 
   return (
     <Header className="jip-header">
-      {isDesktop ? (
-        <>
-          <img width={80} alt="logo" src={logo} />
-          <Menu
-            className="jip-nav"
-            theme="light"
-            mode="horizontal"
-            defaultSelectedKeys={["1"]}
-            items={items}
-          />
-          <Button type="primary" className="jip-button btn-enroll">
-            <span className="main-label">Đăng nhập</span>
-            <div className="divider">
-              <span className="diamond"></span>
-            </div>
-          </Button>
-        </>
-      ) : (
-        <>
-          <img width={80} alt="logo" src={logo} />
-          <Button type="text" onClick={() => setOpen(true)}>
-            <MenuOutlined />
-          </Button>
-          <Drawer
-            title="MENU"
-            rootClassName="drawer-menu"
-            placement="right"
-            open={open}
-            onClose={() => setOpen(false)}
-          >
-            <Menu mode="inline" items={items} defaultSelectedKeys={["1"]} />
-            <Button type="primary" className="btn-metalic">
-              Liên hệ tư vấn
+      <div className="jip-header-inner">
+        {isDesktop ? (
+          <>
+            <img width={80} alt="logo" src={logo} />
+            <Menu
+              className="jip-nav"
+              theme="light"
+              mode="horizontal"
+              defaultSelectedKeys={["1"]}
+              items={items}
+            />
+            <Button type="primary" className="jip-button btn-enroll">
+              <span className="main-label">Đăng nhập</span>
+              <div className="divider">
+                <span className="diamond"></span>
+              </div>
             </Button>
-          </Drawer>
-        </>
-      )}
+          </>
+        ) : (
+          <>
+            <img width={80} alt="logo" src={logo} />
+            <Button type="text" onClick={() => setOpen(true)}>
+              <MenuOutlined />
+            </Button>
+            <Drawer
+              title="MENU"
+              rootClassName="drawer-menu"
+              placement="right"
+              open={open}
+              onClose={() => setOpen(false)}
+            >
+              <Menu mode="inline" items={items} defaultSelectedKeys={["1"]} />
+              <Button type="primary" className="btn-metalic">
+                Liên hệ tư vấn
+              </Button>
+            </Drawer>
+          </>
+        )}
+      </div>
     </Header>
   );
 }
