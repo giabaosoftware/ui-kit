@@ -1,42 +1,323 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  --base-navy: #001a3d;
+  --base-gold: #d4af37;
+  --base-gold-dark: #b8860b;
+  --base-cream: #f5f5dc;
+  --base-cream-light: #fdfdf5;
+
+  --base-font-heading: "Playfair Display", serif;
+  --base-font-body: "Inter", sans-serif;
+
+  /* Brand Colors */
+  --jip-color-navy: var(--base-navy);
+  --jip-color-gold: var(--base-gold);
+  --jip-color-gold-dark: var(--base-gold-dark);
+  --jip-color-cream: var(--base-cream);
+  --jip-color-cream-light: var(--base-cream-light);
+
+  --font-heading: var(--base-font-heading);
+  --font-body: var(--base-font-body);
+  /* Backgrounds */
+  --jip-bg-default: var(--jip-color-cream-light);
+  --jip-bg-subtle: var(--jip-color-cream);
+  --jip-bg-brand: var(--jip-color-navy);
+  /* Text & Content */
+  --jip-text-primary: #1a1a1a;
+  --jip-text-secondary: #4a4a4a;
+  --jip-text-on-brand: #ffffff;
+  --jip-text-accent: var(--jip-color-gold-dark);
+  /* Interactive & Borders */
+  --jip-action-primary: var(--jip-color-navy);
+  --jip-action-hover: #003399;
+  --jip-border-gold: rgba(212, 175, 55, 0.4);
+  /* Feedback */
+  --jip-success: #2d5a27;
+  --jip-error: #a52a2a;
+  --jip-warning: var(--jip-color-gold);
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  /* Typography Tokens */
+  /* Display & Headings (Serif) */
+  --typo-display-l: bold 40px/1.1 var(--font-heading); /* Giảm từ 48px */
+  --typo-display-s: bold 32px/1.1 var(--font-heading); /* Giảm từ 36px */
+  --typo-h1: 600 28px/1.2 var(--font-heading); /* Giảm từ 32px */
+  --typo-h2: 600 20px/1.3 var(--font-heading); /* Giảm từ 24px */
+
+  /* Body & UI Elements (Sans-serif - Tăng độ đọc hiểu ở size nhỏ) */
+  --typo-h3: bold 18px/1.4 var(--font-body); /* Giảm từ 20px */
+  --typo-body-l: 400 16px/1.5 var(--font-body); /* Giảm từ 18px */
+  --typo-body-m: 400 14px/1.5 var(--font-body); /* Giảm từ 16px - Tiêu chuẩn mới */
+  --typo-body-s: 400 13px/1.4 var(--font-body); /* Giảm từ 14px */
+  --typo-label: bold 12px/1.2 var(--font-body); /* Giảm từ 14px - Rất hợp với checkbox 20px */
+  --typo-caption: 500 11px/1.2 var(--font-body);
+
+  /* Core Spacing Tokens */
+  --jip-spacing-4: 4px;
+  --jip-spacing-8: 8px;
+  --jip-spacing-16: 16px;
+  --jip-spacing-24: 24px;
+  --jip-spacing-32: 32px;
+  --jip-spacing-48: 48px;
+  --jip-spacing-64: 64px;
+  --jip-spacing-80: 80px;
+
+  /* Semantic Aliases */
+  --jip-container-gutter: var(--jip-spacing-32);
+  --jip-section-gap: var(--jip-spacing-64);
+  --jip-card-padding: var(--jip-spacing-24);
+  --jip-element-spacing: var(--jip-spacing-16);
+  --jip-btn-radius: 999px; /* Pill shape như trong ảnh */
+  --jip-btn-border-width: 2px;
+
+  /* Bổ sung thêm cho Checkbox */
+  --jip-checkbox-size: 20px;
+  --jip-shadow-glow: 0 0 8px rgba(212, 175, 55, 0.6);
+  --jip-border-width-focus: 3px;
+
+  /* Metallic Gradient Token */
+  --jip-gradient-gold-metallic: linear-gradient(
+    135deg,
+    #b8860b 0%,
+    #fcf6ba 20%,
+    #d4af37 40%,
+    #fbf5b7 60%,
+    #aa771c 100%
+  );
+
+  /* Glow Token */
+  --jip-checkbox-glow:
+    0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html[data-theme="dark"] {
+  /* BRAND COLORS (INVERTED FOR DARK MODE)
+     Tên giữ nguyên nhưng ý nghĩa màu sắc thay đổi:
+     - Navy: Trở thành màu sáng (Off-white/Blue-white)
+     - Gold: Trở thành tone vàng trầm/đồng tối
+     - Cream: Trở thành tone xanh đen/đen sâu
+  */
+  --jip-color-navy: color-mix(in srgb, var(--base-navy), white 85%);
+  --jip-color-gold: color-mix(in srgb, var(--base-gold), black 45%);
+  --jip-color-gold-dark: color-mix(in srgb, var(--base-gold), white 25%);
+  --jip-color-cream: #121212;
+  --jip-color-cream-light: #1e1e1e;
+
+  --font-heading: var(--base-font-heading);
+  --font-body: var(--base-font-body);
+
+  /* Backgrounds */
+  --jip-bg-default: var(--jip-color-cream-light);
+  --jip-bg-subtle: var(--jip-color-cream);
+  --jip-bg-brand: var(--jip-color-navy);
+
+  /* Text & Content */
+  --jip-text-primary: #ffffff; /* Chữ trắng trên nền tối */
+  --jip-text-secondary: #b0b0b0; /* Chữ xám trên nền tối */
+  --jip-text-on-brand: #002060; /* Chữ tối trên nền brand đã được làm sáng */
+  --jip-text-accent: var(--jip-color-gold-dark);
+
+  /* Interactive & Borders */
+  --jip-action-primary: var(--jip-color-gold);
+  --jip-action-hover: var(--jip-color-gold-dark);
+  --jip-border-gold: rgba(255, 215, 0, 0.2);
+
+  /* Feedback */
+  --jip-success: #4ade80; /* Green sáng cho Dark mode */
+  --jip-error: #f87171; /* Red sáng cho Dark mode */
+  --jip-warning: var(--jip-color-gold-dark);
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Typography Tokens */
+  --typo-display-l: bold 40px/1.1 var(--font-heading);
+  --typo-display-s: bold 32px/1.1 var(--font-heading);
+  --typo-h1: 600 28px/1.2 var(--font-heading);
+  --typo-h2: 600 20px/1.3 var(--font-heading);
+  --typo-h3: bold 18px/1.4 var(--font-body);
+  --typo-body-l: 400 16px/1.5 var(--font-body);
+  --typo-body-m: 400 14px/1.5 var(--font-body);
+  --typo-body-s: 400 13px/1.4 var(--font-body);
+  --typo-label: bold 12px/1.2 var(--font-body);
+  --typo-caption: 500 11px/1.2 var(--font-body);
+
+  /* Core Spacing Tokens */
+  --jip-spacing-4: 4px;
+  --jip-spacing-8: 8px;
+  --jip-spacing-16: 16px;
+  --jip-spacing-24: 24px;
+  --jip-spacing-32: 32px;
+  --jip-spacing-48: 48px;
+  --jip-spacing-64: 64px;
+  --jip-spacing-80: 80px;
+
+  /* Semantic Aliases */
+  --jip-container-gutter: var(--jip-spacing-32);
+  --jip-section-gap: var(--jip-spacing-64);
+  --jip-card-padding: var(--jip-spacing-24);
+  --jip-element-spacing: var(--jip-spacing-16);
+  --jip-btn-radius: 999px;
+  --jip-btn-border-width: 2px;
+
+  /* Checkbox & Effects */
+  --jip-checkbox-size: 20px;
+  --jip-shadow-glow: 0 0 12px rgba(212, 175, 55, 0.3);
+  --jip-border-width-focus: 3px;
+
+  /* Metallic Gradient Token (Inverted for Dark contrast) */
+  --jip-gradient-gold-metallic: linear-gradient(
+    135deg,
+    #5e4b10 0%,
+    #b8860b 20%,
+    #d4af37 40%,
+    #8a6d1a 60%,
+    #443405 100%
+  );
+
+  /* Glow Token */
+  --jip-checkbox-glow:
+    0 0 15px rgba(212, 175, 55, 0.5), 0 0 25px rgba(0, 0, 0, 0.8);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-.card {
-  padding: 2em;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
-.read-the-docs {
-  color: #888;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import App from "./App.tsx";
 import { ConfigProvider } from "antd";
 import { I18nextProvider } from "react-i18next";
@@ -14,8 +13,17 @@ createRoot(document.getElementById("root")!).render(
         <ConfigProvider
           theme={{
             token: {
-              colorPrimary: "#2a3f5dff",
+              colorPrimary: "#001a3d",
               borderRadius: 8,
+            },
+            components: {
+              Layout: {
+                headerBg: "#fdfdf5",
+              },
+              Menu: {
+                colorBgBase: "#fdfdf5",
+                colorItemBg: "#fdfdf5",
+              },
             },
           }}
         >
